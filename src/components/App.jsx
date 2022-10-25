@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router';
 import Layout from './Layout/Layout';
-import AuthPage from '../Page/AuthPage/AuthPage';
-import MainPage from '../Page/MainPage/MainPage';
-import PageNotFound from '../Page/PageNotFound/PageNotFound';
-import Contacts from '../Page/Contacts';
-import UsefulInfo from '../Page/UsefulInfo';
-import Results from '../Page/Results';
-import TestPage from '../Page/TestPage';
+import AuthPage from '../Pages/AuthPage/AuthPage';
+import MainPage from '../Pages/MainPage/MainPage';
+import PageNotFound from '../Pages/PageNotFound/PageNotFound';
+import Contacts from '../Pages/Contacts';
+import UsefulInfo from '../Pages/UsefulInfo';
+import Results from '../Pages/Results';
+import TestPage from '../Pages/TestPage';
 
 // import { lazy, Suspense } from 'react';
 // import { Loader } from 'components/Loader/Loader';
