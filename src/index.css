@@ -1,5 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:regular,bold,medium,medium regular,semiBold regular,extrabold,semibold,black&subset=latin,latin-ext');
+
 /* @import-normalize; bring in normalize.css styles */
 @import '../node_modules/modern-normalize/modern-normalize.css';
+
+:root {
+  --main-color: #000000;
+  --secondary-color: #555555;
+  --accent-color: #ff6b09;
+  --fill-color: #02172a;
+
+  --main-text: ;
+  --secondary-text: ;
+  --accent-pale-text: ;
+  --inputs-text: ;
+  --expenses-text: ;
+  --income-text: ;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'Montserrat', sans-serif;
+}
 
 ul {
   list-style: none;
@@ -28,8 +55,4 @@ svg {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-body {
-  margin: 0;
 }

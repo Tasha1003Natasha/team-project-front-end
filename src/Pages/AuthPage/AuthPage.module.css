@@ -1,0 +1,221 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}
+
+.authSection {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.authTitle {
+  margin: 0;
+  font-family: 'Montserrat';
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.authText {
+  margin: 8px 0 0 0;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: #555555;
+}
+.authText > span {
+  font-weight: 600;
+  color: #000000;
+}
+.descriptionWrapper {
+  max-width: 280px;
+}
+.formWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 15px rgba(2, 23, 42, 0.1);
+}
+.formText {
+  text-align: center;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #000000;
+}
+.loginText {
+  text-align: start;
+  margin-top: 34px;
+  max-width: 240px;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.authButton {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 159px;
+  height: 51px;
+  border: none;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
+  cursor: pointer;
+}
+.authButton:hover {
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.262));
+}
+.googleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.inputsWrapper {
+  margin-top: 20px;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.inputForm {
+  width: 240px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ced2d1;
+}
+.inputForm > placeholder {
+  font-family: 'Montserrat Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  color: #bbbbbb;
+}
+.btnsWrapper {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.formButton {
+  width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 1px solid #ced2d1;
+  box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
+  cursor: pointer;
+}
+.formButton:hover {
+  border: none;
+  color: #ffffff;
+  background: #ff6b09;
+  transition: 0.3s;
+}
+
+@media (min-width: 768px) {
+  .authSection {
+    padding: 80px 0;
+  }
+  .authTitle {
+    font-size: 30px;
+  }
+  .authText {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .descriptionWrapper {
+    max-width: 535px;
+  }
+  .formWrapper {
+    padding: 60px 32px;
+    margin-top: 24px;
+    max-width: 500px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .formText {
+    text-align: start;
+    font-size: 14px;
+  }
+  .loginText {
+    font-size: 14px;
+    max-width: 425px;
+    text-align: start;
+  }
+  .authButton {
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .inputForm {
+    width: 440px;
+    padding: 20px;
+  }
+  .formButton {
+    width: 210px;
+    font-size: 12px;
+  }
+  .btnsWrapper {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .authSection {
+    padding: 100px 124px;
+  }
+  .authWrapper {
+    display: flex;
+    align-items: center;
+    gap: 112px;
+  }
+  .authTitle {
+    font-size: 34px;
+  }
+  .descriptionWrapper {
+    max-width: 380px;
+  }
+}
