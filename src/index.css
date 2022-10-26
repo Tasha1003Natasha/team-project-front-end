@@ -4,17 +4,14 @@
 @import '../node_modules/modern-normalize/modern-normalize.css';
 
 :root {
-  --main-color: #000000;
+  --main-color: #e5e5e5;
   --secondary-color: #555555;
+  --form-color: #ffffff;
   --accent-color: #ff6b09;
   --fill-color: #02172a;
 
-  --main-text: ;
-  --secondary-text: ;
-  --accent-pale-text: ;
-  --inputs-text: ;
-  --expenses-text: ;
-  --income-text: ;
+  --main-text: #000000;
+  --secondary-text: #555555;
 }
 
 body {
@@ -24,7 +21,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  background-color: var(--main-color);
   font-family: 'Montserrat', sans-serif;
 }
 
