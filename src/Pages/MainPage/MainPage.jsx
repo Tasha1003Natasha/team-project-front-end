@@ -1,5 +1,6 @@
 // import { ReactComponent as Arrow } from '../../images/icons/icons.svg#arrow';
 import Sprite from '../../images/icons/icons.svg';
+import { Link } from 'react-router-dom';
 
 import styles from './MainPage.module.css';
 
@@ -20,19 +21,19 @@ const MainPage = () => {
               <p className={styles.mainText}>Linux kernel creator, hacker, 1969</p>
             </div>
             <div className={styles.btnsWrapper}>
-              <button className={styles.mainButton}>QA technical training
+              <Link to="test" className={styles.mainButton}>QA technical training
               
                 <svg className={styles.arrowIcon} width={24} height={16}>
               <use href={`${Sprite}#arrow`}></use>
             </svg>
 
 
-                </button>
-              <button className={styles.mainButtonTest}>Testing theory
+                </Link>
+              <Link to="useful-info" className={styles.mainButtonTest}>Testing theory
               <svg className={styles.arrowIcon} width={24} height={16}>
               <use href={`${Sprite}#arrow`}></use>
             </svg>
-                </button>
+                </Link>
             </div>
             
           </div>
