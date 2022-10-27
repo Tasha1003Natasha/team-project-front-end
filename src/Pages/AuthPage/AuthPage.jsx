@@ -1,8 +1,45 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { signIn, logIn } from 'redux/auth/auth-operations';
 import { ReactComponent as GoogleIcon } from '../../images/icons/google.svg';
 
 import s from './AuthPage.module.css';
 
 const AuthPage = () => {
+  const dispatch = useDispatch();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleChange = evt => {
+    switch (evt.target.name) {
+      case 'email':
+        setEmail(evt.target.value);
+        break;
+      case 'password':
+        setPassword(evt.target.value);
+        break;
+      default:
+        return;
+    }
+  };
+
+  const handleSignIn = evt => {
+    evt.preventDefault();
+
+    const user = { email, password };
+
+    dispatch(signIn(user));
+  };
+
+  const handleLogIn = async evt => {
+    evt.preventDefault();
+
+    const userToLogIn = { email, password };
+
+    dispatch(logIn(userToLogIn));
+  };
+
   return (
     <main>
       <section className={s.authSection}>
@@ -18,7 +55,7 @@ const AuthPage = () => {
               </p>
             </div>
             <div className={s.formWrapper}>
-              <form className={s.authForm}>
+              <form className={s.authForm} onChange={handleChange}>
                 <p className={s.formText}>
                   You can use your Google Account to authorize:
                 </p>
@@ -38,11 +75,19 @@ const AuthPage = () => {
                     type="email"
                     placeholder="E-mail"
                   />
-                  <input className={s.inputForm} type="password" />
+                  <input
+                    className={s.inputForm}
+                    name="password"
+                    type="password"
+                  />
                 </div>
                 <div className={s.btnsWrapper}>
-                  <button className={s.formButton}>Sign in</button>
-                  <button className={s.formButton}>Sign up</button>
+                  <button className={s.formButton} onClick={handleLogIn}>
+                    Sign in
+                  </button>
+                  <button className={s.formButton} onClick={handleSignIn}>
+                    Sign up
+                  </button>
                 </div>
               </form>
             </div>
