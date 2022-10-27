@@ -9,9 +9,11 @@ const testSlice = createSlice({
   extraReducers: {
     [theoryTest.fulfilled]: (state, { payload }) => {
       state.testTheory = payload;
+      state.testTech = [];
     },
     [techTest.fulfilled]: (state, { payload }) => {
       state.testTech = payload;
+      state.testTheory = [];
     },
   },
 });

@@ -1,10 +1,34 @@
 // import { ReactComponent as Arrow } from '../../images/icons/icons.svg#arrow';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { techTest, theoryTest } from '../../redux/tests/tests-operations';
+
 import Sprite from '../../images/icons/icons.svg';
 import { Link } from 'react-router-dom';
 
 import styles from './MainPage.module.css';
 
 const MainPage = () => {
+  const dispatch = useDispatch();
+
+  const [question, setQuestion] = useState('');
+  const [answers, setAnswers] = useState('');
+  const [type, setType] = useState('');
+
+  const handleTech = evt => {
+    
+
+    const test = { question, answers, type };
+    dispatch(techTest(test));
+  };
+
+  const handleTheory = evt => {
+   
+
+    const test = { question, answers, type };
+    dispatch(theoryTest(test));
+  };
+
   return (
     <main>
       <section className={styles.mainSection}>
@@ -24,13 +48,21 @@ const MainPage = () => {
               </p>
             </div>
             <div className={styles.btnsWrapper}>
-              <Link to="test" className={styles.mainButton}>
+              <Link
+                to="test"
+                className={styles.mainButton}
+                onClick={handleTech}
+              >
                 QA technical training
                 <svg className={styles.arrowIcon} width={24} height={16}>
                   <use href={`${Sprite}#arrow`}></use>
                 </svg>
               </Link>
-              <Link to="test" className={styles.mainButtonTest}>
+              <Link
+                to="test"
+                className={styles.mainButtonTest}
+                onClick={handleTheory}
+              >
                 Testing theory
                 <svg className={styles.arrowIcon} width={24} height={16}>
                   <use href={`${Sprite}#arrow`}></use>

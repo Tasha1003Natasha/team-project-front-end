@@ -1,25 +1,42 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+const TestCard = ({ item, id }) => {
+  const { question, answers, type, _id } = item;
 
-function fun1() {
+  const radioButton = document.getElementsByName('r1');
+  // console.log(radioButton);
   const ansver = [];
-  const rad = document.getElementsByName('r1');
-  for (let i = 0; i < rad.length; i++) {
-    if (rad[i].checked) {
-      ansver.push(rad[i].textContent);
+  const checkAnswer = () => {
+    for (let i = 0; i < radioButton.length; i++) {
+      if (radioButton[i].checked) {
+        ansver.push(radioButton[i].value);
+      }
       console.log(ansver);
     }
-  }
-}
+  };
 
-const TestCard = () => {
   return (
     <>
-      <p>Question?</p>
-      <input name="r1" type="radio" /> Первый
-      <input name="r1" type="radio" /> Второй
-      <input name="r1" type="radio" /> Третий
-      <button type="button"></button>
+      {item && (
+        <div key={id}>
+          <p>{question}</p>
+          {answers.map((answer, ind) => {
+            return (
+              <>
+                <input
+                  name="r1"
+                  type="radio"
+                  value={answer}
+                  id={ind}
+                  key={ind}
+                />
+                {answer}
+              </>
+            );
+          })}
+          <button type="submit" onSubmit={checkAnswer}>
+            Next
+          </button>
+        </div>
+      )}
     </>
   );
 };
