@@ -1,6 +1,6 @@
 import axios from 'axios';
 export const API = axios.create({
-  baseURL: 'https://team-project-back-end.herokuapp.com/',
+  baseURL: 'https://team-project-back-end.herokuapp.com/api/',
 });
 
 export const tokenAuth = {
