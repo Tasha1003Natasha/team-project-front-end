@@ -18,11 +18,11 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
           <Route path="auth" element={<AuthPage />} />
+          <Route path="test" element={<TestPage />} />
+          <Route path="results" element={<Results />} />
+          <Route path="contacts" element={<Contacts />} />
           <Route path="useful-info" element={<UsefulInfo />} />
-          <Route path="contacts" element={<Contacts />}>
-            <Route path="results" element={<Results />} />
-            <Route path="test" element={<TestPage />} />
-          </Route>
+
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
