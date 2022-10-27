@@ -1,0 +1,300 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+    @media (min-width: 768px) {
+   .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 59px;
+  }
+}
+
+.mainSection{
+    padding-top: 34px;
+    padding-bottom: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #E5E5E5;
+}
+
+@media (min-width: 768px){
+    .mainSection{
+        padding-top: 82px;
+        padding-bottom: 125px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1280px){
+    .mainSection{
+        padding-top: 122px;
+        padding-bottom: 133px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* .mainWrapper{
+
+} */
+
+.descriptionWrappper{
+    padding: 0 20px;
+
+}
+
+.mainTitle{    
+    padding-bottom: 32px;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.67;
+
+    text-align: center;
+    
+    color: var(--main-color);
+
+}
+
+@media(min-width: 768px){
+    .mainTitle{
+        padding-bottom: 32px;
+        
+        font-size: 22px;
+        line-height: 1.36;
+
+        text-align: center;       
+        
+    }
+}
+
+@media(min-width: 1280px){
+    .mainTitle{        
+        margin-left: 290px;
+        margin-right: 290px;       
+       
+        font-size: 22px;
+        line-height: 1.36;       
+        
+        text-align: center;       
+    }
+}
+
+.mainLine{
+    margin: 0 auto;
+    width: 130px;
+    border: 1px solid #00122f38;;
+}
+
+@media(min-width: 768px){
+    .mainLine{      
+        width: 322px;
+        
+    }
+}
+
+.mainTextStrong{
+    margin-top: 12px;
+
+    margin-bottom: 8px;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;    
+    
+    text-align: center;    
+    
+    color: var(--main-color);
+    
+}
+
+@media(min-width: 768px){
+    .mainTextStrong{       
+        font-size: 18px;
+        line-height: 1.22;
+
+        text-align: center; 
+        
+    }
+}
+
+
+.mainText{
+    margin-bottom: 40px;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 1.2;
+
+    text-align: center;
+   
+    color: var(--secondary-color);
+
+}
+
+@media(min-width: 768px){
+    .mainText{
+        margin-bottom: 60px;
+
+        font-size: 14px;
+        line-height: 1.21;
+
+        text-align: center;       
+       
+    }
+}
+
+@media(min-width: 1280px){
+    .mainText{
+        margin-bottom: 80px;
+    }
+}
+
+.btnsWrapper{
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+@media(min-width: 768px){
+    .btnsWrapper{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media(min-width: 1280px){
+    .btnsWrapper{
+        display: flex;
+        flex-wrap: wrap;        
+        align-content: center;        
+        
+        width: 400px;
+        height: 212px;
+       
+    }
+}
+
+.mainButton{
+    padding: 60px 52px 46px 52px;  
+
+    margin-bottom: 20px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+    
+    background: var(--fill-color);
+
+}
+
+@media(min-width: 768px){
+    .mainButton{
+        padding: 60px 50px 46px 50px;  
+
+        margin-bottom: 30px;
+
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 1.21;
+        text-align: center;        
+
+    }
+}
+
+@media(min-width: 1280px){
+    .mainButton{
+        padding: 60px 50px 46px 50px;
+        margin-right: 20px;
+        width: 400px;
+        height: 212px;   
+        
+        margin-bottom: 0;       
+    }
+}
+
+
+
+.mainButtonTest{
+    padding: 60px 88px 46px 88px;   
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    
+    color: #FFFFFF;
+    
+    background: var(--accent-color);
+
+}
+
+@media(min-width: 768px){
+    .mainButtonTest{
+        padding: 60px 130px 46px 130px;
+        
+        font-size: 30px;
+        line-height: 37px;
+        text-align: center;
+        letter-spacing: 0.02em;
+
+        color: #FFFFFF;
+    }
+}
+
+@media(min-width: 1280px){
+    .mainButtonTest{
+        padding: 60px 100px 46px 100px;
+       
+        width: 400px;
+        height: 212px;         
+        
+        font-size: 32px;
+        line-height: 1.22;
+        text-align: center;
+       
+    }
+}
+
+
+
+.arrowIcon {
+    margin-top: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    fill: #FFFFFF;
+}
+
+@media(min-width: 1280px){
+    .arrowIcon{
+        margin-top: 12px;
+    }
+}
