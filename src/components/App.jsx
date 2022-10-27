@@ -5,7 +5,7 @@ import MainPage from '../Pages/MainPage/MainPage';
 import PageNotFound from '../Pages/PageNotFound/PageNotFound';
 import Contacts from '../Pages/Contacts';
 import UsefulInfo from '../Pages/UsefulInfo';
-import Results from '../Pages/Results';
+import Results from '../Pages/ResultsPage/Results';
 import TestPage from '../Pages/TestPage';
 
 // import { lazy, Suspense } from 'react';

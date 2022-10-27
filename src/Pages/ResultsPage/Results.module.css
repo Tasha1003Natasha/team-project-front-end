@@ -1,0 +1,186 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}
+
+.sectionResults {
+  padding: 32px 0 50px 0;
+}
+.resultsContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.resultTitle {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--main-text);
+}
+.resultSubtitle {
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--main-text);
+}
+.line {
+  margin-top: 16px;
+  width: 130px;
+  height: 0px;
+  opacity: 0.15;
+  border: 1px solid var(--border-color);
+}
+.diagrammWrapper {
+  margin-top: 18px;
+}
+.diagramBox canvas {
+  width: 250px;
+  height: 250px;
+}
+.answerList {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.answerCorrect,
+.answerTotal {
+  position: relative;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--main-text);
+}
+.answerCorrect:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 20px;
+  height: 0;
+  opacity: 0.15;
+  border: 1px solid #00122f;
+  transform: rotate(-90deg);
+}
+
+.answerCorrect,
+.answerTotal > span {
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--main-text);
+}
+.resultPic {
+  margin-top: 20px;
+  width: 120px;
+  height: 120px;
+}
+.resultText {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--main-text);
+}
+.materialsText {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--main-text);
+}
+.buttonRepeat {
+  margin-top: 20px;
+  width: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17px 28px;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--main-text);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.buttonRepeat:hover {
+  background-color: var(--accent-color);
+  color: var(--form-color);
+  transition: 0.25s;
+}
+
+@media (min-width: 768px) {
+  .sectionResults {
+    padding: 40px 0 100px 0;
+  }
+  .resultTitle {
+    font-size: 27px;
+    line-height: 1.22;
+  }
+  .resultSubtitle {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  .line {
+    margin-top: 32px;
+    width: 336px;
+  }
+  .diagrammWrapper {
+    margin-top: 40px;
+  }
+  .diagramBox canvas {
+    width: 285px;
+    height: 285px;
+  }
+  .answerList {
+    margin-top: 32px;
+  }
+  .answerCorrect,
+  .answerTotal {
+    font-size: 16px;
+  }
+  .answerCorrect,
+  .answerTotal > span {
+    font-size: 16px;
+  }
+  .resultPic {
+    margin-top: 32px;
+    width: 176px;
+    height: 176px;
+  }
+  .resultText {
+    margin-top: 6px;
+    font-size: 22px;
+  }
+  .materialsText {
+    font-size: 20px;
+  }
+  .buttonRepeat {
+    margin-top: 40px;
+  }
+}
