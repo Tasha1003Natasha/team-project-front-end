@@ -30,7 +30,7 @@ const MainPage = () => {
                   <use href={`${Sprite}#arrow`}></use>
                 </svg>
               </Link>
-              <Link to="useful-info" className={styles.mainButtonTest}>
+              <Link to="test" className={styles.mainButtonTest}>
                 Testing theory
                 <svg className={styles.arrowIcon} width={24} height={16}>
                   <use href={`${Sprite}#arrow`}></use>

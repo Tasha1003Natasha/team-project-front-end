@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 function fun1() {
-  const ahsver = [];
+  const ansver = [];
   const rad = document.getElementsByName('r1');
   for (let i = 0; i < rad.length; i++) {
     if (rad[i].checked) {
-      ahsver.push(rad[i].textContent);
+      ansver.push(rad[i].textContent);
+      console.log(ansver);
     }
   }
 }

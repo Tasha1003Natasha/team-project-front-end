@@ -1,1 +1,4 @@
-export const testInitialState = [];
+export const testInitialState = {
+  testTech: [],
+  testTheory: [],
+};
