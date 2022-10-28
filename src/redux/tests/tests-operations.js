@@ -19,7 +19,6 @@ export const theoryTest = createAsyncThunk(
     }
 
     const { data } = await API.get('/tests/theory', credentials);
-    console.log(data);
     return data;
   }
 );
