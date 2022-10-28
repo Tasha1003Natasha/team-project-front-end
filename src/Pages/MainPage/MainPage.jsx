@@ -1,3 +1,4 @@
+
 // import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { techTest, theoryTest } from '../../redux/tests/tests-operations';
@@ -8,11 +9,12 @@ import styles from './MainPage.module.css';
 const MainPage = () => {
   const dispatch = useDispatch();
 
-  const handleTech = evt => {
+
+  const handleTech = () => {
     dispatch(techTest());
   };
 
-  const handleTheory = evt => {
+  const handleTheory = () => {
     dispatch(theoryTest());
   };
 

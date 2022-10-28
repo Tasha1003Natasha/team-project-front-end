@@ -13,8 +13,10 @@ const TestCard = ({ index = 0 }) => {
 
   // const radioButton = document.getElementsByName('r1');
   // console.log(radioButton);
+
   // const ansver = [];
   // const checkAnswer = () => {
+
   //   for (let i = 0; i < radioButton.length; i++) {
   //     if (radioButton[i].checked) {
   //       ansver.push(radioButton[i].value);
@@ -22,7 +24,9 @@ const TestCard = ({ index = 0 }) => {
   //     console.log(ansver);
   //   }
   // };
+
   // console.log(currentIndex);
+
 
   return (
     <>
