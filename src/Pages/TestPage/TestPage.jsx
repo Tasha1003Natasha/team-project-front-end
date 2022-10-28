@@ -11,7 +11,6 @@ const TestPage = () => {
         <p>name test</p>
         <button type="button">Close</button>
         <TestForm />
-        <button type="button">Next question</button>
       </div>
       {/* )} */}
     </>
