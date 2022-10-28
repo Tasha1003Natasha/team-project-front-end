@@ -1,7 +1,7 @@
 <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <symbol id="arrow" viewBox="0 0 32 32">
-      <path d="m31.805 15.529-10-10a.668.668 0 0 0-.943.943l8.862 8.862H.667a.667.667 0 1 0 0 1.334h29.057l-8.862 8.862a.668.668 0 0 0 .942.943l10-10a.668.668 0 0 0 0-.943z"/>
+      <path  d="m31.805 15.529-10-10a.668.668 0 0 0-.943.943l8.862 8.862H.667a.667.667 0 1 0 0 1.334h29.057l-8.862 8.862a.668.668 0 0 0 .942.943l10-10a.668.668 0 0 0 0-.943z"/>
     </symbol>
     <symbol id="burger-menu" viewBox="0 0 32 32">
       <path d="M4 24h24v-2.667H4V24zm0-6.667h24v-2.667H4v2.667zM4 8v2.667h24V8H4z"/>
