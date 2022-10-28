@@ -1,15 +1,14 @@
-// import { ReactComponent as Arrow } from '../../images/icons/icons.svg#arrow';
+
 // import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { techTest, theoryTest } from '../../redux/tests/tests-operations';
-
 import Sprite from '../../images/icons/icons.svg';
 import { Link } from 'react-router-dom';
-
 import styles from './MainPage.module.css';
 
 const MainPage = () => {
   const dispatch = useDispatch();
+
 
   const handleTech = () => {
     dispatch(techTest());
