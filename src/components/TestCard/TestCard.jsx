@@ -5,28 +5,15 @@ import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
 
 const TestCard = ({ index = 0 }) => {
   let currentIndex = Number(index);
-  console.log(index);
+
   const testTech = useSelector(getTechTest);
   const testTheory = useSelector(getTheoryTest);
 
   // const { question, answers, type, _id } = item;
 
-  // const radioButton = document.getElementsByName('r1');
   // console.log(radioButton);
 
-  // const ansver = [];
-  // const checkAnswer = () => {
-
-  //   for (let i = 0; i < radioButton.length; i++) {
-  //     if (radioButton[i].checked) {
-  //       ansver.push(radioButton[i].value);
-  //     }
-  //     console.log(ansver);
-  //   }
-  // };
-
   // console.log(currentIndex);
-
 
   return (
     <>
@@ -42,6 +29,7 @@ const TestCard = ({ index = 0 }) => {
                   value={answer}
                   id={ind}
                   key={ind}
+                  autofocus="false"
                 />
                 {answer}
               </>
@@ -70,9 +58,6 @@ const TestCard = ({ index = 0 }) => {
               </>
             );
           })}
-          {/* <button type="submit" onSubmit={checkAnswer}>
-            Next
-          </button> */}
         </div>
       )}
     </>

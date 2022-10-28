@@ -1,20 +1,23 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-// import { useSelector } from 'react-redux';
-// import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
 import TestCard from '../TestCard/TestCard';
-// import { useEffect, useState } from 'react';
-// const backBTn = document.querySelector('.backBTn');
-// const nextBTn = document.querySelector('.nextBTn');
-// backBTn.addEventListener('onClick', currentQuestionIndexBack);
-// nextBTn.addEventListener('onClick', currentQuestionIndexNext);
+
 export const TestForm = () => {
   const [index, setIndex] = useState('0');
+  const [answer, setAnswer] = useState([]);
+  const radioButton = document.getElementsByName('r1');
 
-  // const testTech = useSelector(getTechTest);
-  // const testTheory = useSelector(getTheoryTest);
-
+  const checkAnswer = radioButton => {
+    for (let i = 0; i < radioButton.length; i++) {
+      if (radioButton[i].checked) {
+        setAnswer([...answer, radioButton[i].value]);
+      }
+    }
+  };
+  console.log(answer);
   const currentQuestionIndexBack = evt => {
+    checkAnswer(radioButton);
     const backIndex = Number(index) - 1;
     if (backIndex > 0 && backIndex <= 12) {
       setIndex(backIndex);
@@ -25,6 +28,7 @@ export const TestForm = () => {
   };
 
   const currentQuestionIndexNext = evt => {
+    checkAnswer(radioButton);
     const NextIndex = Number(index) + 1;
     if (NextIndex > 0 && NextIndex <= 12) {
       setIndex(NextIndex);
@@ -33,17 +37,24 @@ export const TestForm = () => {
       setIndex(0);
     }
   };
-  console.log(index);
 
   return (
     <>
-      <TestCard index={index} />
+      <p>Question {Number(index) + 1} / 12 </p>
+      <TestCard index={index} radioButton={radioButton} />
+
       <button type="button" onClick={currentQuestionIndexBack}>
         Back
       </button>
-      <button type="button" onClick={currentQuestionIndexNext}>
-        Next
-      </button>
+      {Number(index) + 1 < 12 ? (
+        <button type="button" onClick={currentQuestionIndexNext}>
+          Next
+        </button>
+      ) : (
+        <Link to="/results" onClick={currentQuestionIndexNext}>
+          Finish test
+        </Link>
+      )}
     </>
   );
 };
