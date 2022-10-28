@@ -1,0 +1,131 @@
+.useSection{
+    padding-top: 42px;
+    padding-bottom: 117px;
+
+    background-image: url("../images/image/pic-1.png");
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 768px){
+    .useSection{
+        padding-top: 182px;
+        padding-bottom: 356px;
+
+        background-image: url("../images/image/pic-2.png");
+       
+    }
+}
+
+@media (min-width: 1280px){
+    .useSection{
+        padding-top: 102px;
+        padding-bottom: 272px;
+
+        background-image: url("../images/image/pic-3.png");
+      
+    }
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+@media (min-width: 768px) {
+    .container {    
+    padding: 0 30px;
+}
+}
+
+@media (min-width: 1280px) {
+    .container {     
+     padding: 0 123px;
+   }
+ }
+
+.useWrapper{
+   margin-bottom: 32px;
+}
+
+.useTitle{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;    
+    
+    color: var(--main-text);
+    
+}
+
+@media (max-width: 767px){
+    .useTitle{
+        width: 129px;
+    }
+}
+
+
+@media (min-width: 768px){
+    .useTitle{
+        font-size: 22px;
+        line-height: 1.36;
+    }
+}
+
+.useLine {   
+    margin-top: 12px;
+    margin-bottom: 8px;
+    margin-left: 0;
+
+    width: 150px;
+
+    /* border: 1px solid var(--secondary-color); */
+    border-top: 1px solid var(--secondary-color);
+}   
+
+@media (min-width: 768px){
+    .useLine{
+        margin-top: 20px;
+        margin-bottom: 24px;
+
+        width: 336px;
+    }
+}
+
+.useText{
+    width: 195px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 1.6;
+
+    color: var(--main-text);
+}
+
+@media (min-width: 768px){
+    .useText{
+        width: 280px;
+        padding-left: 75px;
+        
+        font-size: 14px;
+        line-height: 1.57
+      
+    }
+}
+
+
+@media (min-width: 1280px){
+    .useText{
+        width: 277px;
+        padding-left: 60px;
+        
+              
+    }
+}
+
+.useTextLine{
+    text-decoration-line: underline;
+    
+}
