@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
 import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
@@ -11,18 +11,22 @@ const TestCard = ({ index = 0 }) => {
 
   // const { question, answers, type, _id } = item;
 
-  const radioButton = document.getElementsByName('r1');
+  // const radioButton = document.getElementsByName('r1');
   // console.log(radioButton);
-  const ansver = [];
-  const checkAnswer = () => {
-    for (let i = 0; i < radioButton.length; i++) {
-      if (radioButton[i].checked) {
-        ansver.push(radioButton[i].value);
-      }
-      console.log(ansver);
-    }
-  };
-  console.log(currentIndex);
+
+  // const ansver = [];
+  // const checkAnswer = () => {
+
+  //   for (let i = 0; i < radioButton.length; i++) {
+  //     if (radioButton[i].checked) {
+  //       ansver.push(radioButton[i].value);
+  //     }
+  //     console.log(ansver);
+  //   }
+  // };
+
+  // console.log(currentIndex);
+
 
   return (
     <>
