@@ -1,5 +1,5 @@
 // import { ReactComponent as Arrow } from '../../images/icons/icons.svg#arrow';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { techTest, theoryTest } from '../../redux/tests/tests-operations';
 
@@ -11,22 +11,12 @@ import styles from './MainPage.module.css';
 const MainPage = () => {
   const dispatch = useDispatch();
 
-  const [question, setQuestion] = useState('');
-  const [answers, setAnswers] = useState('');
-  const [type, setType] = useState('');
-
-  const handleTech = evt => {
-    
-
-    const test = { question, answers, type };
-    dispatch(techTest(test));
+  const handleTech = () => {
+    dispatch(techTest());
   };
 
-  const handleTheory = evt => {
-   
-
-    const test = { question, answers, type };
-    dispatch(theoryTest(test));
+  const handleTheory = () => {
+    dispatch(theoryTest());
   };
 
   return (
