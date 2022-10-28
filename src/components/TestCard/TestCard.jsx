@@ -31,7 +31,6 @@ const TestCard = ({ index = 0 }) => {
                       value={answer}
                       id={ind}
                       key={ind}
-                      autofocus="false"
                     />
                     {answer}
                   </li>
@@ -53,7 +52,7 @@ const TestCard = ({ index = 0 }) => {
             {testTheory[currentIndex].answers.map((answer, ind) => {
               return (
                 <>
-                  <li>
+                  <li key={currentIndex}>
                     <input
                       name="r1"
                       type="radio"
