@@ -49,20 +49,24 @@ const TestCard = ({ index = 0 }) => {
       {testTheory[currentIndex] && (
         <div>
           <p>{testTheory[currentIndex].question}</p>
-          {testTheory[currentIndex].answers.map((answer, ind) => {
-            return (
-              <>
-                <input
-                  name="r1"
-                  type="radio"
-                  value={answer}
-                  id={ind}
-                  key={ind}
-                />
-                {answer}
-              </>
-            );
-          })}
+          <ul>
+            {testTheory[currentIndex].answers.map((answer, ind) => {
+              return (
+                <>
+                  <li>
+                    <input
+                      name="r1"
+                      type="radio"
+                      value={answer}
+                      id={ind}
+                      key={ind}
+                    />
+                    {answer}
+                  </li>
+                </>
+              );
+            })}
+          </ul>
         </div>
       )}
     </>
