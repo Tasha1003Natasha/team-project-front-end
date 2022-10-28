@@ -9,8 +9,8 @@ export const TestForm = () => {
   const [answer, setAnswer] = useState([]);
   const radioButton = document.getElementsByName('r1');
   const backBtn = document.querySelector('back');
-  const nextBtn = document.querySelector('next');
-  const finishBtn = document.querySelector('finish');
+  // const nextBtn = document.querySelector('next');
+  // const finishBtn = document.querySelector('finish');
 
   const checkAnswer = radioButton => {
     for (let i = 0; i < radioButton.length; i++) {
