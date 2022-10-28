@@ -21,10 +21,10 @@ const UsefulInfo = () => {
             <ul>
               <li><h3 className={styles.useTitle}>Useful resources</h3></li>
               <li><hr className={styles.useLine}/></li>
-              <li><p className={styles.useText}>1. <span className={styles.useTextLine}>dou.ua</span></p></li>
-              <li><p className={styles.useText}>2. <span className={styles.useTextLine}>Habr</span></p></li>
-              <li><p className={styles.useText}>3. <span className={styles.useTextLine}>facebook.com/QA</span></p></li>
-              <li><p className={styles.useText}>4. <span className={styles.useTextLine}>goit.ua</span></p></li>
+              <li><p className={styles.useText}>1. <a href='https://dou.ua/' target='_blank' rel="noreferrer" className={styles.useTextLine}>dou.ua</a></p></li>
+              <li><p className={styles.useText}>2. <a href='https://habr.com/ru/all/' target='_blank' rel="noreferrer" className={styles.useTextLine}>Habr</a></p></li>
+              <li><p className={styles.useText}>3. <a href='https://www.facebook.com/qa.blog.ua/' target='_blank' rel="noreferrer" className={styles.useTextLine}>facebook.com/QA</a></p></li>
+              <li><p className={styles.useText}>4. <a href='https://goit.global/ua/' target='_blank' rel="noreferrer" className={styles.useTextLine}>goit.ua</a></p></li>
                
             </ul>
              </li>

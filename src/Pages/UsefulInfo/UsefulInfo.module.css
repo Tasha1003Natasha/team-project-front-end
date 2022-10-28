@@ -2,9 +2,12 @@
     padding-top: 42px;
     padding-bottom: 117px;
 
-    background-image: url("../images/image/pic-1.png");
-    /* background-size: contain; */
+    background-image: url("../../images/contacts/pic-1.png");
+    background-size: cover;
     background-repeat: no-repeat;
+
+    width: 100%;
+    height: 100vh;
 }
 
 @media (min-width: 768px){
@@ -12,7 +15,7 @@
         padding-top: 182px;
         padding-bottom: 356px;
 
-        background-image: url("../images/image/pic-2.png");
+        background-image: url("../../images/contacts/pic-2.png");
        
     }
 }
@@ -22,7 +25,7 @@
         padding-top: 102px;
         padding-bottom: 272px;
 
-        background-image: url("../images/image/pic-3.png");
+        background-image: url("../../images/contacts/pic-3.png");
       
     }
 }
@@ -80,7 +83,7 @@
 
     width: 150px;
 
-    /* border: 1px solid var(--secondary-color); */
+    opacity: 0.15;
     border-top: 1px solid var(--secondary-color);
 }   
 
@@ -102,6 +105,7 @@
     line-height: 1.6;
 
     color: var(--main-text);
+
 }
 
 @media (min-width: 768px){
@@ -127,5 +131,7 @@
 
 .useTextLine{
     text-decoration-line: underline;
+
+    color: var(--main-text);
     
 }
