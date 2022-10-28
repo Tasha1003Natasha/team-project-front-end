@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import TestCard from '../TestCard/TestCard';
 
@@ -39,13 +40,21 @@ export const TestForm = () => {
 
   return (
     <>
+      <p>Question {Number(index) + 1} / 12 </p>
       <TestCard index={index} radioButton={radioButton} />
+
       <button type="button" onClick={currentQuestionIndexBack}>
         Back
       </button>
-      <button type="button" onClick={currentQuestionIndexNext}>
-        Next
-      </button>
+      {Number(index) + 1 < 12 ? (
+        <button type="button" onClick={currentQuestionIndexNext}>
+          Next
+        </button>
+      ) : (
+        <Link to="/results" onClick={currentQuestionIndexNext}>
+          Finish test
+        </Link>
+      )}
     </>
   );
 };

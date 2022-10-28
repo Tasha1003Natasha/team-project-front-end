@@ -3,9 +3,9 @@
 import { useSelector } from 'react-redux';
 import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
 
-const TestCard = ({ index = 0, radioButton }) => {
+const TestCard = ({ index = 0 }) => {
   let currentIndex = Number(index);
-  radioButton.checked = 'false';
+
   const testTech = useSelector(getTechTest);
   const testTheory = useSelector(getTheoryTest);
 
@@ -29,6 +29,7 @@ const TestCard = ({ index = 0, radioButton }) => {
                   value={answer}
                   id={ind}
                   key={ind}
+                  autofocus="false"
                 />
                 {answer}
               </>
@@ -57,9 +58,6 @@ const TestCard = ({ index = 0, radioButton }) => {
               </>
             );
           })}
-          {/* <button type="submit" onSubmit={checkAnswer}>
-            Next
-          </button> */}
         </div>
       )}
     </>
