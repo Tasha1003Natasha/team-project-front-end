@@ -4,7 +4,7 @@ import AuthPage from '../Pages/AuthPage/AuthPage';
 import MainPage from '../Pages/MainPage/MainPage';
 import PageNotFound from '../Pages/PageNotFound/PageNotFound';
 import Contacts from '../Pages/Contacts';
-import UsefulInfo from '../Pages/UsefulInfo';
+import UsefulInfo from '../Pages/UsefulInfo/UsefulInfo';
 
 
 
