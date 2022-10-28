@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
+import { getTechTest } from '../../redux/tests/test-selector';
 
 import TestForm from '../../components/TestForm/TestForm';
 // import { getToken } from 'redux/auth/auth-selector';
