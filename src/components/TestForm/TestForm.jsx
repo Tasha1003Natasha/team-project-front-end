@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import style from './TestForm.module.css';
 
 import TestCard from '../TestCard/TestCard';
 
@@ -7,6 +8,9 @@ export const TestForm = () => {
   const [index, setIndex] = useState('0');
   const [answer, setAnswer] = useState([]);
   const radioButton = document.getElementsByName('r1');
+  const backBtn = document.querySelector('back');
+  const nextBtn = document.querySelector('next');
+  const finishBtn = document.querySelector('finish');
 
   const checkAnswer = radioButton => {
     for (let i = 0; i < radioButton.length; i++) {
@@ -23,6 +27,7 @@ export const TestForm = () => {
       setIndex(backIndex);
     }
     if (backIndex < 0) {
+      backBtn.disablead = true;
       setIndex(0);
     }
   };
@@ -40,18 +45,19 @@ export const TestForm = () => {
 
   return (
     <>
-      <p>Question {Number(index) + 1} / 12 </p>
-      <TestCard index={index} radioButton={radioButton} />
-
-      <button type="button" onClick={currentQuestionIndexBack}>
+      <div className={style.questionContainer}>
+        <p>Question {Number(index) + 1} / 12 </p>
+        <TestCard index={index} radioButton={radioButton} />
+      </div>
+      <button type="button" name="back" onClick={currentQuestionIndexBack}>
         Back
       </button>
       {Number(index) + 1 < 12 ? (
-        <button type="button" onClick={currentQuestionIndexNext}>
+        <button type="button" name="next" onClick={currentQuestionIndexNext}>
           Next
         </button>
       ) : (
-        <Link to="/results" onClick={currentQuestionIndexNext}>
+        <Link to="/results" name="finish" onClick={currentQuestionIndexNext}>
           Finish test
         </Link>
       )}
