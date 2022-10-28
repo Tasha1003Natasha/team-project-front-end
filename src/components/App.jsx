@@ -5,8 +5,10 @@ import MainPage from '../Pages/MainPage/MainPage';
 import PageNotFound from '../Pages/PageNotFound/PageNotFound';
 import Contacts from '../Pages/Contacts';
 import UsefulInfo from '../Pages/UsefulInfo';
+
 import Results from '../Pages/Results';
 import TestPage from '../Pages/TestPage/TestPage';
+
 
 // import { lazy, Suspense } from 'react';
 // import { Loader } from 'components/Loader/Loader';
