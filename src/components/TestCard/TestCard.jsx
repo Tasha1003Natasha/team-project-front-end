@@ -1,5 +1,5 @@
 // import { useEffect, useState } from 'react';
-
+// import style from './TestCard.module.css';
 import { useSelector } from 'react-redux';
 import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
 
