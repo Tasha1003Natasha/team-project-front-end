@@ -1,29 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { logIn, logOut, signIn } from 'redux/auth/auth-operations';
-import { userResults } from './results-operations';
+import { results } from './results-operations';
 
 const initialState = {
   results: null,
-  isLogin: false,
 };
 
 const resultsSlice = createSlice({
   name: 'results',
   initialState,
   extraReducers: {
-    [userResults.pending]: (state, _) => {
-      state.isLogin = false;
-    },
-
-    [userResults.fulfilled]: (state, { payload }) => {
-      state.isLogin = true;
+    [results.fulfilled]: (state, { payload }) => {
       state.results = payload;
     },
-
-    [userResults.rejected]: (state, _) => {
-      state.isLogin = false;
-    },
-
     [signIn.fulfilled]: (state, { payload }) => {
       state.results = payload.results;
     },
