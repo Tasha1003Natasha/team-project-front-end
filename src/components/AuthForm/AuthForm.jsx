@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signIn, logIn } from 'redux/auth/auth-operations';
 import { ReactComponent as GoogleIcon } from '../../images/icons/google.svg';
+import { Link } from 'react-router-dom';
 
 import s from './AuthForm.module.css';
 
@@ -85,9 +86,9 @@ const AuthForm = () => {
                   />
                 </div>
                 <div className={s.btnsWrapper}>
-                  <button className={s.formButton} onClick={handleLogIn}>
+                  <Link to="/" className={s.formButton} onClick={handleLogIn}>
                     Sign in
-                  </button>
+                  </Link>
                   <button className={s.formButton} onClick={handleSignIn}>
                     Sign up
                   </button>

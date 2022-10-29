@@ -1,17 +1,17 @@
-
 import { useDispatch, useSelector } from 'react-redux';
 import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
 
 import TestForm from '../../components/TestForm/TestForm';
 import { Link } from 'react-router-dom';
-// import { getToken } from 'redux/auth/auth-selector';
-// import AuthPage from 'Pages/AuthPage/AuthPage';
+import style from './TestPage.module.css';
+import { getToken } from 'redux/auth/auth-selector';
+import AuthPage from 'Pages/AuthPage/AuthPage';
 
 const TestPage = () => {
   const dispatch = useDispatch();
-  let testTech = useSelector(getTechTest);
-  let theoryTest = useSelector(getTheoryTest);
-
+  const testTech = useSelector(getTechTest);
+  const theoryTest = useSelector(getTheoryTest);
+  const token = useSelector(getToken);
   const hendlerCloseTest = () => {
     const test = [];
     dispatch(testTech(test));
@@ -20,18 +20,22 @@ const TestPage = () => {
 
   return (
     <>
-      {/* {token ? ( */}
-      <div>
-        {testTech[0] ? <p>[QA_technical_training]</p> : <p>[Testing_theory]</p>}
+      {token ? (
+        <section ClassName={style.sectionTest}>
+          {testTech[0] ? (
+            <p>[QA_technical_training]</p>
+          ) : (
+            <p>[Testing_theory]</p>
+          )}
 
-        <Link to="/" type="button" onClick={hendlerCloseTest}>
-          Close test
-        </Link>
-        <TestForm />
-      </div>
-      {/* ) : (
+          <Link to="/" type="button" onClick={hendlerCloseTest}>
+            Close test
+          </Link>
+          <TestForm />
+        </section>
+      ) : (
         <AuthPage />
-      )} */}
+      )}
     </>
   );
 };
