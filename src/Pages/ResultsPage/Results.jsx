@@ -1,5 +1,6 @@
 import s from './Results.module.css';
 import Chart from 'components/Chart/Chart';
+import Chart2 from 'components/Chart/Chart2';
 import Cat from '../../images/result/result.png';
 
 const Results = () => {
@@ -15,7 +16,7 @@ const Results = () => {
             </div>
             <div className={s.diagrammWrapper}>
               <div className={s.diagramBox}>
-                <Chart />
+                <Chart2 />
               </div>
 
               <ul className={s.answerList}>
