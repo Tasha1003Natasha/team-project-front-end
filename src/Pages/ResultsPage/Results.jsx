@@ -1,5 +1,5 @@
 import s from './Results.module.css';
-import Chart from 'components/Chart/Chart';
+// import Chart from 'components/Chart/Chart';
 import Chart2 from 'components/Chart/Chart2';
 import Cat from '../../images/result/result.png';
 
