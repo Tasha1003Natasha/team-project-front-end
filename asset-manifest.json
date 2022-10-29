@@ -1,19 +1,27 @@
 {
   "files": {
-    "main.css": "/team-project-front-end/static/css/main.9ede4760.css",
-    "main.js": "/team-project-front-end/static/js/main.e678c1a9.js",
+    "main.css": "/team-project-front-end/static/css/main.6689a5a1.css",
+    "main.js": "/team-project-front-end/static/js/main.8f1354e9.js",
     "static/media/pic-3.png": "/team-project-front-end/static/media/pic-3.4759844bff9f5474275b.png",
     "static/media/pic-2.png": "/team-project-front-end/static/media/pic-2.709e56e818c661b7f013.png",
+    "static/media/Natasha.png": "/team-project-front-end/static/media/Natasha.69d28aae6d7d920d9b46.png",
     "static/media/pic-1.png": "/team-project-front-end/static/media/pic-1.61bbc7e06fa1de681d20.png",
+    "static/media/Ira.jpg": "/team-project-front-end/static/media/Ira.42fdd5d0a88c5f98d80e.jpg",
+    "static/media/Roma.jpg": "/team-project-front-end/static/media/Roma.a4a96c122f8b95b55fe2.jpg",
+    "static/media/Serhii_O.jpg": "/team-project-front-end/static/media/Serhii_O.275a35f5ba963cce0d06.jpg",
+    "static/media/Vova.jpg": "/team-project-front-end/static/media/Vova.46404a5f80859d8c90ae.jpg",
+    "static/media/Sanya.jpg": "/team-project-front-end/static/media/Sanya.4f4207cce7dc948c66f7.jpg",
+    "static/media/Serhii.jpg": "/team-project-front-end/static/media/Serhii.2255d5e39bfcb2941b5b.jpg",
     "static/media/result.png": "/team-project-front-end/static/media/result.3525466dbdcc1dc13700.png",
     "static/media/icons.svg": "/team-project-front-end/static/media/icons.5ede052fb32f1d19672b225939dc984b.svg",
     "static/media/google.svg": "/team-project-front-end/static/media/google.f04463201c59f95bf3d62b7a2359d1f0.svg",
+    "static/media/icons-social.svg": "/team-project-front-end/static/media/icons-social.21039f1cd892d1b210933ba2c0042109.svg",
     "index.html": "/team-project-front-end/index.html",
-    "main.9ede4760.css.map": "/team-project-front-end/static/css/main.9ede4760.css.map",
-    "main.e678c1a9.js.map": "/team-project-front-end/static/js/main.e678c1a9.js.map"
+    "main.6689a5a1.css.map": "/team-project-front-end/static/css/main.6689a5a1.css.map",
+    "main.8f1354e9.js.map": "/team-project-front-end/static/js/main.8f1354e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ede4760.css",
-    "static/js/main.e678c1a9.js"
+    "static/css/main.6689a5a1.css",
+    "static/js/main.8f1354e9.js"
   ]
 }
