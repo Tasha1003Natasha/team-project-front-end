@@ -14,8 +14,8 @@ const TestCard = ({ index = 0 }) => {
       {testTech[currentIndex] && (
         <div>
           <p>{testTech[currentIndex].question}</p>
-          <p>{testTech[currentIndex]._id}</p>
-          <ul>
+
+          <ul key={testTech[currentIndex]._id}>
             {testTech[currentIndex].answers.map((answer, ind) => {
               return (
                 <>

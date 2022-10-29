@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import style from './TestForm.module.css';
 import { useSelector } from 'react-redux';
 import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
-
+import { results } from 'redux/results/resalts-operation';
+import { useDispatch } from 'react-redux';
 import TestCard from '../TestCard/TestCard';
 
 export const TestForm = () => {
   const [index, setIndex] = useState('0');
   const [answer, setAnswer] = useState([]);
+  const dispatch = useDispatch();
 
   const radioButton = document.getElementsByName('r1');
   const backBtn = document.querySelector('back');
@@ -16,6 +18,7 @@ export const TestForm = () => {
   // const finishBtn = document.querySelector('finish');
   const testTech = useSelector(getTechTest);
   const testTheory = useSelector(getTheoryTest);
+  // const results = useSelector(getResults);
 
   const checkAnswer = radioButton => {
     for (let i = 0; i < radioButton.length; i++) {
@@ -23,7 +26,7 @@ export const TestForm = () => {
         setAnswer([
           ...answer,
           {
-            rightAnswer: radioButton[i].value,
+            userAnswer: radioButton[i].value,
             _id: testTech[Number(index)]._id,
           },
         ]);
@@ -32,7 +35,7 @@ export const TestForm = () => {
         setAnswer([
           ...answer,
           {
-            rightAnswer: radioButton[i].value,
+            userAnswer: radioButton[i].value,
             _id: testTheory[Number(index)]._id,
           },
         ]);
@@ -40,7 +43,6 @@ export const TestForm = () => {
     }
   };
 
-  console.log(answer);
   const currentQuestionIndexBack = evt => {
     checkAnswer(radioButton);
     const backIndex = Number(index) - 1;
@@ -64,24 +66,30 @@ export const TestForm = () => {
     }
   };
 
+  const getResultsFunc = () => {
+    dispatch(results(answer));
+  };
+
   return (
     <>
       <div className={style.questionContainer}>
         <p>Question {Number(index) + 1} / 12 </p>
         <TestCard index={index} radioButton={radioButton} />
       </div>
-      <button type="button" name="back" onClick={currentQuestionIndexBack}>
-        Back
-      </button>
-      {Number(index) + 1 < 12 ? (
-        <button type="button" name="next" onClick={currentQuestionIndexNext}>
-          Next
+      <div>
+        <button type="button" name="back" onClick={currentQuestionIndexBack}>
+          Back
         </button>
-      ) : (
-        <Link to="/results" name="finish" onClick={currentQuestionIndexNext}>
-          Finish test
-        </Link>
-      )}
+        {Number(index) + 1 < 12 ? (
+          <button type="button" name="next" onClick={currentQuestionIndexNext}>
+            Next
+          </button>
+        ) : (
+          <Link to="/results" name="finish" onClick={getResultsFunc}>
+            Finish test
+          </Link>
+        )}
+      </div>
     </>
   );
 };

@@ -22,15 +22,17 @@ const TestPage = () => {
     <>
       {isLogin ? (
         <section className={style.sectionTest}>
-          {testTech[0] ? (
-            <p>[QA_technical_training]</p>
-          ) : (
-            <p>[Testing_theory]</p>
-          )}
+          <div>
+            {testTech[0] ? (
+              <p>[QA_technical_training]</p>
+            ) : (
+              <p>[Testing_theory]</p>
+            )}
 
-          <Link to="/" type="button" onClick={hendlerCloseTest}>
-            Close test
-          </Link>
+            <Link to="/" type="button" onClick={hendlerCloseTest}>
+              Close test
+            </Link>
+          </div>
           <TestForm />
         </section>
       ) : (
