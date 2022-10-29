@@ -19,9 +19,9 @@ const Contacts = () => {
           <p><hr className={styles.line}/></p>
 {/* Natasha */}
           <ul className={styles.card__wrapper}>
-            <li className={styles.card}> 
-
-              <img
+            <li > 
+            <div className={styles.card}>
+            <img
                   src={Natasha}
                   alt="1"
                   className={styles.img}
@@ -48,7 +48,7 @@ const Contacts = () => {
                   <li className={styles.list__item}>
                     <a
                       className={styles.social__link}
-                      href="https://www.linkedin.com/in/"
+                      href="https://www.linkedin.com/in/tasha-natasha-0ba490245/"
                       target="blank"
                     >
                       
@@ -60,13 +60,16 @@ const Contacts = () => {
                   
                 </ul>
               </div>
-            </li>
-          {/* </ul> */}
-{/* Serhii */}
-          {/* <ul className={styles.card__wrapper}> */}
-            <li className={styles.card}> 
+            </div>
 
-              <img
+              
+            </li>
+          
+{/* Serhii */}
+          
+            <li > 
+            <div className={styles.card}>
+            <img
                   src={Serhii}
                   alt="1"
                   className={styles.img}
@@ -105,13 +108,16 @@ const Contacts = () => {
                   
                 </ul>
               </div>
-            </li>
-          {/* </ul> */}
-{/* Ira */}
-          {/* <ul className={styles.card__wrapper}> */}
-            <li className={styles.card}> 
+            </div>
 
-              <img
+             
+            </li>
+          
+{/* Ira */}
+          
+            <li >
+            <div className={styles.card}>
+            <img
                   src={Ira}
                   alt="1"
                   className={styles.img}
@@ -150,13 +156,16 @@ const Contacts = () => {
                   
                 </ul>
               </div>
-            </li>
-          {/* </ul> */}
-{/* Vova */}
-          {/* <ul className={styles.card__wrapper}> */}
-            <li className={styles.card}> 
+            </div> 
 
-              <img
+            
+            </li>
+          
+{/* Vova */}
+          
+            <li > 
+            <div className={styles.card}>
+            <img
                   src={Vova}
                   alt="1"
                   className={styles.img}
@@ -195,13 +204,16 @@ const Contacts = () => {
                   
                 </ul>
               </div>
-            </li>
-          {/* </ul> */}
-{/* Roma */}
-          {/* <ul className={styles.card__wrapper}> */}
-            <li className={styles.card}> 
+            </div>
 
-              <img
+              
+            </li>
+          
+{/* Roma */}
+          
+            <li > 
+            <div className={styles.card}>
+            <img
                   src={Roma}
                   alt="1"
                   className={styles.img}
@@ -240,13 +252,16 @@ const Contacts = () => {
                   
                 </ul>
               </div>
-            </li>
-          {/* </ul> */}
-{/* Serhii_O*/}
-          {/* <ul className={styles.card__wrapper}> */}
-            <li className={styles.card}> 
+            </div>
 
-              <img
+              
+            </li>
+          
+{/* Serhii_O*/}
+          
+            <li > 
+            <div className={styles.card}>
+            <img
                   src={Serhii_O}
                   alt="1"
                   className={styles.img}
@@ -273,7 +288,7 @@ const Contacts = () => {
                   <li className={styles.list__item}>
                     <a
                       className={styles.social__link}
-                      href="https://www.linkedin.com/in/"
+                      href="https://www.linkedin.com/in/sergey-ostapenko-26a1a997/"
                       target="blank"
                     >
                       
@@ -285,12 +300,15 @@ const Contacts = () => {
                   
                 </ul>
               </div>
-            </li>
-          {/* </ul> */}
-{/* Sanya */}
-          {/* <ul className={styles.card__wrapper}> */}
-            <li className={styles.card}> 
+            </div>
 
+              
+            </li>
+         
+{/* Sanya */}
+         
+            <li >
+              <div className={styles.card}>
               <img
                   src={Sanya}
                   alt="1"
@@ -330,6 +348,9 @@ const Contacts = () => {
                   
                 </ul>
               </div>
+              </div> 
+
+             
             </li>
           </ul>
 
