@@ -1,0 +1,190 @@
+.section{
+padding-top: 42px;
+padding-bottom: 80px;
+}
+
+@media (min-width: 768px){
+    .section{
+        padding-top: 42px;
+        padding-bottom: 60px;   
+    }
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+    @media (min-width: 768px) {
+   .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 768px) {
+    .container {
+     /* width: 100%;
+     margin: 0 auto; */
+     padding: 0 16px;
+   }
+ }
+
+.title{  
+    /* margin-bottom: 14px;  */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;   
+
+    text-align: center;    
+
+    color: var(--main-text);
+}
+
+@media (min-width: 768px){
+    .title{
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 1.23;
+    }
+}
+
+.line{
+    margin-top: 14px;
+    margin-bottom: 20px; 
+    width: 130px;
+
+    opacity: 0.15;
+    /* border: 1px solid #00122F; */
+    border-bottom-width: 1px solid var(--border-color);
+   
+}
+
+@media (min-width: 768px){
+    .line{
+        margin-top: 20px;
+        margin-bottom: 40px; 
+        width: 322px;
+    }
+}
+
+.card__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
+    /* margin-bottom: 20px; */
+}
+
+/* @media (min-width: 1280px){
+    .card_wrapper{
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+        justify-content: center;
+    gap: 30px;
+    }
+} */
+
+
+
+.card:not(:last-child){
+    /* display: flex;
+    flex-wrap: wrap; */
+    margin-bottom: 20px;
+}
+
+
+
+.img{
+    /* width: 280px;
+    height: 244px; */
+    background-color: darkgrey;
+
+}
+
+@media (min-width: 768px){
+    .img{
+        width: 336px;
+        /* height: 244px; */
+    }
+}
+
+@media (min-width: 1280px){
+    .img{
+        width: 288px;
+        /* height: 244px; */
+    }
+}
+
+.team__about{
+    height: 126px;
+    padding: 20px 20px 22px 20px;
+    background: var(--form-color);
+}
+
+@media (min-width: 768px){
+    .team__about{
+        width: 336px;
+    }
+}
+
+@media (min-width: 1280px){
+    .team__about{
+        width: 288px;
+    }
+}
+
+.member__title{    
+    margin-bottom: 6px; 
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    
+    text-transform: uppercase;
+
+    color: var(--main-text);
+
+
+}
+
+.role__textWrap{
+   
+}
+
+.role__text{
+    /* margin-bottom: 10px; */
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;   
+
+    color: var(--secondary-text);
+}
+
+.social__list{
+    display: flex;
+    justify-content: center;
+
+}
+
+.list__item{
+
+}
+
+.social__link{
+
+}
+
+.list__item{
+    padding: 10px;
+
+}
+
+.social__link{
+
+}
