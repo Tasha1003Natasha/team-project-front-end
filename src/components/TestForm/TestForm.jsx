@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import style from './TestForm.module.css';
 import { useSelector } from 'react-redux';
 import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
-import { results } from 'redux/results/resalts-operation';
+import { results } from 'redux/tests/tests-operations';
 import { useDispatch } from 'react-redux';
 import TestCard from '../TestCard/TestCard';
 
@@ -18,7 +18,6 @@ export const TestForm = () => {
   // const finishBtn = document.querySelector('finish');
   const testTech = useSelector(getTechTest);
   const testTheory = useSelector(getTheoryTest);
-  // const results = useSelector(getResults);
 
   const checkAnswer = radioButton => {
     for (let i = 0; i < radioButton.length; i++) {
