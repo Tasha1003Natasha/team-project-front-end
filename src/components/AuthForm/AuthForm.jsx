@@ -26,96 +26,16 @@ const AuthForm = () => {
   };
 
   // // Зайти
-  // const handleSignIn = evt => {
-  //   evt.preventDefault();
-
-  //   const user = { email, password };
-
-  //   dispatch(signIn(user));
-  // };
+  const handleSignIn = evt => {
+    evt.preventDefault();
+    const user = { email, password };
+    dispatch(logIn(user));
+  };
 
   // // Реєстрація
-  // const handleLogIn = () => {
-  //   const user = { email, password };
-  //   // const userToLogIn = { email, password };
-
-  //   dispatch(logIn(user));
-  // };
-
-  // return (
-  //   <main>
-  //     <section className={s.authSection}>
-  //       <div className={s.container}>
-  //         <div className={s.authWrapper}>
-  //           <div className={s.descriptionWrapper}>
-  //             <h1 className={s.authTitle}>Pro Test</h1>
-  //             <p className={s.authText}>
-  //               <span>[</span> We will help you find weak points in knowledge so
-  //               that you can strengthen it. We will show you what is relevant to
-  //               know for a<span> QA Engineer</span> and will try to make the
-  //               learning process more diverse_ <span>]</span>
-  //             </p>
-  //           </div>
-  //           <div className={s.formWrapper}>
-  //             <form className={s.authForm} onSubmit={handleLogIn}>
-  //               <p className={s.formText}>
-  //                 You can use your Google Account to authorize:
-  //               </p>
-  //               <button className={s.authButton}>
-  //                 <a className={s.googleIcon} href="https://www.google.com/">
-  //                   <GoogleIcon />
-  //                   Google
-  //                 </a>
-  //               </button>
-  //               <p className={s.loginText}>
-  //                 Or login to our app using e-mail and password:
-  //               </p>
-  //               <div className={s.inputsWrapper}>
-  //                 <input
-  //                   className={s.inputForm}
-  //                   name="email"
-  //                   type="email"
-  //                   value={email}
-  //                   onChange={handleChange}
-  //                   placeholder="E-mail"
-  //                 />
-  //                 <input
-  //                   className={s.inputForm}
-  //                   name="password"
-  //                   type="password"
-  //                   value={password}
-  //                   onChange={handleChange}
-  //                 />
-  //               </div>
-  //               <div className={s.btnsWrapper}>
-  //                 {/* <Link to="/" className={s.formButton} onClick={handleLogIn}>
-  //                   Sign in
-  //                 </Link> */}
-  //                 <button className={s.formButton} type="submit">
-  //                   Sign in
-  //                 </button>
-  //                 <button
-  //                   className={s.formButton}
-  //                   onClick={handleSignIn}
-  //                   type="button"
-  //                 >
-  //                   Sign up
-  //                 </button>
-  //               </div>
-  //             </form>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </section>
-  //   </main>
-  // );
-
-  ///////////////////////////////////////////////////////////
-  const handleSubmit = event => {
-    event.preventDefault();
-    dispatch(signIn({ email, password }));
-    setEmail('');
-    setPassword('');
+  const handleLogIn = () => {
+    const user = { email, password };
+    dispatch(signIn(user));
   };
 
   return (
@@ -133,7 +53,7 @@ const AuthForm = () => {
               </p>
             </div>
             <div className={s.formWrapper}>
-              <form className={s.authForm} onSubmit={handleLogIn}>
+              <form className={s.authForm}>
                 <p className={s.formText}>
                   You can use your Google Account to authorize:
                 </p>
@@ -167,12 +87,16 @@ const AuthForm = () => {
                   {/* <Link to="/" className={s.formButton} onClick={handleLogIn}>
                     Sign in
                   </Link> */}
-                  <button className={s.formButton} type="submit">
+                  <button
+                    className={s.formButton}
+                    onClick={handleSignIn}
+                    type="submit"
+                  >
                     Sign in
                   </button>
                   <button
                     className={s.formButton}
-                    onClick={handleSignIn}
+                    onClick={handleLogIn}
                     type="button"
                   >
                     Sign up
