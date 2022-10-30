@@ -9,18 +9,13 @@ const TestCard = ({ index = 0 }) => {
   const testTech = useSelector(getTechTest);
   const testTheory = useSelector(getTheoryTest);
 
-  // const { question, answers, type, _id } = item;
-
-  // console.log(radioButton);
-
-  // console.log(currentIndex);
-
   return (
     <>
       {testTech[currentIndex] && (
         <div>
           <p>{testTech[currentIndex].question}</p>
-          <ul>
+
+          <ul key={testTech[currentIndex]._id}>
             {testTech[currentIndex].answers.map((answer, ind) => {
               return (
                 <>
