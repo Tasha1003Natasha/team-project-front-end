@@ -37,8 +37,17 @@ export const App = () => {
             <Route
               index
               element={
-                <PublicRoute>
+                <PrivateRoute>
                   <MainPageLazy />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path="/auth"
+              element={
+                <PublicRoute>
+                  <AuthPageLazy />
                 </PublicRoute>
               }
             />

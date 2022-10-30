@@ -7,7 +7,7 @@ export const signIn = createAsyncThunk('auth/register', async credentials => {
   return data;
 });
 
-export const logIn = createAsyncThunk('auth/logIn', async credentials => {
+export const logIn = createAsyncThunk('auth/login', async credentials => {
   try {
     const { data } = await API.post('auth/login', credentials);
     console.log(data);
@@ -31,5 +31,3 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
     toast.error('Server error, please try again later');
   }
 });
-
-
