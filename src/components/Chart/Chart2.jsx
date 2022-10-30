@@ -1,12 +1,18 @@
 import React, { useCallback, useState } from 'react';
+// import { useSelector } from 'react-redux';
 import { PieChart, Pie, Sector } from 'recharts';
+// import {
+//   getCurrectAnswer,
+//   getIncurrectAnswer,
+// } from '../../redux/tests/test-selector';
 
 const data = [
-  { name: 'Correct', value: 9 },
-  { name: 'Incorrect', value: 3 },
+  { name: 'Correct', value: 3 },
+  { name: 'Incorrect', value: 9 },
 ];
-
 const renderActiveShape = props => {
+  // const correct = useSelector(getCurrectAnswer);
+  // const incorrect = useSelector(getIncurrectAnswer);
   const RADIAN = Math.PI / 180;
   const {
     cx,

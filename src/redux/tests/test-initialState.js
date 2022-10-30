@@ -1,5 +1,8 @@
 export const testInitialState = {
   testTech: [],
   testTheory: [],
-  results: '',
+  results: {
+    correct: 0,
+    incorrect: 0,
+  },
 };
