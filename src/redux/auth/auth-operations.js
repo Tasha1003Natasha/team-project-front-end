@@ -10,7 +10,7 @@ export const signIn = createAsyncThunk('auth/register', async user => {
 export const logIn = createAsyncThunk('auth/login', async user => {
   try {
     const { data } = await API.post('auth/login', user);
-    tokenAuth.set(data.accessToken);
+    tokenAuth.set(data.token);
     return data;
   } catch (error) {
     if (error.response.status === 401) {
