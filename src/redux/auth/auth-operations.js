@@ -10,7 +10,6 @@ export const signIn = createAsyncThunk('auth/register', async credentials => {
 export const logIn = createAsyncThunk('auth/login', async credentials => {
   try {
     const { data } = await API.post('auth/login', credentials);
-    console.log(data);
     tokenAuth.set(data.accessToken);
     return data;
   } catch (error) {

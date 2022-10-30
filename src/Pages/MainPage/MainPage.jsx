@@ -14,6 +14,7 @@ const MainPage = () => {
 
   const handleTech = () => {
     dispatch(techTest());
+    
   };
 
   const handleTheory = () => {
