@@ -3,7 +3,7 @@ import Layout from './Layout/Layout';
 import AuthPage from '../Pages/AuthPage/AuthPage';
 import MainPage from '../Pages/MainPage/MainPage';
 import PageNotFound from '../Pages/PageNotFound/PageNotFound';
-import Contacts from '../Pages/Contacts';
+import Contacts from '../Pages/Contacts/Contacts';
 import UsefulInfo from '../Pages/UsefulInfo/UsefulInfo';
 
 

@@ -31,34 +31,4 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
   }
 });
 
-export const getRefresh = createAsyncThunk(
-  'auth/refresh',
-  async (_, { getState, rejectWithValue }) => {
-    const state = getState();
-    const oldSid = state.auth.sid;
-    const oldRefresh = state.auth.refreshToken;
-    if (!oldRefresh || !oldSid) {
-      return rejectWithValue('something went wrong');
-    }
-    try {
-      const { data } = await API.post(
-        '/auth/refresh',
-        { sid: oldSid },
-        {
-          headers: {
-            Authorization: `Bearer ${oldRefresh}`,
-          },
-        }
-      );
 
-      tokenAuth.set(data.newAccessToken);
-      return data;
-    } catch (error) {
-      tokenAuth.unset();
-      if (error.response.status !== 401) {
-        toast.error('Oops, we got an error :(((( Dont worry and try again.');
-      }
-      return rejectWithValue('something went wrong');
-    }
-  }
-);
