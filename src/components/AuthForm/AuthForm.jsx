@@ -33,7 +33,7 @@ const AuthForm = () => {
   };
 
   // // Реєстрація
-  const handleLogIn = () => {
+  const handleSignUp = () => {
     const user = { email, password };
     dispatch(signIn(user));
   };
@@ -96,7 +96,7 @@ const AuthForm = () => {
                   </button>
                   <button
                     className={s.formButton}
-                    onClick={handleLogIn}
+                    onClick={handleSignUp}
                     type="button"
                   >
                     Sign up
