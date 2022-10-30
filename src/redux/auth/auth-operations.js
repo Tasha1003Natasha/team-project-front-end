@@ -2,14 +2,14 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { API, tokenAuth } from 'API';
 import { toast } from 'react-toastify';
 
-export const signIn = createAsyncThunk('auth/register', async credentials => {
-  const { data } = await API.post('auth/register', credentials);
+export const signIn = createAsyncThunk('auth/register', async user => {
+  const { data } = await API.post('auth/register', user);
   return data;
 });
 
-export const logIn = createAsyncThunk('auth/logIn', async credentials => {
+export const logIn = createAsyncThunk('auth/login', async user => {
   try {
-    const { data } = await API.post('auth/login', credentials);
+    const { data } = await API.post('auth/login', user);
     tokenAuth.set(data.accessToken);
     return data;
   } catch (error) {
@@ -30,5 +30,3 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
     toast.error('Server error, please try again later');
   }
 });
-
-

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signIn, logIn } from 'redux/auth/auth-operations';
 import { ReactComponent as GoogleIcon } from '../../images/icons/google.svg';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import s from './AuthForm.module.css';
 
@@ -25,19 +25,17 @@ const AuthForm = () => {
     }
   };
 
+  // // Зайти
   const handleSignIn = evt => {
     evt.preventDefault();
-
     const user = { email, password };
-    dispatch(signIn(user));
+    dispatch(logIn(user));
   };
 
-  const handleLogIn = evt => {
-    evt.preventDefault();
-
-    const userToLogIn = { email, password };
-
-    dispatch(logIn(userToLogIn));
+  // // Реєстрація
+  const handleLogIn = () => {
+    const user = { email, password };
+    dispatch(signIn(user));
   };
 
   return (
@@ -55,7 +53,7 @@ const AuthForm = () => {
               </p>
             </div>
             <div className={s.formWrapper}>
-              <form className={s.authForm} onSubmit={handleLogIn}>
+              <form className={s.authForm}>
                 <p className={s.formText}>
                   You can use your Google Account to authorize:
                 </p>
@@ -86,10 +84,21 @@ const AuthForm = () => {
                   />
                 </div>
                 <div className={s.btnsWrapper}>
-                  <Link to="/" className={s.formButton} onClick={handleLogIn}>
+                  {/* <Link to="/" className={s.formButton} onClick={handleLogIn}>
                     Sign in
-                  </Link>
-                  <button className={s.formButton} onClick={handleSignIn}>
+                  </Link> */}
+                  <button
+                    className={s.formButton}
+                    onClick={handleSignIn}
+                    type="submit"
+                  >
+                    Sign in
+                  </button>
+                  <button
+                    className={s.formButton}
+                    onClick={handleLogIn}
+                    type="button"
+                  >
                     Sign up
                   </button>
                 </div>

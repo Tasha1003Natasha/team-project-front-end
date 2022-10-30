@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { logIn, logOut } from './auth-operations';
 
 export const initialState = {
-  accessToken: null,
+  token: null,
   isLogin: false,
 };
 
@@ -10,17 +10,17 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    googleAuth: (state, { payload }) => {
-      state.accessToken = payload.accessToken;
-      state.isLogin = true;
-    },
+    // googleAuth: (state, { payload }) => {
+    //   state.accessToken = payload.accessToken;
+    //   state.isLogin = true;
+    // },
   },
   extraReducers: {
     [logIn.pending]: (state, { payload }) => {
       state.isLogin = false;
     },
     [logIn.fulfilled]: (state, { payload }) => {
-      state.accessToken = payload.accessToken;
+      state.token = payload.token;
       state.isLogin = true;
     },
     [logIn.rejected]: (state, { payload }) => {
@@ -28,7 +28,7 @@ const authSlice = createSlice({
     },
 
     [logOut.fulfilled]: (state, { payload }) => {
-      state.accessToken = null;
+      state.token = null;
       state.isLogin = false;
     },
   },
