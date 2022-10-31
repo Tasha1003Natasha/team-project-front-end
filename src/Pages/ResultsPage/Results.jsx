@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 
 const Results = () => {
   const correct = useSelector(getCurrectAnswer);
-  // const incorrect = useSelector(getIncurrectAnswer);
   const testTheory = useSelector(getTheoryTest);
 
   return (
@@ -44,9 +43,13 @@ const Results = () => {
               </ul>
             </div>
             <img className={s.resultPic} src={Cat} alt="result" />
-            <p className={s.resultText}>Not bad!</p>
+            <p className={s.resultText}>
+              {correct === 12 ? 'Great!' : 'Not bad'}
+            </p>
             <p className={s.materialsText}>
-              But you still need to learn some materials.
+              {correct === 12
+                ? 'You are cool!'
+                : 'But you still need to learn some materials.'}
             </p>
             <Link to="/test" className={s.buttonRepeat}>
               Try again
