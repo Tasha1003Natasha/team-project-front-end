@@ -30,3 +30,8 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
     toast.error('Server error, please try again later');
   }
 });
+
+export const userCurrent = createAsyncThunk('auth/current', async () => {
+  const { data } = await API.post('auth/current');
+  return data;
+});
