@@ -48,7 +48,7 @@ const Results = () => {
             <p className={s.materialsText}>
               But you still need to learn some materials.
             </p>
-            <Link to="/" className={s.buttonRepeat}>
+            <Link to="/test" className={s.buttonRepeat}>
               Try again
             </Link>
           </div>
