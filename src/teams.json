@@ -1,0 +1,82 @@
+[
+    {
+      "id": "id-1",
+      "url": "https://avatars.githubusercontent.com/u/102981670?v=4",
+      "name": "Natasha",
+      "role": "Team Lead",
+      "link": {
+        "github": "https://github.com/Tasha1003Natasha",
+        "linkedin": "https://www.linkedin.com/in/tasha-natasha-0ba490245/"
+      }
+     
+    },
+    {
+        "id": "id-2",
+        "url": "https://avatars.githubusercontent.com/u/98112335?v=4",
+        "name": "Serhii",
+        "role": "Scrum Master",
+        "link": {
+          "github": "https://github.com/serg-itsh",
+          "linkedin": "https://www.linkedin.com/in/serhii-shevchenko-9889a3244/"
+        }
+       
+      },
+      {
+        "id": "id-3",
+        "url": "https://avatars.githubusercontent.com/u/100072177?v=4",
+        "name": "Iryna",
+        "role": "Developer",
+        "link": {
+          "github": "https://github.com/IrynaSabinina",
+          "linkedin": "https://www.linkedin.com/in/iryna-sabinina-7620a5244/"
+        }
+       
+      },
+      {
+        "id": "id-4",
+        "url": "https://media-exp1.licdn.com/dms/image/C4D03AQEGjG4wXB63VA/profile-displayphoto-shrink_800_800/0/1661263299452?e=1672876800&v=beta&t=s8VnJk3Ibar7tbsry5uoiJXecM0BM7i3yqD96LycpqM",
+        "name": "Volodymyr",
+        "role": "Developer",
+        "link": {
+          "github": "https://github.com/Mr-Nihility",
+          "linkedin": "https://www.linkedin.com/in/volodymyr-romanenko-b0b15b243/"
+        }
+       
+      },
+      {
+        "id": "id-5",
+        "url": "https://avatars.githubusercontent.com/u/99145947?v=4",
+        "name": "Roman",
+        "role": "Developer",
+        "link": {
+          "github": "https://github.com/RoRomario360",
+          "linkedin": "https://www.linkedin.com/in/roman-merkulov-857041241/"
+        }
+       
+      },
+      {
+        "id": "id-6",
+      "url": "https://media-exp1.licdn.com/dms/image/D4D35AQHXyRQgb6Oiiw/profile-framedphoto-shrink_800_800/0/1661103856504?e=1667822400&v=beta&t=jN3Qn8jJ3GDoOp5b7v5HwIn8_5TrHdbdQoPbDvIJcR0",
+      "name": "Serhii",
+      "role": "Developer",
+      "link": {
+        "github": "https://github.com/SergeyOstapenko",
+        "linkedin": "https://www.linkedin.com/in/sergey-ostapenko-26a1a997/"
+      }
+       
+      },
+      {
+        "id": "id-7",
+        "url": "https://avatars.githubusercontent.com/u/98844617?v=4",
+        "name": "Alexandr",
+        "role": "Developer",
+        "link": {
+          "github": "https://github.com/Sinbew",
+          "linkedin": "https://www.linkedin.com/in/alexandr-raskulov/"
+        }
+       
+      }
+   
+    
+  ]
+  
