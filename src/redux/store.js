@@ -13,18 +13,22 @@ import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/auth-slice';
 import { testReducer } from './tests/tests-slice';
 
-const persistConfig = {
+const persistAuth = {
   key: 'auth',
   storage,
-  whitelist: ['token', 'isLogin', 'testInitialState'],
+  whitelist: ['token', 'isLogin'],
 };
 
-const persistedReducer = persistReducer(persistConfig, authReducer);
+const persistTest = {
+  key: 'test',
+  storage,
+  whitelist: ['testTech', 'testTheory', 'results'],
+};
 
 const store = configureStore({
   reducer: {
-    auth: persistedReducer,
-    test: testReducer,
+    auth: persistReducer(persistAuth, authReducer),
+    test: persistReducer(persistTest, testReducer),
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware: getDefaultMiddleware =>
