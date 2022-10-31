@@ -7,7 +7,6 @@ export const techTest = createAsyncThunk('tests/tech', async () => {
     toast.error('Login please, first');
   }
   const { data } = await API.get('/tests/tech');
-
   return data;
 });
 
@@ -19,3 +18,15 @@ export const theoryTest = createAsyncThunk('tests/theory', async () => {
   const { data } = await API.get('/tests/theory');
   return data;
 });
+
+export const results = createAsyncThunk('tests/results', async answers => {
+  if (!tokenAuth) {
+    toast.error('Login please, first');
+  }
+
+  const { data } = await API.post('tests/results', answers);
+
+  return data;
+});
+
+

@@ -1,4 +1,3 @@
-
 // import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { techTest, theoryTest } from '../../redux/tests/tests-operations';
@@ -6,18 +5,23 @@ import Sprite from '../../images/icons/icons.svg';
 import { Link } from 'react-router-dom';
 import styles from './MainPage.module.css';
 
+import { useSelector } from 'react-redux';
+import { getIsLoggedIn } from 'redux/auth/auth-selector';
+
 const MainPage = () => {
   const dispatch = useDispatch();
-
+  const isLogin = useSelector(getIsLoggedIn);
 
   const handleTech = () => {
     dispatch(techTest());
+    
   };
 
   const handleTheory = () => {
     dispatch(theoryTest());
   };
 
+  if (isLogin) {
   return (
     <main>
       <section className={styles.mainSection}>
@@ -63,6 +67,7 @@ const MainPage = () => {
       </section>
     </main>
   );
+  }
 };
 
 export default MainPage;
