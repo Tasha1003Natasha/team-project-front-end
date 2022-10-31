@@ -23,7 +23,7 @@ const Results = () => {
               {testTheory[0] ? (
                 <p className={s.resultSubtitle}>[ Testing theory_]</p>
               ) : (
-                <p className={s.resultSubtitle}>[ Testing QA_]</p>
+                <p className={s.resultSubtitle}>[ Технічна підготовка QA]</p>
               )}
 
               <div className={s.line}></div>
