@@ -5,8 +5,8 @@ export const API = axios.create({
 });
 
 export const tokenAuth = {
-  set(accessToken) {
-    API.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+  set(token) {
+    API.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
 
   unset() {

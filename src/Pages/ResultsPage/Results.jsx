@@ -7,6 +7,7 @@ import {
   getCurrectAnswer,
   getTheoryTest,
 } from '../../redux/tests/test-selector';
+import { Link } from 'react-router-dom';
 
 const Results = () => {
   const correct = useSelector(getCurrectAnswer);
@@ -47,7 +48,9 @@ const Results = () => {
             <p className={s.materialsText}>
               But you still need to learn some materials.
             </p>
-            <button className={s.buttonRepeat}>Try again</button>
+            <Link to="/" className={s.buttonRepeat}>
+              Try again
+            </Link>
           </div>
         </div>
       </section>
