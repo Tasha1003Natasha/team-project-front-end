@@ -1,0 +1,16 @@
+.footer {
+    background-color: #02172A;
+}
+
+.footer__container {
+    height: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 36px 30px 48px;
+    display: flex;
+}
+
+.footer__text {
+    
+}
