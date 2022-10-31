@@ -56,15 +56,6 @@ export const App = () => {
             />
 
             <Route
-              path="/auth"
-              element={
-                <PublicRoute>
-                  <AuthPageLazy />
-                </PublicRoute>
-              }
-            />
-
-            <Route
               path="/test"
               element={
                 <PrivateRoute>
