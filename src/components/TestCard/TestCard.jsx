@@ -3,7 +3,7 @@
 import { useSelector } from 'react-redux';
 import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
 
-const TestCard = ({ index = 0 }) => {
+const TestCard = ({ index = 0, isChecked }) => {
   let currentIndex = Number(index);
 
   const testTech = useSelector(getTechTest);
@@ -26,6 +26,7 @@ const TestCard = ({ index = 0 }) => {
                       value={answer}
                       id={ind}
                       key={ind}
+                      checked={isChecked}
                     />
                     {answer}
                   </li>

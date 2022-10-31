@@ -38,7 +38,6 @@ export const TestForm = () => {
         }
 
         setAnswer([...answer, userAnswer]);
-        console.log(answer);
       }
       if (radioButton[i].checked && testTheory[0]) {
         setAnswer([
@@ -54,6 +53,7 @@ export const TestForm = () => {
 
   const currentQuestionIndexBack = evt => {
     checkAnswer(radioButton);
+
     const backIndex = Number(index) - 1;
     if (backIndex > 0 && backIndex <= 12) {
       setIndex(backIndex);
@@ -65,6 +65,7 @@ export const TestForm = () => {
 
   const currentQuestionIndexNext = evt => {
     checkAnswer(radioButton);
+    isChecked(radioButton);
     const NextIndex = Number(index) + 1;
     if (NextIndex > 0 && NextIndex <= 12) {
       setIndex(NextIndex);
@@ -79,13 +80,23 @@ export const TestForm = () => {
     dispatch(results(answer));
   };
 
-  console.log(answer);
   localStorage.setItem('userAnswers', JSON.stringify(answer));
+
+  const getAnswer = localStorage.getItem('userAnswers');
+
+  const isChecked = radioButton => {
+    for (let i = 0; i < radioButton.length; i++) {
+      console.log(radioButton[i].value);
+      if (getAnswer[0]) {
+        radioButton[i].checked = true;
+      }
+    }
+  };
   return (
     <>
       <div className={style.questionContainer}>
         <p>Question {Number(index) + 1} / 12 </p>
-        <TestCard index={index} radioButton={radioButton} />
+        <TestCard index={index} radioButton={radioButton} checked={isChecked} />
       </div>
       <div>
         <button type="button" name="back" onClick={currentQuestionIndexBack}>
