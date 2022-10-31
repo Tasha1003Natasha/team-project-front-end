@@ -13,7 +13,7 @@ export const TestForm = () => {
   const dispatch = useDispatch();
 
   const radioButton = document.getElementsByName('r1');
-  const backBtn = document.querySelector('back');
+  // const backBtn = document.querySelector('back');
   // const nextBtn = document.querySelector('next');
   // const finishBtn = document.querySelector('finish');
   const testTech = useSelector(getTechTest);
@@ -22,13 +22,23 @@ export const TestForm = () => {
   const checkAnswer = radioButton => {
     for (let i = 0; i < radioButton.length; i++) {
       if (radioButton[i].checked && testTech[0]) {
-        setAnswer([
-          ...answer,
-          {
-            userAnswer: radioButton[i].value,
-            _id: testTech[Number(index)]._id,
-          },
-        ]);
+        const userAnswer = {
+          userAnswer: radioButton[i].value,
+          _id: testTech[Number(index)]._id,
+        };
+
+        for (let i = 0; i < answer.length; i++) {
+          if (userAnswer._id === answer[i]._id) {
+            console.log(userAnswer._id);
+            const index = answer.indexOf(answer[i]);
+            console.log(index);
+            console.log(answer[i]);
+            answer.splice(index, 1);
+          }
+        }
+
+        setAnswer([...answer, userAnswer]);
+        console.log(answer);
       }
       if (radioButton[i].checked && testTheory[0]) {
         setAnswer([
@@ -48,8 +58,7 @@ export const TestForm = () => {
     if (backIndex > 0 && backIndex <= 12) {
       setIndex(backIndex);
     }
-    if (backIndex < 0) {
-      backBtn.disablead = true;
+    if (backIndex < 1) {
       setIndex(0);
     }
   };
@@ -66,9 +75,12 @@ export const TestForm = () => {
   };
 
   const getResultsFunc = () => {
+    checkAnswer(radioButton);
     dispatch(results(answer));
   };
 
+  console.log(answer);
+  localStorage.setItem('userAnswers', JSON.stringify(answer));
   return (
     <>
       <div className={style.questionContainer}>
