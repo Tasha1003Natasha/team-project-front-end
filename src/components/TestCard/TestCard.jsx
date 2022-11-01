@@ -3,7 +3,7 @@
 import { useSelector } from 'react-redux';
 import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
 
-const TestCard = ({ index = 0, isChecked }) => {
+const TestCard = ({ index = 0 }) => {
   let currentIndex = Number(index);
 
   const testTech = useSelector(getTechTest);
@@ -14,30 +14,23 @@ const TestCard = ({ index = 0, isChecked }) => {
       {testTech[currentIndex] && (
         <div>
           <p>{testTech[currentIndex].question}</p>
-
-          <ul key={testTech[currentIndex]._id}>
+          <p>{testTech[currentIndex]._id}</p>
+          <ul>
             {testTech[currentIndex].answers.map((answer, ind) => {
               return (
-                <>
-                  <li key={currentIndex}>
-                    <input
-                      name="r1"
-                      type="radio"
-                      value={answer}
-                      id={ind}
-                      key={ind}
-                      checked={isChecked}
-                    />
-                    {answer}
-                  </li>
-                </>
+                <li key={ind}>
+                  <input
+                    name="r1"
+                    type="radio"
+                    value={answer}
+                    // onClick={onClick}
+                    defaultChecked={false}
+                  />
+                  {answer}
+                </li>
               );
             })}
           </ul>
-
-          {/* <button type="submit" onSubmit={checkAnswer}>
-            Next
-          </button> */}
         </div>
       )}
 
