@@ -23,14 +23,19 @@ const TestPage = () => {
     <>
       {isLogin ? (
         <section className={style.sectionTest}>
-          <div>
+          <div className={style.hederTest}>
             {testTech[0] ? (
-              <p>[QA_technical_training]</p>
+              <p className={style.hederText}>[QA_technical&shy;_training]</p>
             ) : (
-              <p>[Testing_theory]</p>
+              <p className={style.hederTest}>[Testing&shy;theory_]</p>
             )}
 
-            <Link to="/" type="button" onClick={hendlerCloseTest}>
+            <Link
+              className={style.closeBtn}
+              to="/"
+              type="button"
+              onClick={hendlerCloseTest}
+            >
               Close test
             </Link>
           </div>
