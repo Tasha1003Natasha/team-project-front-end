@@ -9,7 +9,7 @@ import Layout from './Layout/Layout';
 // import TestPage from '../Pages/TestPage/TestPage';
 
 // import teams from '../teams.json';
-import teams from '../../src/teams.json';
+// import teams from '../../src/teams.json';
 
 import { lazy, Suspense } from 'react';
 import { Loader } from 'components/Loader/Loader';
@@ -86,7 +86,7 @@ export const App = () => {
               path="/contacts"
               element={
                 <PublicRoute>
-                  <ContactsLazy items={teams} />
+                  <ContactsLazy />
                 </PublicRoute>
               }
             />
