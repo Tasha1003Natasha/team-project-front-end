@@ -11,6 +11,8 @@ const TestPage = () => {
   const dispatch = useDispatch();
   const testTech = useSelector(getTechTest);
   const theoryTest = useSelector(getTheoryTest);
+  const nextBtn = document.getElementsByName('next');
+  nextBtn.disabled = true;
 
   const isLogin = useSelector(getIsLoggedIn);
   const hendlerCloseTest = () => {
@@ -39,7 +41,7 @@ const TestPage = () => {
               Close test
             </Link>
           </div>
-          <TestForm />
+          <TestForm nextBtn={nextBtn} />
         </section>
       ) : (
         <AuthPage />
