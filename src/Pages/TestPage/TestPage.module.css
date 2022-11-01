@@ -1,8 +1,49 @@
-.sectionTest {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.container {
   width: 100%;
-  margin: 0px auto;
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}
+
+.sectionTest {
+  padding: 26px 0;
+}
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trainingTitle {
+  width: 130px;
+  font-family: 'Montserrat Medium';
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--main-text);
+}
+.finishBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  padding: 17px 0;
+  font-family: 'Montserrat Medium';
+  font-size: 10px;
+  line-height: 1.2;
+  display: flex;
+  letter-spacing: 0.02em;
+  color: var(--form-color);
+  background-color: var(--accent-color);
 }

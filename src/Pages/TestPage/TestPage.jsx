@@ -3,9 +3,11 @@ import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
 
 import TestForm from '../../components/TestForm/TestForm';
 import { Link } from 'react-router-dom';
-import style from './TestPage.module.css';
+
 import { getIsLoggedIn } from 'redux/auth/auth-selector';
 import AuthPage from 'Pages/AuthPage/AuthPage';
+
+import s from './TestPage.module.css';
 
 const TestPage = () => {
   const dispatch = useDispatch();
@@ -22,19 +24,30 @@ const TestPage = () => {
   return (
     <>
       {isLogin ? (
-        <section className={style.sectionTest}>
-          <div>
-            {testTech[0] ? (
-              <p>[QA_technical_training]</p>
-            ) : (
-              <p>[Testing_theory]</p>
-            )}
+        <section className={s.sectionTest}>
+          <div className={s.container}>
+            <div className={s.buttonsWrapper}>
+              {testTech[0] ? (
+                <p className={s.trainingTitle}>
+                  [QA_technical_
+                  <br />
+                  training]
+                </p>
+              ) : (
+                <p className={s.trainingTitle}>[Testing_theory]</p>
+              )}
 
-            <Link to="/" type="button" onClick={hendlerCloseTest}>
-              Close test
-            </Link>
+              <Link
+                className={s.finishBtn}
+                to="/"
+                type="button"
+                onClick={hendlerCloseTest}
+              >
+                Finish test
+              </Link>
+            </div>
+            <TestForm />
           </div>
-          <TestForm />
         </section>
       ) : (
         <AuthPage />
