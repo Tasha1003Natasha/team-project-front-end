@@ -16,11 +16,12 @@ const renderActiveShape = props => {
     outerRadius,
     startAngle,
     endAngle,
-    fill,
+    // fill,
     payload,
     percent,
     // value,
   } = props;
+
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(-RADIAN * midAngle);
   const sx = cx + (outerRadius + 10) * cos;
@@ -33,7 +34,13 @@ const renderActiveShape = props => {
 
   return (
     <g>
-      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
+      <text
+        x={cx}
+        y={cy}
+        dy={8}
+        textAnchor="middle"
+        fill={payload.name === 'Correct' ? '#FF6B09' : '#000000'}
+      >
         {payload.name}
       </text>
       <Sector
@@ -43,7 +50,7 @@ const renderActiveShape = props => {
         outerRadius={outerRadius}
         startAngle={startAngle}
         endAngle={endAngle}
-        fill={fill}
+        fill={payload.name === 'Correct' ? '#FF6B09' : '#555555'}
       />
       <Sector
         cx={cx}
@@ -52,14 +59,20 @@ const renderActiveShape = props => {
         endAngle={endAngle}
         innerRadius={outerRadius + 6}
         outerRadius={outerRadius + 10}
-        fill={fill}
+        fill={payload.name === 'Correct' ? '#FF6B09' : '#555555'}
       />
       <path
         d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
-        stroke={fill}
+        stroke={payload.name === 'Correct' ? '#FF6B09' : '#555555'}
         fill="none"
       />
-      <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+      <circle
+        cx={ex}
+        cy={ey}
+        r={2}
+        fill={payload.name === 'Correct' ? '#FF6B09' : '#555555'}
+        stroke="none"
+      />
       {/* <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
@@ -71,7 +84,7 @@ const renderActiveShape = props => {
         y={ey}
         dy={18}
         textAnchor={textAnchor}
-        fill="#999"
+        fill="#555555"
       >
         {` ${(percent * 100).toFixed(2)}%`}
       </text>
@@ -95,6 +108,7 @@ const Chart2 = () => {
     { name: 'Correct', value: correct },
     { name: 'Incorrect', value: incorrect },
   ];
+  const COLORS = ['#FF6B09', '#555555'];
 
   return (
     <div>
@@ -107,7 +121,7 @@ const Chart2 = () => {
           cy={200}
           innerRadius={60}
           outerRadius={80}
-          fill="#FF6B01"
+          fill={COLORS[COLORS.length]}
           dataKey="value"
           onMouseEnter={onPieEnter}
         />
