@@ -6,19 +6,37 @@ import { ReactComponent as GoogleIcon } from '../../images/icons/google.svg';
 
 import s from './AuthForm.module.css';
 
+//validate
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
+import { TextField } from 'components/SignIn/TextField';
+
 const AuthForm = () => {
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // const handleChange = evt => {
+  //   switch (evt.currentTarget.name) {
+  //     case 'email':
+  //       setEmail(evt.currentTarget.value);
+  //       break;
+  //     case 'password':
+  //       setPassword(evt.currentTarget.value);
+  //       break;
+  //     default:
+  //       return;
+  //   }
+  // };
+
   const handleChange = evt => {
-    switch (evt.currentTarget.name) {
+    switch (evt.target.name) {
       case 'email':
-        setEmail(evt.currentTarget.value);
+        setEmail(evt.target.value);
         break;
       case 'password':
-        setPassword(evt.currentTarget.value);
+        setPassword(evt.target.value);
         break;
       default:
         return;
@@ -37,6 +55,13 @@ const AuthForm = () => {
     const user = { email, password };
     dispatch(signIn(user));
   };
+  //Validate
+  const validate = Yup.object({
+    email: Yup.string().email('Email is invalid').required('Email is required'),
+    password: Yup.string()
+      .min(9, 'Password must be at least 9 charaters')
+      .required('Password is required'),
+  });
 
   return (
     <main>
@@ -52,58 +77,71 @@ const AuthForm = () => {
                 learning process more diverse_ <span>]</span>
               </p>
             </div>
-            <div className={s.formWrapper}>
-              <form className={s.authForm}>
-                <p className={s.formText}>
-                  You can use your Google Account to authorize:
-                </p>
-                <button className={s.authButton}>
-                  <a className={s.googleIcon} href="https://www.google.com/">
-                    <GoogleIcon />
-                    Google
-                  </a>
-                </button>
-                <p className={s.loginText}>
-                  Or login to our app using e-mail and password:
-                </p>
-                <div className={s.inputsWrapper}>
-                  <input
-                    className={s.inputForm}
-                    name="email"
-                    type="email"
-                    value={email}
-                    onChange={handleChange}
-                    placeholder="E-mail"
-                  />
-                  <input
-                    className={s.inputForm}
-                    name="password"
-                    type="password"
-                    value={password}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={s.btnsWrapper}>
-                  {/* <Link to="/" className={s.formButton} onClick={handleLogIn}>
+            <Formik
+              initialValues={{
+                email: '',
+                password: '',
+              }}
+              validationSchema={validate}
+            >
+              {formik => (
+                <div className={s.formWrapper}>
+                  <Form className={s.authForm} onChange={handleChange}>
+                    <p className={s.formText}>
+                      You can use your Google Account to authorize:
+                    </p>
+                    <button className={s.authButton}>
+                      <a
+                        className={s.googleIcon}
+                        href="https://www.google.com/"
+                      >
+                        <GoogleIcon />
+                        Google
+                      </a>
+                    </button>
+                    <p className={s.loginText}>
+                      Or login to our app using e-mail and password:
+                    </p>
+                    <div className={s.inputsWrapper}>
+                      <TextField
+                        className={s.inputForm}
+                        name="email"
+                        type="email"
+                        value={email}
+                        // onChange={handleChange}
+                        placeholder="E-mail"
+                      />
+                      <TextField
+                        className={s.inputForm}
+                        name="password"
+                        type="password"
+                        value={password}
+                        // onChange={handleChange}
+                      />
+                    </div>
+                    <div className={s.btnsWrapper}>
+                      {/* <Link to="/" className={s.formButton} onClick={handleLogIn}>
                     Sign in
                   </Link> */}
-                  <button
-                    className={s.formButton}
-                    onClick={handleSignIn}
-                    type="submit"
-                  >
-                    Sign in
-                  </button>
-                  <button
-                    className={s.formButton}
-                    onClick={handleSignUp}
-                    type="button"
-                  >
-                    Sign up
-                  </button>
+                      <button
+                        className={s.formButton}
+                        onClick={handleSignIn}
+                        type="submit"
+                      >
+                        Sign in
+                      </button>
+                      <button
+                        className={s.formButton}
+                        onClick={handleSignUp}
+                        type="button"
+                      >
+                        Sign up
+                      </button>
+                    </div>
+                  </Form>
                 </div>
-              </form>
-            </div>
+              )}
+            </Formik>
           </div>
         </div>
       </section>
