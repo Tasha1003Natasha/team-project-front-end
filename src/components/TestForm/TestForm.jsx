@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import style from './TestForm.module.css';
 import { useSelector } from 'react-redux';
 import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
 import { results } from 'redux/tests/tests-operations';
 import { useDispatch } from 'react-redux';
 import TestCard from '../TestCard/TestCard';
-
-import s from './TestForm.module.css';
+import Sprite from '../../images/icons/icons.svg';
 
 export const TestForm = () => {
+  const screenWidth = window.screen.width;
+  console.log(screenWidth);
   const [index, setIndex] = useState('0');
   const [answer, setAnswer] = useState([]);
   const dispatch = useDispatch();
@@ -119,36 +120,50 @@ export const TestForm = () => {
   };
 
   return (
-    <div className={s.container}>
-      <div className={s.questionContainer}>
-        <p>Question {Number(index) + 1} / 12 </p>
+    <>
+      <div className={style.questionContainer}>
+        <p className={style.numberQuestion}>
+          Question <span className={style.active}>{Number(index) + 1}</span> /
+          12
+        </p>
         <TestCard index={index} radioButton={radioButton} />
       </div>
-      <div className={s.navBtnsWrapper}>
+      <div className={style.testFooter}>
         <button
-          className={s.navBtn}
+          className={style.btnQuestions}
           type="button"
           name="back"
           onClick={currentQuestionIndexBack}
         >
-          Back
+          <svg className={style.arrowBack} width={24} height={16}>
+            <use href={`${Sprite}#arrow`}></use>
+          </svg>
+          {screenWidth >= 768 && <span>Previous question</span>}
         </button>
         {Number(index) + 1 < 12 ? (
           <button
-            className={s.navBtn}
+            className={style.btnQuestions}
             type="button"
             name="next"
             onClick={currentQuestionIndexNext}
           >
-            Next
+            {screenWidth >= 768 && <span>Next question</span>}
+            <svg className={style.arrowNext} width={24} height={16}>
+              <use href={`${Sprite}#arrow`}></use>
+            </svg>
           </button>
         ) : (
-          <Link to="/results" name="finish" onClick={getResultsFunc}>
-            Finish test
+          <Link
+            className={style.btnQuestions}
+            to="/results"
+            name="finish"
+            onClick={getResultsFunc}
+          >
+            <span>Finish test</span>
           </Link>
         )}
       </div>
-    </div>
+    </>
   );
 };
 
