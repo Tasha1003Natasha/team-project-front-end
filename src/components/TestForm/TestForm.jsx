@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import style from './TestForm.module.css';
+
 import { useSelector } from 'react-redux';
 import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
 import { results } from 'redux/tests/tests-operations';
 import { useDispatch } from 'react-redux';
 import TestCard from '../TestCard/TestCard';
+
+import s from './TestForm.module.css';
 
 export const TestForm = () => {
   const [index, setIndex] = useState('0');
@@ -117,17 +119,27 @@ export const TestForm = () => {
   };
 
   return (
-    <>
-      <div className={style.questionContainer}>
+    <div className={s.container}>
+      <div className={s.questionContainer}>
         <p>Question {Number(index) + 1} / 12 </p>
         <TestCard index={index} radioButton={radioButton} />
       </div>
-      <div>
-        <button type="button" name="back" onClick={currentQuestionIndexBack}>
+      <div className={s.navBtnsWrapper}>
+        <button
+          className={s.navBtn}
+          type="button"
+          name="back"
+          onClick={currentQuestionIndexBack}
+        >
           Back
         </button>
         {Number(index) + 1 < 12 ? (
-          <button type="button" name="next" onClick={currentQuestionIndexNext}>
+          <button
+            className={s.navBtn}
+            type="button"
+            name="next"
+            onClick={currentQuestionIndexNext}
+          >
             Next
           </button>
         ) : (
@@ -136,7 +148,7 @@ export const TestForm = () => {
           </Link>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
