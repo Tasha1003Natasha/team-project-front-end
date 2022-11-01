@@ -1,4 +1,5 @@
 import Navigation from 'components/Navigation/Navigation';
+import Footer from 'components/Footer/Footer';
 import { Outlet } from 'react-router';
 
 // import { useSelector } from 'react-redux';
@@ -12,6 +13,7 @@ const Layout = () => {
     <>
       <Navigation />
       <Outlet />
+      <Footer/>
     </>
   );
 };
