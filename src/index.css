@@ -12,6 +12,7 @@
   --border-color: #00122f;
   --main-text: #000000;
   --secondary-text: #555555;
+  --footer-text: rgba(255, 255, 255, 0.4);
 }
 
 body {
