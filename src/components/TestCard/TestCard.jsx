@@ -2,6 +2,7 @@
 // import style from './TestCard.module.css';
 import { useSelector } from 'react-redux';
 import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
+import style from './TestCard.module.css';
 
 const TestCard = ({ index = 0 }) => {
   let currentIndex = Number(index);
@@ -12,14 +13,19 @@ const TestCard = ({ index = 0 }) => {
   return (
     <>
       {testTech[currentIndex] && (
-        <div>
-          <p>{testTech[currentIndex].question}</p>
+        <>
+          <p className={style.questionText}>
+            {testTech[currentIndex].question}
+          </p>
+          <hr className={style.line} />
           {/* <p>{testTech[currentIndex]._id}</p> */}
-          <ul>
+          <ul className={style.answersList}>
             {testTech[currentIndex].answers.map((answer, ind) => {
               return (
-                <li key={ind}>
+                <li className={style.answersItem} key={ind}>
                   <input
+                    className={style.radio}
+                    // style="background-color: #ff6b09"
                     name="r1"
                     type="radio"
                     value={answer}
@@ -31,7 +37,7 @@ const TestCard = ({ index = 0 }) => {
               );
             })}
           </ul>
-        </div>
+        </>
       )}
 
       {testTheory[currentIndex] && (
