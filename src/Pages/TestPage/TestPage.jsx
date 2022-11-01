@@ -11,6 +11,7 @@ const TestPage = () => {
   const dispatch = useDispatch();
   const testTech = useSelector(getTechTest);
   const theoryTest = useSelector(getTheoryTest);
+
   const isLogin = useSelector(getIsLoggedIn);
   const hendlerCloseTest = () => {
     const test = [];
