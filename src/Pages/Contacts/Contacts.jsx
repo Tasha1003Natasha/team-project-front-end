@@ -1,4 +1,4 @@
-import ContactsCard from '../../components/ContactsCard/ContactsCard';
+// import ContactsCard from '../../components/ContactsCard/ContactsCard';
 import styles from './Contacts.module.css';
 // import PropTypes from 'prop-types';
 
@@ -18,17 +18,43 @@ const Contacts = () => {
           </p>
 
           <ul className={styles.card__wrapper}>
-            {teams.map(team => (
-              <li key={team.id}>
-                <ContactsCard
-                  imageUrl={team.url}
-                  name={team.name}
-                  role={team.role}
-                  linkGit={team.github}
-                  linkedIn={team.linkedin}
-                />
-              </li>
-            ))}
+            {teams.map((id, team) => {
+              return (
+                <li key={id}>
+                  <img
+                    src={team.url}
+                    alt="/"
+                    className={styles.img}
+                    width="280"
+                    height="280"
+                  />
+                  <h3 className={styles.member__title}>{team.name}</h3>
+                  <p className={styles.role__text}>{team.role}</p>
+                  <li key={id} className={styles.list__item}>
+                    <a
+                      className={styles.social__link}
+                      href={team.github}
+                      target="blank"
+                    >
+                      {/* <svg className={styles.arrowIcon} width={24} height={24}>
+                        <use href={`${Sprite}#icon-github-1`}></use>
+                      </svg> */}
+                    </a>
+                  </li>
+                  <li key={id} className={styles.list__item}>
+                    <a
+                      className={styles.social__link}
+                      href={team.linkedin}
+                      target="blank"
+                    >
+                      {/* <svg className={styles.arrowIcon} width={24} height={24}>
+                        <use href={`${Sprite}#icon-linkedin-1`}></use>
+                      </svg> */}
+                    </a>
+                  </li>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>

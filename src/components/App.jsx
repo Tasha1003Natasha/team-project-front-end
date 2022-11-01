@@ -82,14 +82,16 @@ export const App = () => {
               }
             />
 
-            <Route
+            {/* <Route
               path="/contacts"
               element={
                 <PublicRoute>
                   <ContactsLazy />
                 </PublicRoute>
               }
-            />
+            /> */}
+
+            <Route path="/contacts" element={<ContactsLazy />} />
 
             <Route
               path="*"
