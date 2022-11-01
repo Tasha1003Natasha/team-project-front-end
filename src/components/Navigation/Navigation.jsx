@@ -1,9 +1,15 @@
 import styles from './Navigation.module.css';
-import logo from '../../images/icons/icons.svg';
-import logo_sign_out from '../../images/icons/icons.svg';
+// import logo from '../../images/icons/icons.svg';
+// import logo_sign_out from '../../images/icons/icons.svg';
 import { Link, NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getIsLoggedIn } from 'redux/auth/auth-selector';
+import UserMenu from 'components/UserMenu/UserMenu';
+import Sprite from '../../images/icons/icons.svg';
 
 const Navigation = () => {
+  const isLogin = useSelector(getIsLoggedIn);
+
   return (
     <>
       <header className={styles.header}>
@@ -11,31 +17,23 @@ const Navigation = () => {
           <div className={styles.header__nav}>
             <Link to="/">
               <svg width={129} height={28} className={styles.header__logo}>
-                <use href={logo + '#logo-header'}></use>
+                <use href={`${Sprite}#logo-header`}></use>
               </svg>
             </Link>
             <div className={styles.menu__container}>
               <ul className={styles.menu__container_list}>
                 <li className={styles.menu__container_list_item}>
-                  <NavLink className={styles.menu__container_list_item_text}>Home</NavLink>
-                </li>
-                <li className={styles.menu__container_list_item}>
-                  <NavLink className={styles.menu__container_list_item_text}>Materials</NavLink>
-                </li>
-                <li className={styles.menu__container_list_item}>
-                  <NavLink className={styles.menu__container_list_item_text}>Contacts</NavLink>
+                  <NavLink
+                    to="/contacts"
+                    className={styles.menu__container_list_item_text}
+                  >
+                    Contacts
+                  </NavLink>
                 </li>
               </ul>
-              <p></p>
-              <p></p>
-              <span className={styles.line}></span>
-              <button className={styles.button_logo_sign_out}>
-                <svg width={16} height={16}>
-                  <use href={logo_sign_out + '#sign-out'}></use>
-                </svg>
-              </button>
             </div>
           </div>
+          {isLogin && <UserMenu />}
         </div>
       </header>
     </>
