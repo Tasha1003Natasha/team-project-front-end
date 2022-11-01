@@ -16,7 +16,7 @@ import { testReducer } from './tests/tests-slice';
 const persistAuth = {
   key: 'auth',
   storage,
-  whitelist: ['token', 'isLogin'],
+  whitelist: ['token', 'isLogin', 'user'],
 };
 
 const persistTest = {
