@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/team-project-front-end/static/css/main.025ee187.css",
-    "main.js": "/team-project-front-end/static/js/main.5437ea91.js",
+    "main.js": "/team-project-front-end/static/js/main.63d64197.js",
     "static/css/412.53540f41.chunk.css": "/team-project-front-end/static/css/412.53540f41.chunk.css",
     "static/js/412.58d4e171.chunk.js": "/team-project-front-end/static/js/412.58d4e171.chunk.js",
     "static/css/527.ebe49daa.chunk.css": "/team-project-front-end/static/css/527.ebe49daa.chunk.css",
     "static/js/527.90697c49.chunk.js": "/team-project-front-end/static/js/527.90697c49.chunk.js",
     "static/css/854.f6c524f0.chunk.css": "/team-project-front-end/static/css/854.f6c524f0.chunk.css",
     "static/js/854.aea5cb37.chunk.js": "/team-project-front-end/static/js/854.aea5cb37.chunk.js",
-    "static/css/520.423c692f.chunk.css": "/team-project-front-end/static/css/520.423c692f.chunk.css",
-    "static/js/520.9c0d00b7.chunk.js": "/team-project-front-end/static/js/520.9c0d00b7.chunk.js",
+    "static/css/197.29b87bdc.chunk.css": "/team-project-front-end/static/css/197.29b87bdc.chunk.css",
+    "static/js/197.da584803.chunk.js": "/team-project-front-end/static/js/197.da584803.chunk.js",
     "static/css/340.6c07e223.chunk.css": "/team-project-front-end/static/css/340.6c07e223.chunk.css",
     "static/js/340.d241f93f.chunk.js": "/team-project-front-end/static/js/340.d241f93f.chunk.js",
     "static/css/958.82fa0b45.chunk.css": "/team-project-front-end/static/css/958.82fa0b45.chunk.css",
@@ -19,23 +19,21 @@
     "static/js/337.9a5feda9.chunk.js": "/team-project-front-end/static/js/337.9a5feda9.chunk.js",
     "static/media/pic-3.png": "/team-project-front-end/static/media/pic-3.4759844bff9f5474275b.png",
     "static/media/pic-2.png": "/team-project-front-end/static/media/pic-2.709e56e818c661b7f013.png",
-    "static/media/default.png": "/team-project-front-end/static/media/default.589f912ac1d1b05d8f66.png",
     "static/media/pic-1.png": "/team-project-front-end/static/media/pic-1.61bbc7e06fa1de681d20.png",
     "static/media/result.png": "/team-project-front-end/static/media/result.3525466dbdcc1dc13700.png",
     "static/media/icons.svg": "/team-project-front-end/static/media/icons.5ede052fb32f1d19672b225939dc984b.svg",
     "static/media/google.svg": "/team-project-front-end/static/media/google.f04463201c59f95bf3d62b7a2359d1f0.svg",
-    "static/media/icons-social.svg": "/team-project-front-end/static/media/icons-social.21039f1cd892d1b210933ba2c0042109.svg",
     "index.html": "/team-project-front-end/index.html",
     "main.025ee187.css.map": "/team-project-front-end/static/css/main.025ee187.css.map",
-    "main.5437ea91.js.map": "/team-project-front-end/static/js/main.5437ea91.js.map",
+    "main.63d64197.js.map": "/team-project-front-end/static/js/main.63d64197.js.map",
     "412.53540f41.chunk.css.map": "/team-project-front-end/static/css/412.53540f41.chunk.css.map",
     "412.58d4e171.chunk.js.map": "/team-project-front-end/static/js/412.58d4e171.chunk.js.map",
     "527.ebe49daa.chunk.css.map": "/team-project-front-end/static/css/527.ebe49daa.chunk.css.map",
     "527.90697c49.chunk.js.map": "/team-project-front-end/static/js/527.90697c49.chunk.js.map",
     "854.f6c524f0.chunk.css.map": "/team-project-front-end/static/css/854.f6c524f0.chunk.css.map",
     "854.aea5cb37.chunk.js.map": "/team-project-front-end/static/js/854.aea5cb37.chunk.js.map",
-    "520.423c692f.chunk.css.map": "/team-project-front-end/static/css/520.423c692f.chunk.css.map",
-    "520.9c0d00b7.chunk.js.map": "/team-project-front-end/static/js/520.9c0d00b7.chunk.js.map",
+    "197.29b87bdc.chunk.css.map": "/team-project-front-end/static/css/197.29b87bdc.chunk.css.map",
+    "197.da584803.chunk.js.map": "/team-project-front-end/static/js/197.da584803.chunk.js.map",
     "340.6c07e223.chunk.css.map": "/team-project-front-end/static/css/340.6c07e223.chunk.css.map",
     "340.d241f93f.chunk.js.map": "/team-project-front-end/static/js/340.d241f93f.chunk.js.map",
     "958.82fa0b45.chunk.css.map": "/team-project-front-end/static/css/958.82fa0b45.chunk.css.map",
@@ -46,6 +44,6 @@
   },
   "entrypoints": [
     "static/css/main.025ee187.css",
-    "static/js/main.5437ea91.js"
+    "static/js/main.63d64197.js"
   ]
 }
