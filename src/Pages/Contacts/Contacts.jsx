@@ -1,48 +1,47 @@
-import ContactsCard from '../../components/ContactsCard/ContactsCard'
+import ContactsCard from '../../components/ContactsCard/ContactsCard';
 import styles from './Contacts.module.css';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
+import { useSelector } from 'react-redux';
+import { getContacts } from '../../redux/contacts/contacts-selector';
 
+const Contacts = () => {
+  const teams = useSelector(getContacts);
 
-
-const Contacts = ({ items }) => {
   return (
     <main>
       <section className={styles.section}>
         <div className={styles.container}>
           <h1 className={styles.title}>Our team</h1>
-          <p><hr className={styles.line}/></p>
+          <p>
+            <hr className={styles.line} />
+          </p>
 
           <ul className={styles.card__wrapper}>
-            {items.map(item =>  (
-              <li key={item.id}> 
-
-              <ContactsCard
-                imageUrl={item.url}
-                name={item.name}
-                role={item.role}
-                linkGit={item.link.github}
-                linkedIn={item.link.linkedin}              
-              />
-                
+            {teams.map(team => (
+              <li key={team.id}>
+                <ContactsCard
+                  imageUrl={team.url}
+                  name={team.name}
+                  role={team.role}
+                  linkGit={team.github}
+                  linkedIn={team.linkedin}
+                />
               </li>
-
             ))}
-            
-          </ul>          
-
+          </ul>
         </div>
       </section>
     </main>
   );
 };
 
-Contacts.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }),
-  ),
-};
+// Contacts.propTypes = {
+//   items: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.string.isRequired,
+//     })
+//   ),
+// };
 
 export default Contacts;
