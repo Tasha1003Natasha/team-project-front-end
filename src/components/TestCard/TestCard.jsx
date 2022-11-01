@@ -14,7 +14,7 @@ const TestCard = ({ index = 0 }) => {
       {testTech[currentIndex] && (
         <div>
           <p>{testTech[currentIndex].question}</p>
-          <p>{testTech[currentIndex]._id}</p>
+          {/* <p>{testTech[currentIndex]._id}</p> */}
           <ul>
             {testTech[currentIndex].answers.map((answer, ind) => {
               return (
