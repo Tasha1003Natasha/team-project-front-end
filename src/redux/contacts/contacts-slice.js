@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getContacts } from './contacts-operations';
 
 export const initialState = {
-  contacts: null,
+  contacts: [],
 };
 
 const contactsSlice = createSlice({
@@ -10,8 +10,8 @@ const contactsSlice = createSlice({
   initialState,
   extraReducers: {
     [getContacts.fulfilled]: (state, { payload }) => {
-      state.testTheory = payload;
-      state.testTech = [];
+      state.contacts = payload;
+      state.contacts = [];
     },
   },
 });
