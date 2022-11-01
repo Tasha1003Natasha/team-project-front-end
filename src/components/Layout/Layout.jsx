@@ -13,7 +13,11 @@ const Layout = () => {
     <>
       <Navigation />
       <Outlet />
+<<<<<<< HEAD
       <Footer />
+=======
+      <Footer/>
+>>>>>>> main
     </>
   );
 };
