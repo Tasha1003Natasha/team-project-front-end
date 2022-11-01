@@ -8,12 +8,11 @@
 
     background-color: #f9fafc;
 
-    /* background-size: cover; */
-    background-size: contain;
+    background-position: 100%;
+    background-size: cover; 
     
     width: 100vw; 
-    height: 100vh;
-  
+    height: 100vh;  
 }
 
 @media (min-width: 768px){
