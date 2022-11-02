@@ -73,7 +73,8 @@
 // import { getContacts } from '../../redux/contacts/contacts-selector';
 // const dispatch = useDispatch();
 
-const ContactsCard = () => {
+const ContactsCard = ({ url, name, role, github, linkedin }) => {
+  console.log({ url, name, role, github, linkedin });
   // const dispatch = useDispatch();
   // const { url, name, role, github, linkedin } = useSelector(getContacts);
 
