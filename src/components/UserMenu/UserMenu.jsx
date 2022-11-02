@@ -16,41 +16,43 @@ const UserMenu = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.userMenu}>
-        <ul className={styles.menu__container_list}>
-          <li className={styles.menu__container_list_item}>
-            <NavLink  className={styles.menu__container_list_item_text}>
-              Home
-            </NavLink>
-          </li>
-          <li className={styles.menu__container_list_item}>
-            <NavLink className={styles.menu__container_list_item_text}>
-              Materials
-            </NavLink>
-          </li>
-          <li className={styles.menu__container_list_item}>
-            <NavLink className={styles.menu__container_list_item_text}>
-              Materials
-            </NavLink>
-          </li>
-        </ul>
-        <p className={styles.avatarName}>{avatarName || 'U'}</p>
-        <p className={styles.userName}>
-          {userName || 'User Name'} <span className={styles.userLine}></span>
-        </p>
-        <button
-          className={styles.iconButton}
-          type="button"
-          onClick={handlelogOut}
-        >
-          <span className={styles.line}></span>
-          <svg className={styles.logoutIcon} width={16} height={16}>
-            <use href={`${Sprite}#sign-out`}></use>
-          </svg>
-        </button>
+    <header>
+      <div className={styles.container}>
+        <div className={styles.userMenu}>
+          <ul className={styles.menu__container_list}>
+            <li className={styles.menu__container_list_item}>
+              <NavLink className={styles.menu__container_list_item_text}>
+                Home
+              </NavLink>
+            </li>
+            <li className={styles.menu__container_list_item}>
+              <NavLink className={styles.menu__container_list_item_text}>
+                Materials
+              </NavLink>
+            </li>
+            <li className={styles.menu__container_list_item}>
+              <NavLink className={styles.menu__container_list_item_text}>
+                Contacts
+              </NavLink>
+            </li>
+          </ul>
+          <p className={styles.avatarName}>{avatarName || 'U'}</p>
+          <p className={styles.userName}>
+            {userName || 'User Name'} <span className={styles.userLine}></span>
+          </p>
+          <button
+            className={styles.iconButton}
+            type="button"
+            onClick={handlelogOut}
+          >
+            <span className={styles.line}></span>
+            <svg className={styles.logoutIcon} width={16} height={16}>
+              <use href={`${Sprite}#sign-out`}></use>
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
+    </header>
   );
 };
 

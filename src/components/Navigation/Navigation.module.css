@@ -1,5 +1,5 @@
 .header {
-  width: 100%;
+
   padding-top: 20px;
   padding-bottom: 20px;
 
@@ -12,12 +12,12 @@
   padding: 0 20px;
 }
 
-@media (max-width: 320px) {
+/* @media (max-width: 320px) {
     .container {
       width: 100%;
       margin: 0 auto;
     }
-  }
+  } */
 
 .header__nav {
   display: flex;
@@ -25,10 +25,21 @@
 }
 
 .menu__container {
+
   margin-left: auto;
   display: flex;
   align-items: center;
 }
+/* .menu__container:before{
+  content: '';
+  position:absolute;
+  width: 2px;
+  height: 68px;
+  top: 50%;
+  left: 0;
+  transform: rotate(180deg);
+  background-color: black;
+} */
 
 .menu__container_list {
   display: flex;
@@ -36,11 +47,6 @@
 }
 
 .menu__container_list_item {
-<<<<<<< Updated upstream
-  /* margin-right: 80px; */
-
-=======
->>>>>>> Stashed changes
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -56,7 +62,6 @@
 
 .menu__container_list_item_text {
     color: var(--main-text);
-    /* font-family: 'Montserrat Medium'; */
 }
 
 .line {
@@ -66,7 +71,6 @@
 }
 
 .button_logo_sign_out {
-
     margin-left: 27px;
 }
 
@@ -77,3 +81,17 @@
   background-color: var(--accent-color);
   display: block;
 } 
+
+ @media (min-width: 768px) {
+  .mobileWrapper{
+    display:none;
+  }
+ }
+
+
+ @media (max-width: 768px) {
+.desktopWrapper{
+  display: none;
+}
+ }
+
