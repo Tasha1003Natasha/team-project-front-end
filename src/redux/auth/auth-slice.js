@@ -35,16 +35,6 @@ const authSlice = createSlice({
       state.token = null;
       state.user = {};
     },
-    // [userCurrent.pending]: (state, _) => {
-    //   state.isLogin = false;
-    // },
-    // [userCurrent.fulfilled]: (state, { payload }) => {
-    //   state.isLogin = true;
-    //   state.user = payload.user.email;
-    // },
-    // [userCurrent.rejected]: (state, _) => {
-    //   state.isLogin = false;
-    // },
   },
 });
 

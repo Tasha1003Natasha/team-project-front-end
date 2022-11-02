@@ -1,49 +1,82 @@
-.container {
+.sectionTest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-  /* height: 100vh; */
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+.hederTest {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 280px;
+
+  margin-top: 28px;
+  margin-bottom: 18px;
+}
+
+.hederText {
+  width: 130px;
+  display: inline;
+
+  font-family: 'Montserrat Medium';
+
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+
+.closeBtn {
+  font-family: 'Montserrat Medium';
+
+  font-size: 10px;
+  line-height: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 0 20px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  width: 130px;
+  height: 48px;
+  background-color: #ff6b09;
 }
 
 @media (min-width: 768px) {
-  .container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 30px;
+  .hederTest {
+    min-width: 704px;
+    margin-top: 42px;
+    margin-bottom: 24px;
+  }
+  .hederText {
+    width: 210px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0.02em;
+  }
+  .closeBtn {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    width: 181px;
   }
 }
+@media (min-width: 1280px) {
+  .hederTest {
+    min-width: 821px;
+    margin-top: 42px;
+    margin-bottom: 24px;
+  }
 
-.sectionTest {
-  padding: 26px 0;
-}
-.buttonsWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.trainingTitle {
-  width: 130px;
-  font-family: 'Montserrat Medium';
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  color: var(--main-text);
-}
-.finishBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 130px;
-  padding: 17px 0;
-  font-family: 'Montserrat Medium';
-  font-size: 10px;
-  line-height: 1.2;
-  display: flex;
-  letter-spacing: 0.02em;
-  color: var(--form-color);
-  background-color: var(--accent-color);
+  /* .hederText {
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0.02em;
+  } */
 }

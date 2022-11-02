@@ -20,8 +20,8 @@
 .line {
   margin-right: 3px;
   display: inline-block;
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   background-size: 100%, contain;
   background-repeat: no-repeat;
   filter: brightness(0.7);

@@ -1,18 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getContacts } from './contacts-operations';
+import { getTeams } from './contacts-operations';
 
 export const initialState = {
-  contacts: [],
+  teams: [],
 };
 
 const contactsSlice = createSlice({
   name: ' contacts',
   initialState,
   extraReducers: {
-    [getContacts.fulfilled]: (state, { payload }) => {
-      state.contacts = payload;
-      state.contacts = [];
+    [getTeams.fulfilled]: (state, { payload }) => {
+      state.teams = payload;
     },
   },
 });
+
 export const contactsReducer = contactsSlice.reducer;
+

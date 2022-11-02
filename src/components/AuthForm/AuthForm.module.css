@@ -111,7 +111,7 @@
   flex-direction: column;
 }
 .inputForm {
-  width: 240px;
+  width: 200px;
   padding: 20px;
   background: #ffffff;
   border: 1px solid #ced2d1;
@@ -193,7 +193,7 @@
     margin-right: 0;
   }
   .inputForm {
-    width: 440px;
+    width: 400px;
     padding: 20px;
   }
   .formButton {
