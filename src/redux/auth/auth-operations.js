@@ -45,8 +45,21 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
   }
 });
 
-export const userCurrent = createAsyncThunk('auth/current', async () => {
-  const { data } = await API.get('auth/current');
-  tokenAuth.set(data.token);
-  return data;
-});
+export const userCurrent = createAsyncThunk(
+  "auth/current",
+  async(_, {rejectWithValue, getState}) => {
+      try {
+          const {auth} = getState()
+          const result = await API.getCurrent(auth.token);
+          return result;
+      } catch ({response}) {
+          const {status, data} = response;
+          const error = {
+              status,
+              message: data.message,
+          }
+          return rejectWithValue(error);
+      }
+  }
+)
+

@@ -17,7 +17,11 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { PublicRoute } from './PublicRoute/PublicRoute';
-// import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { userCurrent } from '../redux/auth/auth-operations';
 
 const AuthPageLazy = lazy(() => import('Pages/AuthPage/AuthPage'));
 const MainPageLazy = lazy(() => import('Pages/MainPage/MainPage'));
@@ -28,6 +32,12 @@ const ResultsPageLazy = lazy(() => import('Pages/ResultsPage/Results'));
 const TestPageLazy = lazy(() => import('Pages/TestPage/TestPage'));
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(userCurrent());
+  }, [dispatch]);
+
   return (
     <>
       <Suspense
@@ -38,67 +48,67 @@ export const App = () => {
         }
       >
         <Routes>
-          {/* <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout />}>
             <Route
               index
               element={
                 <PrivateRoute>
-                <MainPageLazy />
+                  <MainPageLazy />
                 </PrivateRoute>
               }
-            /> */}
+            />
 
-          {/* <Route
+            <Route
               path="/auth"
               element={
                 <PublicRoute>
-                <AuthPageLazy />
+                  <AuthPageLazy />
                 </PublicRoute>
               }
-            /> */}
+            />
 
-          {/* <Route
+            <Route
               path="/test"
               element={
                 <PrivateRoute>
-                <TestPageLazy />
-                 </PrivateRoute>
+                  <TestPageLazy />
+                </PrivateRoute>
               }
-            /> */}
+            />
 
-          {/* <Route
+            <Route
               path="/results"
               element={
                 <PrivateRoute>
-                <ResultsPageLazy />
+                  <ResultsPageLazy />
                 </PrivateRoute>
               }
-            /> */}
+            />
 
-          {/* <Route
+            <Route
               path="/useful-info"
               element={
                 <PrivateRoute>
-                <UsefulInfoLazy />
+                  <UsefulInfoLazy />
                 </PrivateRoute>
               }
-            /> */}
+            />
 
-          {/* <Route
+            <Route
               path="/contacts"
               element={
                 <PublicRoute>
                   <ContactsLazy />
                 </PublicRoute>
               }
-            /> */}
-          <Route path="/" element={<Layout />}>
+            />
+            {/* <Route path="/" element={<Layout />}>
             <Route index element={<MainPageLazy />} />
             <Route path="/auth" element={<AuthPageLazy />} />
             <Route path="/test" element={<TestPageLazy />} />
             <Route path="/results" element={<ResultsPageLazy />} />
             <Route path="/useful-info" element={<UsefulInfoLazy />} />
-            <Route path="/contacts" element={<ContactsLazy />} />
+            <Route path="/contacts" element={<ContactsLazy />} /> */}
 
             <Route
               path="*"
@@ -110,18 +120,6 @@ export const App = () => {
             />
           </Route>
         </Routes>
-
-        {/* <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<MainPage />} />
-            <Route path="auth" element={<AuthPage />} />
-            <Route path="test" element={<TestPage />} />
-            <Route path="results" element={<ResultsPage />} />
-            <Route path="useful-info" element={<UsefulInfo />} />
-            <Route path="contacts" element={<Contacts />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Route>
-        </Routes> */}
         <ToastContainer theme="colored" />
       </Suspense>
     </>
