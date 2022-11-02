@@ -1,10 +1,19 @@
 
+.header {
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  background-color: #F5F6FB;
+  border-bottom: 1px solid #E2E3E5;
+}
+
 .container {
     margin: 0 auto;
     padding: 0 20px;
   }
 
-.userMenu {
+.header__nav {
     display: flex;
   align-items: center;
 }
@@ -15,6 +24,14 @@
     align-items: center;
   }
   
+  .avatarName {
+    margin-right: 8px;
+  }
+
+  .userName {
+    margin-right: 20px;
+  }
+
   .menu__container_list {
     display: flex;
     align-items: center;
@@ -50,3 +67,16 @@
   
       margin-left: 27px;
   }
+
+  @media (min-width: 768px) {
+    .userMenuMobile{
+      display:none;
+    }
+   }
+  
+  
+   @media (max-width: 768px) {
+  .userMenuDesktop{
+    display: none;
+  }
+   }
