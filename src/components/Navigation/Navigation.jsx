@@ -1,10 +1,8 @@
 import styles from './Navigation.module.css';
-// import logo from '../../images/icons/icons.svg';
-// import logo_sign_out from '../../images/icons/icons.svg';
 import { Link, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getIsLoggedIn } from 'redux/auth/auth-selector';
-import UserMenu from 'components/UserMenu/UserMenu';
+// import UserMenu from 'components/UserMenu/UserMenu';
 import Sprite from '../../images/icons/icons.svg';
 
 const Navigation = () => {
@@ -13,6 +11,29 @@ const Navigation = () => {
   return (
     <>
       <header className={styles.header}>
+        <div className={styles.container}>
+          <div className={styles.header__nav}>
+            <Link to="/">
+              <svg width={129} height={28} className={styles.header__logo}>
+                <use href={`${Sprite}#logo-header`}></use>
+              </svg>
+            </Link>
+            <div className={styles.menu__container}>
+            <span className={styles.line}></span>
+            <svg width={20} height={20}>
+                <use href={`${Sprite}#burger-menu`}></use>
+              </svg>
+            </div>
+          </div>
+          
+        </div>
+      </header>
+
+
+
+                {/* tablet+desktop */}
+
+      {/* <header className={styles.header}>
         <div className={styles.container}>
           <div className={styles.header__nav}>
             <Link to="/">
@@ -35,7 +56,7 @@ const Navigation = () => {
           </div>
           {isLogin && <UserMenu />}
         </div>
-      </header>
+      </header> */}
     </>
   );
 };
