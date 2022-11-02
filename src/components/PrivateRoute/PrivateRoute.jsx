@@ -7,6 +7,7 @@ export const PrivateRoute = ({ children }) => {
   const { pathname } = useLocation();
   const token = useSelector(getToken);
   const isLogin = useSelector(getIsLoggedIn);
+
   if (token && !isLogin) {
     return <Loader />;
   }

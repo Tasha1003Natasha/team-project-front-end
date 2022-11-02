@@ -1,18 +1,8 @@
 import ContactsCard from '../../components/ContactsCard/ContactsCard';
 import styles from './Contacts.module.css';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from '../../redux/contacts/contacts-selector';
-import { getTeams } from '../../redux/contacts/contacts-operations';
+import team from './teams.json';
 
 const Contacts = () => {
-  const dispatch = useDispatch();
-  const team = useSelector(getContacts);
-
-  useEffect(() => {
-    dispatch(getTeams());
-  }, [dispatch]);
-
   return (
     <main>
       <section className={styles.section}>
