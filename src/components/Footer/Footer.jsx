@@ -15,7 +15,7 @@ const Footer = () => {
             <use href={heart + '#heart-footer'}></use>
           </svg>
           <p className={styles.footer__text}>by</p>
-          <Link to="/" className={styles.footer__link}>
+          <Link to="/contacts" className={styles.footer__link}>
             GoIT Students
           </Link>
         </div>

@@ -6,7 +6,7 @@ export const initialState = {
 };
 
 const contactsSlice = createSlice({
-  name: ' contacts',
+  name: 'contacts',
   initialState,
   extraReducers: {
     [getTeams.fulfilled]: (state, { payload }) => {

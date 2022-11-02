@@ -12,7 +12,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     // googleAuth: (state, { payload }) => {
-    //   state.accessToken = payload.accessToken;
+    //   state.token = payload.token;
     //   state.isLogin = true;
     // },
   },
