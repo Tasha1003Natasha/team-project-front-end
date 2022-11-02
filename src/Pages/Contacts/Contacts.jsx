@@ -20,8 +20,9 @@ const Contacts = () => {
           <h1 className={styles.title}>Our team</h1>
           <p className={styles.line}></p>
 
-          <ul className={styles.card}>
+          <ul className={styles.card__wrapper}>
             {team.map((team, id) => {
+            //  console.log(team)
               return (
                 <ContactsCard
                   key={id}
