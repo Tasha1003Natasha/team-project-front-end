@@ -13,6 +13,8 @@ import Layout from './Layout/Layout';
 
 import { lazy, Suspense } from 'react';
 import { Loader } from 'components/Loader/Loader';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
@@ -115,6 +117,7 @@ export const App = () => {
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes> */}
+        <ToastContainer theme="colored" />
       </Suspense>
     </>
   );

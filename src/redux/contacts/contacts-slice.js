@@ -16,19 +16,4 @@ const contactsSlice = createSlice({
 });
 
 export const contactsReducer = contactsSlice.reducer;
-/////////////////////////////////////////////////////////
 
-// export const initialState = {
-//     contacts: [],
-//   },
-
-// const contactsSlice = createSlice({
-//   name: ' contacts',
-//   initialState,
-//   extraReducers: {
-//     [getContacts.fulfilled]: (state, { payload }) => {
-//       state.contacts = payload;
-//       state.contacts = [];
-//     },
-//   },
-// });

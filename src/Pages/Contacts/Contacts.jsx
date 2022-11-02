@@ -20,8 +20,8 @@ const Contacts = () => {
       {teams.map((id, team) => {
         return (
           <li key={id}>
-            <ContactsCard key={team.id} data={team} />
-            {/* <ContactsCard  key={item.id} name={team.name} url={team.url} /> */}
+            {/* <ContactsCard key={team.id} data={team} /> */}
+            <ContactsCard key={team.id} name={team.name} url={team.url} />
           </li>
         );
       })}
