@@ -17,7 +17,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { PublicRoute } from './PublicRoute/PublicRoute';
-import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+// import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 
 const AuthPageLazy = lazy(() => import('Pages/AuthPage/AuthPage'));
 const MainPageLazy = lazy(() => import('Pages/MainPage/MainPage'));
@@ -38,53 +38,53 @@ export const App = () => {
         }
       >
         <Routes>
-          <Route path="/" element={<Layout />}>
+          {/* <Route path="/" element={<Layout />}>
             <Route
               index
               element={
                 <PrivateRoute>
-                  <MainPageLazy />
+                <MainPageLazy />
                 </PrivateRoute>
               }
-            />
+            /> */}
 
-            <Route
+          {/* <Route
               path="/auth"
               element={
                 <PublicRoute>
-                  <AuthPageLazy />
+                <AuthPageLazy />
                 </PublicRoute>
               }
-            />
+            /> */}
 
-            <Route
+          {/* <Route
               path="/test"
               element={
                 <PrivateRoute>
-                  <TestPageLazy />
-                </PrivateRoute>
+                <TestPageLazy />
+                 </PrivateRoute>
               }
-            />
+            /> */}
 
-            <Route
+          {/* <Route
               path="/results"
               element={
                 <PrivateRoute>
-                  <ResultsPageLazy />
+                <ResultsPageLazy />
                 </PrivateRoute>
               }
-            />
+            /> */}
 
-            <Route
+          {/* <Route
               path="/useful-info"
               element={
                 <PrivateRoute>
-                  <UsefulInfoLazy />
+                <UsefulInfoLazy />
                 </PrivateRoute>
               }
-            />
+            /> */}
 
-            {/* <Route
+          {/* <Route
               path="/contacts"
               element={
                 <PublicRoute>
@@ -92,7 +92,12 @@ export const App = () => {
                 </PublicRoute>
               }
             /> */}
-
+          <Route path="/" element={<Layout />}>
+            <Route index element={<MainPageLazy />} />
+            <Route path="/auth" element={<AuthPageLazy />} />
+            <Route path="/test" element={<TestPageLazy />} />
+            <Route path="/results" element={<ResultsPageLazy />} />
+            <Route path="/useful-info" element={<UsefulInfoLazy />} />
             <Route path="/contacts" element={<ContactsLazy />} />
 
             <Route
