@@ -45,15 +45,19 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
   }
 });
 
-export const userCurrent = createAsyncThunk('auth/current', async token => {
-  try {
-    tokenAuth(token);
-    const { data } = await API.get('auth/current');
-    return data;
-  } catch (error) {
-    tokenAuth();
-    toast.error('Oops, we got an error :(((( Dont worry and try again.', {
-      theme: 'colored',
-    });
+export const userCurrent = createAsyncThunk(
+  'auth/current',
+  async (_, { getState }) => {
+    try {
+      const { auth } = getState();
+      tokenAuth.set(auth.token);
+      const { data } = await API.get('auth/current');
+      return data;
+    } catch (error) {
+      tokenAuth();
+      toast.error('Oops, we got an error :(((( Dont worry and try again.', {
+        theme: 'colored',
+      });
+    }
   }
-});
+);

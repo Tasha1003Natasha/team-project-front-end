@@ -9,5 +9,6 @@ export const PrivateRoute = ({ children }) => {
   if (token && !isLogin) {
     return <Loader />;
   }
+  // console.log(children);
   return token ? children : <Navigate to="/auth" />;
 };
