@@ -54,3 +54,7 @@ svg {
   max-width: 100%;
   height: auto;
 }
+
+.noscroll{
+  overflow: hidden;
+}
