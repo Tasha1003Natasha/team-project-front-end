@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { API, tokenAuth } from 'API';
 import { toast } from 'react-toastify';
 
-export const signIn = createAsyncThunk('auth/register', async user => {
+export const signUp = createAsyncThunk('auth/register', async user => {
   try {
     const { data } = await API.post('auth/register', user);
     return data;
@@ -45,21 +45,15 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
   }
 });
 
-export const userCurrent = createAsyncThunk(
-  "auth/current",
-  async(_, {rejectWithValue, getState}) => {
-      try {
-          const {auth} = getState()
-          const result = await API.getCurrent(auth.token);
-          return result;
-      } catch ({response}) {
-          const {status, data} = response;
-          const error = {
-              status,
-              message: data.message,
-          }
-          return rejectWithValue(error);
-      }
+export const userCurrent = createAsyncThunk('auth/current', async token => {
+  try {
+    tokenAuth(token);
+    const { data } = await API.get('auth/current');
+    return data;
+  } catch (error) {
+    tokenAuth();
+    toast.error('Oops, we got an error :(((( Dont worry and try again.', {
+      theme: 'colored',
+    });
   }
-)
-
+});
