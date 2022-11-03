@@ -4,7 +4,9 @@ import { toast } from 'react-toastify';
 
 export const techTest = createAsyncThunk('tests/tech', async () => {
   if (!tokenAuth) {
-    toast.error('Login please, first');
+    toast.error('Login please, first', {
+      theme: 'colored',
+    });
   }
   const { data } = await API.get('/tests/tech');
   return data;
@@ -12,7 +14,9 @@ export const techTest = createAsyncThunk('tests/tech', async () => {
 
 export const theoryTest = createAsyncThunk('tests/theory', async () => {
   if (!tokenAuth) {
-    toast.error('Login please, first');
+    toast.error('Login please, first', {
+      theme: 'colored',
+    });
   }
 
   const { data } = await API.get('/tests/theory');
@@ -21,12 +25,12 @@ export const theoryTest = createAsyncThunk('tests/theory', async () => {
 
 export const results = createAsyncThunk('tests/results', async answers => {
   if (!tokenAuth) {
-    toast.error('Login please, first');
+    toast.error('Login please, first', {
+      theme: 'colored',
+    });
   }
 
   const { data } = await API.post('tests/results', answers);
 
   return data;
 });
-
-
