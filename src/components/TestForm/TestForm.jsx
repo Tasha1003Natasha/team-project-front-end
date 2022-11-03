@@ -147,7 +147,6 @@ export const TestForm = () => {
         {Number(index) + 1 < 12 ? (
           <button
             className={style.btnQuestions}
-            disabled={true}
             type="button"
             name="next"
             onClick={currentQuestionIndexNext}

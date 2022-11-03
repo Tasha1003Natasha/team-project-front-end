@@ -4,7 +4,7 @@ import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
 import TestForm from '../../components/TestForm/TestForm';
 import { Link } from 'react-router-dom';
 import style from './TestPage.module.css';
-import { getIsLoggedIn } from 'redux/auth/auth-selector';
+import { getToken } from 'redux/auth/auth-selector';
 import AuthPage from 'Pages/AuthPage/AuthPage';
 
 const TestPage = () => {
@@ -14,7 +14,7 @@ const TestPage = () => {
   const nextBtn = document.getElementsByName('next');
   nextBtn.disabled = true;
 
-  const isLogin = useSelector(getIsLoggedIn);
+  const isLogin = useSelector(getToken);
   const hendlerCloseTest = () => {
     const test = [];
     dispatch(testTech(test));
