@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signIn, logIn } from 'redux/auth/auth-operations';
 import { ReactComponent as GoogleIcon } from '../../images/icons/google.svg';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import s from './AuthForm.module.css';
 
@@ -45,7 +45,7 @@ const AuthForm = () => {
 
   // // Зайти
   const handleSignIn = evt => {
-    evt.preventDefault();
+    // evt.preventDefault();
     const user = { email, password };
     dispatch(logIn(user));
   };
@@ -120,16 +120,20 @@ const AuthForm = () => {
                       />
                     </div>
                     <div className={s.btnsWrapper}>
-                      {/* <Link to="/" className={s.formButton} onClick={handleLogIn}>
-                    Sign in
-                  </Link> */}
-                      <button
+                      <Link
+                        to="/"
+                        className={s.formButton}
+                        onClick={handleSignIn}
+                      >
+                        Sign in
+                      </Link>
+                      {/* <button
                         className={s.formButton}
                         onClick={handleSignIn}
                         type="submit"
                       >
                         Sign in
-                      </button>
+                      </button> */}
                       <button
                         className={s.formButton}
                         onClick={handleSignUp}

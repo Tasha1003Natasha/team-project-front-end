@@ -5,6 +5,11 @@ import { toast } from 'react-toastify';
 export const signIn = createAsyncThunk('auth/register', async user => {
   try {
     const { data } = await API.post('auth/register', user);
+    // if (data.status === 201) {
+    //   toast.message(
+    //     'Email is registraited, if you whant check yourself, login now'
+    //   );
+    // }
     return data;
   } catch (error) {
     if (error.response.status === 409) {
@@ -46,20 +51,19 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
 });
 
 export const userCurrent = createAsyncThunk(
-  "auth/current",
-  async(_, {rejectWithValue, getState}) => {
-      try {
-          const {auth} = getState()
-          const result = await API.getCurrent(auth.token);
-          return result;
-      } catch ({response}) {
-          const {status, data} = response;
-          const error = {
-              status,
-              message: data.message,
-          }
-          return rejectWithValue(error);
-      }
+  'auth/current',
+  async (_, { rejectWithValue, getState }) => {
+    try {
+      const { auth } = getState();
+      const result = await API.getCurrent(auth.token);
+      return result;
+    } catch ({ response }) {
+      const { status, data } = response;
+      const error = {
+        status,
+        message: data.message,
+      };
+      return rejectWithValue(error);
+    }
   }
-)
-
+);
