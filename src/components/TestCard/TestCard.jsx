@@ -1,32 +1,31 @@
 // import { useEffect, useState } from 'react';
 // import style from './TestCard.module.css';
 import { useSelector } from 'react-redux';
-import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
+import { getCurrentTest } from '../../redux/tests/test-selector';
 import style from './TestCard.module.css';
 
 const TestCard = ({ index = 0 }) => {
   let currentIndex = Number(index);
 
-  const testTech = useSelector(getTechTest);
-  const testTheory = useSelector(getTheoryTest);
-  const nextBtn = document.getElementsByName('next');
+  const currentTest = useSelector(getCurrentTest);
+
+  // const nextBtn = document.getElementsByName('next');
 
   return (
     <>
-      {testTech[currentIndex] && (
+      {currentTest[currentIndex] && (
         <>
           <p className={style.questionText}>
-            {testTech[currentIndex].question}
+            {currentTest[currentIndex].question}
           </p>
           <hr className={style.line} />
           {/* <p>{testTech[currentIndex]._id}</p> */}
           <ul className={style.answersList}>
-            {testTech[currentIndex].answers.map((answer, ind) => {
+            {currentTest[currentIndex].answers.map((answer, ind) => {
               return (
                 <li className={style.answersItem} key={ind}>
                   <input
                     className={style.radio}
-                    // style="background-color: #ff6b09"
                     name="r1"
                     type="radio"
                     value={answer}
@@ -43,7 +42,7 @@ const TestCard = ({ index = 0 }) => {
         </>
       )}
 
-      {testTheory[currentIndex] && (
+      {/* {testTheory[currentIndex] && (
         <div>
           <p>{testTheory[currentIndex].question}</p>
           <ul>
@@ -65,7 +64,7 @@ const TestCard = ({ index = 0 }) => {
             })}
           </ul>
         </div>
-      )}
+      )} */}
     </>
   );
 };

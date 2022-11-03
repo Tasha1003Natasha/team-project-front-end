@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { techTest, theoryTest } from '../../redux/tests/tests-operations';
+import { getTest } from '../../redux/tests/tests-operations';
 import Sprite from '../../images/icons/icons.svg';
 import { Link } from 'react-router-dom';
 import styles from './MainPage.module.css';
@@ -8,17 +8,18 @@ import AuthPage from '../AuthPage/AuthPage';
 
 import { useSelector } from 'react-redux';
 import { getToken } from 'redux/auth/auth-selector';
+// import { useState } from 'react';
 
 const MainPage = () => {
   const dispatch = useDispatch();
   const token = useSelector(getToken);
 
   const handleTech = () => {
-    dispatch(techTest());
+    dispatch(getTest('tech'));
   };
 
   const handleTheory = () => {
-    dispatch(theoryTest());
+    dispatch(getTest('theory'));
   };
 
   return (

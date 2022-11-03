@@ -5,13 +5,13 @@ import Cat from '../../images/result/result.png';
 import { useSelector } from 'react-redux';
 import {
   getCurrectAnswer,
-  getTheoryTest,
+  getCurrentTest,
 } from '../../redux/tests/test-selector';
 import { Link } from 'react-router-dom';
 
 const Results = () => {
   const correct = useSelector(getCurrectAnswer);
-  const testTheory = useSelector(getTheoryTest);
+  const currentTest = useSelector(getCurrentTest);
 
   return (
     <main>
@@ -20,7 +20,7 @@ const Results = () => {
           <div className={s.resultsContent}>
             <div className={s.titlesList}>
               <h2 className={s.resultTitle}>Results</h2>
-              {testTheory[0] ? (
+              {currentTest[0].type === 'theory' ? (
                 <p className={s.resultSubtitle}>[ Testing theory_]</p>
               ) : (
                 <p className={s.resultSubtitle}>[ Технічна підготовка QA]</p>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import style from './TestForm.module.css';
 import { useSelector } from 'react-redux';
-import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
+import { getCurrentTest } from '../../redux/tests/test-selector';
 import { results } from 'redux/tests/tests-operations';
 import { useDispatch } from 'react-redux';
 import TestCard from '../TestCard/TestCard';
@@ -22,15 +22,15 @@ export const TestForm = () => {
 
   // console.log(nextBtn);
 
-  const testTech = useSelector(getTechTest);
-  const testTheory = useSelector(getTheoryTest);
+  const currentTest = useSelector(getCurrentTest);
+  // const testTheory = useSelector(getTheoryTest);
 
   const checkAnswer = radioButton => {
     for (let i = 0; i < radioButton.length; i++) {
-      if (radioButton[i].checked && testTech[0]) {
+      if (radioButton[i].checked && currentTest[0]) {
         const userAnswer = {
           userAnswer: radioButton[i].value,
-          _id: testTech[Number(index)]._id,
+          _id: currentTest[Number(index)]._id,
         };
         unClick(radioButton[i]);
 
@@ -44,22 +44,22 @@ export const TestForm = () => {
 
         setAnswer([...answer, userAnswer]);
       }
-      if (radioButton[i].checked && testTheory[0]) {
-        const userAnswer = {
-          userAnswer: radioButton[i].value,
-          _id: testTheory[Number(index)]._id,
-        };
+      // if (radioButton[i].checked && testTheory[0]) {
+      //   const userAnswer = {
+      //     userAnswer: radioButton[i].value,
+      //     _id: testTheory[Number(index)]._id,
+      //   };
 
-        for (let i = 0; i < answer.length; i++) {
-          if (userAnswer._id === answer[i]._id) {
-            const index = answer.indexOf(answer[i]);
+      //   for (let i = 0; i < answer.length; i++) {
+      //     if (userAnswer._id === answer[i]._id) {
+      //       const index = answer.indexOf(answer[i]);
 
-            answer.splice(index, 1);
-          }
-        }
+      //       answer.splice(index, 1);
+      //     }
+      //   }
 
-        setAnswer([...answer, userAnswer]);
-      }
+      //   setAnswer([...answer, userAnswer]);
+      // }
     }
   };
 
@@ -103,12 +103,12 @@ export const TestForm = () => {
   const chechButton = radioButton => {
     if (localStorageArrayAnswers.length) {
       for (let i = 0; i < radioButton.length; i++) {
-        // console.log(radioButton[i]);
         for (let j = 0; j < localStorageArrayAnswers.length; j++) {
           if (
-            testTech[Number(index)]._id === localStorageArrayAnswers[j]._id &&
+            currentTest[Number(index)]._id ===
+              localStorageArrayAnswers[j]._id &&
             String(radioButton[i].value).length ===
-              String(localStorageArrayAnswers[j].userAnswer).len
+              String(localStorageArrayAnswers[j].userAnswer).length
           ) {
             radioButton[i].value === localStorageArrayAnswers[j].userAnswer
               ? (radioButton[i].checked = true)
