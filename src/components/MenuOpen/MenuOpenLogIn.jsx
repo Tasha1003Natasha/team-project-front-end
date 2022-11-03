@@ -16,7 +16,7 @@ const handlerClose=()=>{
         <div className={styles.mobileWrapper}>
           <div className={styles.container}>
             <div className={styles.header__nav}>
-              <Link to="/">
+              <Link to="/" onClick={handlerClose}>
                 <svg width={129} height={28}>
                   <use href={`${Sprite}#logo-header`}></use>
                 </svg>
@@ -34,7 +34,7 @@ const handlerClose=()=>{
       <div className={styles.menu__container}>
         <ul className={styles.menu__container_list}>
           <li className={styles.menu__container_list_item}>
-            <NavLink
+            <NavLink onClick={handlerClose}
               to="/"
               className={`${styles.menu__container_list_item_text} ${styles.menu__container_list_item_current}`}
             >
@@ -42,16 +42,16 @@ const handlerClose=()=>{
             </NavLink>
           </li>
           <li className={styles.menu__container_list_item}>
-            <NavLink
-              to="/"
+            <NavLink onClick={handlerClose}
+              to="/useful-info"
               className={`${styles.menu__container_list_item_text}`}
             >
               Materials
             </NavLink>
           </li>
           <li className={styles.menu__container_list_item}>
-            <NavLink
-              to="/"
+            <NavLink onClick={handlerClose}
+              to="/contacts"
               className={`${styles.menu__container_list_item_text}`}
             >
               Contacts
