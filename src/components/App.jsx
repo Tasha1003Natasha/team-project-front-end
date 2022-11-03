@@ -13,8 +13,8 @@ import { Loader } from 'components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// import { PublicRoute } from './PublicRoute/PublicRoute';
-// import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import { PublicRoute } from './PublicRoute/PublicRoute';
+import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -44,7 +44,7 @@ export const App = () => {
           </div>
         }
       >
-        {/* <Routes>
+        <Routes>
           <Route path="/" element={<Layout />}>
             <Route
               index
@@ -101,9 +101,9 @@ export const App = () => {
                   <PageNotFoundLazy />
                 </PublicRoute>
               }
-            /> */}
+            />
 
-        <Routes>
+            {/* <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<MainPageLazy />} />
             <Route path="/auth" element={<AuthPageLazy />} />
@@ -113,10 +113,9 @@ export const App = () => {
             <Route path="/contacts" element={<ContactsLazy />} />
             <Route path="*" element={<PageNotFoundLazy />} />
           </Route>
-        </Routes>
-
-        {/* </Route>
         </Routes> */}
+          </Route>
+        </Routes>
         <ToastContainer theme="colored" />
       </Suspense>
     </>
