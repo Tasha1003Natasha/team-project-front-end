@@ -11,7 +11,7 @@ const Navigation = () => {
   return (
     <>
       <header className={styles.header}>
-        {/* <div className={styles.mobileWrapper}>
+        <div className={styles.mobileWrapper}>
           <div className={styles.container}>
             <div className={styles.header__nav}>
               <Link to="/">
@@ -27,9 +27,9 @@ const Navigation = () => {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
         {''}
-        {/* <div className={styles.desktopWrapper}>
+        <div className={styles.desktopWrapper}>
           <div className={styles.container}>
             <div className={styles.header__nav}>
               <Link to="/">
@@ -52,10 +52,10 @@ const Navigation = () => {
             </div>
             {isLogin && <UserMenu />}
           </div>
-        </div> */}
+        </div>
 
         {/* MenuMobileWrapper */}
-        <div className={styles.mobileWrapper}>
+        {/* <div className={styles.mobileWrapper}>
           <div className={styles.container}>
             <div className={styles.header__nav}>
               <Link to="/">
@@ -71,11 +71,11 @@ const Navigation = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* MenuDesktopWrapper */}
       </header>
-      <div className={styles.menu}>
+      {/* <div className={styles.menu}>
         <ul>
           <li className={styles.menu_item}>
             <NavLink
@@ -86,7 +86,7 @@ const Navigation = () => {
             </NavLink>
           </li>
         </ul>
-      </div>
+      </div> */}
 
 
 

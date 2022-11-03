@@ -5,6 +5,7 @@
 
   background-color: #F5F6FB;
   border-bottom: 1px solid #E2E3E5;
+
 }
 
 .container {
@@ -101,7 +102,7 @@
    height: 100vh;
    text-align: center;
    background-color: #F5F6FB;
-   position: fixed;
+   /* position: fixed; */
    /* opacity: 1;
    visibility: hidden; */
  }
