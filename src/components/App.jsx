@@ -49,7 +49,15 @@ export const App = () => {
       >
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<MainPageLazy />} />
+            <Route
+              index
+              element={
+                // <PrivateRoute>
+                <MainPageLazy />
+                // </PrivateRoute>
+              }
+            />
+
             <Route
               path="/auth"
               element={
