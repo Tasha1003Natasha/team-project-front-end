@@ -7,7 +7,7 @@ import styles from './MainPage.module.css';
 import AuthPage from '../AuthPage/AuthPage';
 
 import { useSelector } from 'react-redux';
-import { getToken } from 'redux/auth/auth-selector';
+import { getToken } from '../../redux/auth/auth-selector';
 
 const MainPage = () => {
   const dispatch = useDispatch();

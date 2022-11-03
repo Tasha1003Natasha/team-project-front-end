@@ -8,56 +8,67 @@ import {
   getTheoryTest,
 } from '../../redux/tests/test-selector';
 import { Link } from 'react-router-dom';
+import { getToken } from 'redux/auth/auth-selector';
+import AuthPage from 'Pages/AuthPage/AuthPage';
 
 const Results = () => {
   const correct = useSelector(getCurrectAnswer);
   const testTheory = useSelector(getTheoryTest);
+  const isLogin = useSelector(getToken);
 
   return (
-    <main>
-      <section className={s.sectionResults}>
-        <div className={s.container}>
-          <div className={s.resultsContent}>
-            <div className={s.titlesList}>
-              <h2 className={s.resultTitle}>Results</h2>
-              {testTheory[0] ? (
-                <p className={s.resultSubtitle}>[ Testing theory_]</p>
-              ) : (
-                <p className={s.resultSubtitle}>[ Технічна підготовка QA]</p>
-              )}
+    <>
+      {isLogin ? (
+        <main>
+          <section className={s.sectionResults}>
+            <div className={s.container}>
+              <div className={s.resultsContent}>
+                <div className={s.titlesList}>
+                  <h2 className={s.resultTitle}>Results</h2>
+                  {testTheory[0] ? (
+                    <p className={s.resultSubtitle}>[ Testing theory_]</p>
+                  ) : (
+                    <p className={s.resultSubtitle}>
+                      [ Технічна підготовка QA]
+                    </p>
+                  )}
 
-              <div className={s.line}></div>
-            </div>
-            <div className={s.diagrammWrapper}>
-              <div className={s.diagramBox}>
-                <Chart2 />
+                  <div className={s.line}></div>
+                </div>
+                <div className={s.diagrammWrapper}>
+                  <div className={s.diagramBox}>
+                    <Chart2 />
+                  </div>
+
+                  <ul className={s.answerList}>
+                    <li className={s.answerCorrect}>
+                      Correct answers -<span>{correct}</span>
+                    </li>
+                    <li className={s.answerTotal}>
+                      Total questions -<span>12</span>
+                    </li>
+                  </ul>
+                </div>
+                <img className={s.resultPic} src={Cat} alt="result" />
+                <p className={s.resultText}>
+                  {correct === 12 ? 'Great!' : 'Not bad'}
+                </p>
+                <p className={s.materialsText}>
+                  {correct === 12
+                    ? 'You are cool!'
+                    : 'But you still need to learn some materials.'}
+                </p>
+                <Link to="/test" className={s.buttonRepeat}>
+                  Try again
+                </Link>
               </div>
-
-              <ul className={s.answerList}>
-                <li className={s.answerCorrect}>
-                  Correct answers -<span>{correct}</span>
-                </li>
-                <li className={s.answerTotal}>
-                  Total questions -<span>12</span>
-                </li>
-              </ul>
             </div>
-            <img className={s.resultPic} src={Cat} alt="result" />
-            <p className={s.resultText}>
-              {correct === 12 ? 'Great!' : 'Not bad'}
-            </p>
-            <p className={s.materialsText}>
-              {correct === 12
-                ? 'You are cool!'
-                : 'But you still need to learn some materials.'}
-            </p>
-            <Link to="/test" className={s.buttonRepeat}>
-              Try again
-            </Link>
-          </div>
-        </div>
-      </section>
-    </main>
+          </section>
+        </main>
+      ) : (
+        <AuthPage />
+      )}
+    </>
   );
 };
 

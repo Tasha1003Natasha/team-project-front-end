@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { API, tokenAuth } from 'API';
 import { toast } from 'react-toastify';
 
+
 export const signIn = createAsyncThunk('auth/register', async user => {
   try {
     const { data } = await API.post('auth/register', user);
@@ -18,40 +19,32 @@ export const signIn = createAsyncThunk('auth/register', async user => {
       });
     }
   }
+
 });
 
 export const logIn = createAsyncThunk('auth/login', async user => {
   try {
-    const { data } = await API.post('auth/login', user);
+    const { data } = await API.post('/auth/login', user);
+
     tokenAuth.set(data.token);
     return data;
   } catch (error) {
-    if (error.response.status === 401) {
-      toast.error('Server error, please try again later', {
-        theme: 'colored',
-      });
-    }
-    if (error.response.status !== 401) {
-      toast.error('Wrong email or password, please try again!', {
-        theme: 'colored',
-      });
-    }
+    console.log(error.response.data.message);
   }
 });
 
 export const logOut = createAsyncThunk('auth/logout', async () => {
   try {
-    await API.post('auth/logout');
+    await API.post('/auth/logout');
     tokenAuth.unset();
-  } catch {
-    toast.error('Server error, please try again later', {
-      theme: 'colored',
-    });
+  } catch (error) {
+    console.log(error.response.data.message);
   }
 });
 
 export const userCurrent = createAsyncThunk(
   'auth/current',
+
   async (_, { rejectWithValue, getState }) => {
     try {
       const { auth } = getState();
@@ -64,6 +57,7 @@ export const userCurrent = createAsyncThunk(
         message: data.message,
       };
       return rejectWithValue(error);
+
     }
   }
 );
