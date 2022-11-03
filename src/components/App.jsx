@@ -13,27 +13,27 @@ import { Loader } from 'components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// import { PublicRoute } from './PublicRoute/PublicRoute';
-// import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import { PublicRoute } from './PublicRoute/PublicRoute';
+import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { userCurrent } from '../redux/auth/auth-operations';
+// import { useEffect } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { userCurrent } from '../redux/auth/auth-operations';
 
 const AuthPageLazy = lazy(() => import('Pages/AuthPage/AuthPage'));
 const MainPageLazy = lazy(() => import('Pages/MainPage/MainPage'));
-// const PageNotFoundLazy = lazy(() => import('Pages/PageNotFound/PageNotFound'));
+const PageNotFoundLazy = lazy(() => import('Pages/PageNotFound/PageNotFound'));
 const ContactsLazy = lazy(() => import('Pages/Contacts/Contacts'));
 const UsefulInfoLazy = lazy(() => import('Pages/UsefulInfo/UsefulInfo'));
 const ResultsPageLazy = lazy(() => import('Pages/ResultsPage/Results'));
 const TestPageLazy = lazy(() => import('Pages/TestPage/TestPage'));
 
 export const App = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(userCurrent());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(userCurrent());
+  // }, [dispatch]);
 
   return (
     <>
@@ -44,7 +44,7 @@ export const App = () => {
           </div>
         }
       >
-        {/* <Routes>
+        <Routes>
           <Route path="/" element={<Layout />}>
             <Route
               index
@@ -54,7 +54,6 @@ export const App = () => {
                 </PrivateRoute>
               }
             />
-
             <Route
               path="/auth"
               element={
@@ -63,7 +62,6 @@ export const App = () => {
                 </PublicRoute>
               }
             />
-
             <Route
               path="/test"
               element={
@@ -72,7 +70,6 @@ export const App = () => {
                 </PrivateRoute>
               }
             />
-
             <Route
               path="/results"
               element={
@@ -81,7 +78,6 @@ export const App = () => {
                 </PrivateRoute>
               }
             />
-
             <Route
               path="/useful-info"
               element={
@@ -90,7 +86,6 @@ export const App = () => {
                 </PrivateRoute>
               }
             />
-
             <Route
               path="/contacts"
               element={
@@ -99,7 +94,6 @@ export const App = () => {
                 </PublicRoute>
               }
             />
-
             <Route
               path="*"
               element={
@@ -107,8 +101,9 @@ export const App = () => {
                   <PageNotFoundLazy />
                 </PublicRoute>
               }
-            /> */}
-        <Routes>
+            />
+
+            {/* <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<MainPageLazy />} />
             <Route path="/auth" element={<AuthPageLazy />} />
@@ -116,6 +111,8 @@ export const App = () => {
             <Route path="/results" element={<ResultsPageLazy />} />
             <Route path="/useful-info" element={<UsefulInfoLazy />} />
             <Route path="/contacts" element={<ContactsLazy />} />
+        //   </Route>
+        // </Routes> */}
           </Route>
         </Routes>
         <ToastContainer theme="colored" />

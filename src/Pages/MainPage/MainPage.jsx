@@ -41,7 +41,7 @@ const MainPage = () => {
               </div>
               <div className={styles.btnsWrapper}>
                 <Link
-                  to="test"
+                  to="/test"
                   className={styles.mainButton}
                   onClick={handleTech}
                 >
@@ -51,7 +51,7 @@ const MainPage = () => {
                   </svg>
                 </Link>
                 <Link
-                  to="test"
+                  to="/test"
                   className={styles.mainButtonTest}
                   onClick={handleTheory}
                 >
