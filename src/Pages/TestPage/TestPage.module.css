@@ -54,7 +54,7 @@
   .hederText {
     width: 210px;
     font-family: 'Montserrat';
-    font-weight: 500;
+    font-weight: 400;
     font-size: 22px;
     line-height: 27px;
     letter-spacing: 0.02em;
@@ -74,9 +74,8 @@
     margin-bottom: 24px;
   }
 
-  /* .hederText {
-    font-size: 22px;
-    line-height: 27px;
-    letter-spacing: 0.02em;
-  } */
+  .hederText {
+    font-style: normal;
+    font-weight: 500;
+  }
 }

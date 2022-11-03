@@ -9,6 +9,7 @@ const TestCard = ({ index = 0 }) => {
 
   const testTech = useSelector(getTechTest);
   const testTheory = useSelector(getTheoryTest);
+  const nextBtn = document.getElementsByName('next');
 
   return (
     <>
@@ -29,7 +30,9 @@ const TestCard = ({ index = 0 }) => {
                     name="r1"
                     type="radio"
                     value={answer}
-                    // onClick={onClick}
+                    onClick={evt => {
+                      document.getElementsByName('next').disabled = 'false';
+                    }}
                     defaultChecked={false}
                   />
                   {answer}
