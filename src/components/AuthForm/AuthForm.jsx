@@ -32,7 +32,7 @@ const AuthForm = () => {
 
   // // Зайти
   const handleSignIn = evt => {
-    evt.preventDefault();
+
     const user = { email, password };
     dispatch(logIn(user));
   };
