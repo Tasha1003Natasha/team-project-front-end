@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { signIn, logIn } from 'redux/auth/auth-operations';
+import { signUp, logIn } from 'redux/auth/auth-operations';
 import { ReactComponent as GoogleIcon } from '../../images/icons/google.svg';
 import { Link } from 'react-router-dom';
 
@@ -17,19 +17,6 @@ const AuthForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // const handleChange = evt => {
-  //   switch (evt.currentTarget.name) {
-  //     case 'email':
-  //       setEmail(evt.currentTarget.value);
-  //       break;
-  //     case 'password':
-  //       setPassword(evt.currentTarget.value);
-  //       break;
-  //     default:
-  //       return;
-  //   }
-  // };
-
   const handleChange = evt => {
     switch (evt.target.name) {
       case 'email':
@@ -45,7 +32,6 @@ const AuthForm = () => {
 
   // // Зайти
   const handleSignIn = evt => {
-    // evt.preventDefault();
     const user = { email, password };
     dispatch(logIn(user));
   };
@@ -53,8 +39,9 @@ const AuthForm = () => {
   // // Реєстрація
   const handleSignUp = () => {
     const user = { email, password };
-    dispatch(signIn(user));
+    dispatch(signUp(user));
   };
+
   //Validate
   const validate = Yup.object({
     email: Yup.string().email('Email is invalid').required('Email is required'),
@@ -127,13 +114,7 @@ const AuthForm = () => {
                       >
                         Sign in
                       </Link>
-                      {/* <button
-                        className={s.formButton}
-                        onClick={handleSignIn}
-                        type="submit"
-                      >
-                        Sign in
-                      </button> */}
+
                       <button
                         className={s.formButton}
                         onClick={handleSignUp}
