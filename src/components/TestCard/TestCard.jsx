@@ -9,7 +9,7 @@ const TestCard = ({ index = 0 }) => {
 
   const testTech = useSelector(getTechTest);
   const testTheory = useSelector(getTheoryTest);
-  const nextBtn = document.getElementsByName('next');
+  // const nextBtn = document.getElementsByName('next');
 
   return (
     <>
