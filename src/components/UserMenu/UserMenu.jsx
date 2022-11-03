@@ -3,11 +3,11 @@ import styles from './UserMenu.module.css';
 import { logOut } from '../../redux/auth/auth-operations';
 import Sprite from '../../images/icons/icons.svg';
 import { useDispatch } from 'react-redux';
-import { getCurrent } from 'redux/auth/auth-selector';
+import { getUser } from 'redux/auth/auth-selector';
 import { NavLink } from 'react-router-dom';
 
 const UserMenu = () => {
-  const userName = useSelector(getCurrent);
+  const userName = useSelector(getUser);
   const avatarName = userName?.slice(0, 1).toLocaleUpperCase();
   const dispatch = useDispatch();
 
