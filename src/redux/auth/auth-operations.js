@@ -58,10 +58,10 @@ import { API, tokenAuth } from 'API';
 //   }
 // });
 
-export const signUp = createAsyncThunk('auth/register', credentials => {
-  return API.post('/auth/register', credentials)
+export const signUp = createAsyncThunk('auth/register', user => {
+  return API.post('/auth/register', user)
     .then(() => {
-      return API.post('/auth/login', credentials)
+      return API.post('/auth/login', user)
         .then(({ data }) => {
           tokenAuth.set(data.token);
           return data;
@@ -75,9 +75,9 @@ export const signUp = createAsyncThunk('auth/register', credentials => {
     });
 });
 
-export const logIn = createAsyncThunk('auth/login', async credentials => {
+export const logIn = createAsyncThunk('auth/login', async user => {
   try {
-    const { data } = await API.post('/auth/login', credentials);
+    const { data } = await API.post('/auth/login', user);
 
     tokenAuth.set(data.token);
     return data;
@@ -98,18 +98,10 @@ export const logOut = createAsyncThunk('auth/logout', async () => {
 export const userCurrent = createAsyncThunk(
   'auth/current',
   async (_, { getState, rejectWithValue }) => {
-    const state = getState();
-    const sid = state.auth.sid;
-
-    if (!sid) {
-      return rejectWithValue('error');
-    }
-    const refreshToken = state.auth.refreshToken;
-    tokenAuth.set(refreshToken);
     try {
-      const { data } = await API.post('/auth/refresh', { sid });
-      tokenAuth.set(data.newAccessToken);
-      return data;
+      const { auth } = getState();
+      const result = await API.userCurrent(auth.token);
+      return result;
     } catch (error) {
       return rejectWithValue(error.response.data.message);
     }

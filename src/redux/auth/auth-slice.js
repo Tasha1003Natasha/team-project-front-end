@@ -7,7 +7,6 @@ export const initialState = {
   user: {},
   loading: false,
   error: null,
-  sid: '',
 };
 
 const authSlice = createSlice({
@@ -29,7 +28,6 @@ const authSlice = createSlice({
       state.isLogin = true;
       state.user = payload.user;
       state.token = payload.token;
-      state.sid = payload.sid;
     },
     [signUp.rejected]: (state, { payload }) => {
       state.loading = false;
@@ -45,7 +43,6 @@ const authSlice = createSlice({
       state.token = payload.token;
       state.isLogin = true;
       state.user = payload.user;
-      state.sid = payload.sid;
     },
     [logIn.rejected]: (state, { payload }) => {
       state.isLogin = false;
@@ -74,7 +71,6 @@ const authSlice = createSlice({
       state.user = payload.user;
       state.token = payload.token;
       state.isLogin = true;
-      state.sid = payload.newSid;
     },
     [userCurrent.rejected]: (state, { payload }) => {
       state.loading = false;
