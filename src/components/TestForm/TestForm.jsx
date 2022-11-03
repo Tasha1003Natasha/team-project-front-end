@@ -13,12 +13,15 @@ export const TestForm = () => {
   console.log(screenWidth);
   const [index, setIndex] = useState('0');
   const [answer, setAnswer] = useState([]);
+  // const [active, setActive] = useState('true');
   const dispatch = useDispatch();
 
   const radioButton = document.getElementsByName('r1');
-  // const backBtn = document.querySelector('back');
-  // const nextBtn = document.querySelector('next');
-  // const finishBtn = document.querySelector('finish');
+
+  // nextBtn.disabled = true;
+
+  // console.log(nextBtn);
+
   const testTech = useSelector(getTechTest);
   const testTheory = useSelector(getTheoryTest);
 
@@ -78,6 +81,7 @@ export const TestForm = () => {
     const NextIndex = Number(index) + 1;
     if (NextIndex > 0 && NextIndex <= 12) {
       setIndex(NextIndex);
+      // setActive('true');
     }
     if (NextIndex < 0) {
       setIndex(0);
