@@ -8,17 +8,16 @@ import {
   getTheoryTest,
 } from '../../redux/tests/test-selector';
 import { Link } from 'react-router-dom';
-import { getToken } from 'redux/auth/auth-selector';
-import AuthPage from 'Pages/AuthPage/AuthPage';
+
 
 const Results = () => {
   const correct = useSelector(getCurrectAnswer);
   const testTheory = useSelector(getTheoryTest);
-  const isLogin = useSelector(getToken);
+
 
   return (
     <>
-      {isLogin ? (
+     
         <main>
           <section className={s.sectionResults}>
             <div className={s.container}>
@@ -65,9 +64,7 @@ const Results = () => {
             </div>
           </section>
         </main>
-      ) : (
-        <AuthPage />
-      )}
+
     </>
   );
 };
