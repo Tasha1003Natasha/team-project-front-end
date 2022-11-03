@@ -7,6 +7,7 @@ export const initialState = {
   user: {},
   loading: false,
   error: null,
+  sid: '',
 };
 
 const authSlice = createSlice({
@@ -28,6 +29,7 @@ const authSlice = createSlice({
       state.isLogin = true;
       state.user = payload.user;
       state.token = payload.token;
+      state.sid = payload.sid;
     },
     [signUp.rejected]: (state, { payload }) => {
       state.loading = false;
@@ -43,6 +45,7 @@ const authSlice = createSlice({
       state.token = payload.token;
       state.isLogin = true;
       state.user = payload.user;
+      state.sid = payload.sid;
     },
     [logIn.rejected]: (state, { payload }) => {
       state.isLogin = false;
@@ -58,24 +61,25 @@ const authSlice = createSlice({
       state.token = '';
       state.user = {};
     },
-    [logOut.rejected]: (store, { payload }) => {
-      store.loading = false;
-      store.error = payload;
+    [logOut.rejected]: (state, { payload }) => {
+      state.loading = false;
+      state.error = payload;
     },
-    [userCurrent.pending]: store => {
-      store.loading = true;
-      store.error = null;
+    [userCurrent.pending]: state => {
+      state.loading = true;
+      state.error = null;
     },
-    [userCurrent.fulfilled]: (store, { payload }) => {
-      store.loading = false;
-      store.user = payload.user;
-      store.token = payload.token;
-      store.isLogin = true;
+    [userCurrent.fulfilled]: (state, { payload }) => {
+      state.loading = false;
+      state.user = payload.user;
+      state.token = payload.token;
+      state.isLogin = true;
+      state.sid = payload.newSid;
     },
-    [userCurrent.rejected]: (store, { payload }) => {
-      store.loading = false;
-      store.token = '';
-      store.error = payload;
+    [userCurrent.rejected]: (state, { payload }) => {
+      state.loading = false;
+      state.token = '';
+      state.error = payload;
     },
   },
 });
