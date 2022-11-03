@@ -16,9 +16,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 
+// import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { userCurrent } from '../redux/auth/auth-operations';
+// import { getToken } from '../redux/auth/auth-selector';
 
 const AuthPageLazy = lazy(() => import('Pages/AuthPage/AuthPage'));
 const MainPageLazy = lazy(() => import('Pages/MainPage/MainPage'));
@@ -30,6 +32,7 @@ const TestPageLazy = lazy(() => import('Pages/TestPage/TestPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
+  // const token = useSelector(getToken);
 
   useEffect(() => {
     dispatch(userCurrent());
@@ -46,14 +49,7 @@ export const App = () => {
       >
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route
-              index
-              element={
-                // <PrivateRoute>
-                <MainPageLazy />
-                // </PrivateRoute>
-              }
-            />
+            <Route index element={<MainPageLazy />} />
             <Route
               path="/auth"
               element={
@@ -86,22 +82,8 @@ export const App = () => {
                 </PrivateRoute>
               }
             />
-            <Route
-              path="/contacts"
-              element={
-                <PublicRoute>
-                  <ContactsLazy />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <PublicRoute>
-                  <PageNotFoundLazy />
-                </PublicRoute>
-              }
-            />
+            <Route path="/contacts" element={<ContactsLazy />} />
+            <Route path="*" element={<PageNotFoundLazy />} />
 
             {/* <Routes>
           <Route path="/" element={<Layout />}>
