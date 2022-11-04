@@ -22,7 +22,7 @@ const persistAuth = {
 const persistTest = {
   key: 'test',
   storage,
-  whitelist: ['testTech', 'testTheory', 'results'],
+  whitelist: ['currentTest', 'results'],
 };
 
 const store = configureStore({
