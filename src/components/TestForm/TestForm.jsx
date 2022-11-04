@@ -44,28 +44,12 @@ export const TestForm = () => {
 
         setAnswer([...answer, userAnswer]);
       }
-      // if (radioButton[i].checked && testTheory[0]) {
-      //   const userAnswer = {
-      //     userAnswer: radioButton[i].value,
-      //     _id: testTheory[Number(index)]._id,
-      //   };
-
-      //   for (let i = 0; i < answer.length; i++) {
-      //     if (userAnswer._id === answer[i]._id) {
-      //       const index = answer.indexOf(answer[i]);
-
-      //       answer.splice(index, 1);
-      //     }
-      //   }
-
-      //   setAnswer([...answer, userAnswer]);
-      // }
     }
   };
 
   const currentQuestionIndexBack = evt => {
     checkAnswer(radioButton);
-    chechButton(radioButton);
+
     const backIndex = Number(index) - 1;
     if (backIndex > 0 && backIndex <= 12) {
       setIndex(backIndex);
@@ -81,7 +65,6 @@ export const TestForm = () => {
     const NextIndex = Number(index) + 1;
     if (NextIndex > 0 && NextIndex <= 12) {
       setIndex(NextIndex);
-      // setActive('true');
     }
     if (NextIndex < 0) {
       setIndex(0);
@@ -100,25 +83,6 @@ export const TestForm = () => {
   );
   console.log(localStorageArrayAnswers);
 
-  const chechButton = radioButton => {
-    if (localStorageArrayAnswers.length) {
-      for (let i = 0; i < radioButton.length; i++) {
-        for (let j = 0; j < localStorageArrayAnswers.length; j++) {
-          if (
-            currentTest[Number(index)]._id ===
-              localStorageArrayAnswers[j]._id &&
-            String(radioButton[i].value).length ===
-              String(localStorageArrayAnswers[j].userAnswer).length
-          ) {
-            radioButton[i].value === localStorageArrayAnswers[j].userAnswer
-              ? (radioButton[i].checked = true)
-              : (radioButton[i].checked = false);
-          }
-        }
-      }
-    }
-  };
-
   const unClick = radioButton => {
     radioButton.checked = false;
   };
@@ -130,7 +94,7 @@ export const TestForm = () => {
           Question <span className={style.active}>{Number(index) + 1}</span> /
           12
         </p>
-        <TestCard index={index} radioButton={radioButton} />
+        <TestCard index={index} />
       </div>
       <div className={style.testFooter}>
         <button

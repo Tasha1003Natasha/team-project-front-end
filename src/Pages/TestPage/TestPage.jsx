@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getCurrentTest } from '../../redux/tests/test-selector';
 import { getToken } from 'redux/auth/auth-selector';
-
+import { useState, useEffect } from 'react';
 import TestForm from '../../components/TestForm/TestForm';
 import { Link } from 'react-router-dom';
 import style from './TestPage.module.css';
@@ -11,11 +11,22 @@ import AuthPage from 'Pages/AuthPage/AuthPage';
 
 const TestPage = () => {
   const dispatch = useDispatch();
-  const token = useSelector(getToken);
+  const [type, setType] = useState('');
   const testCurrent = useSelector(getCurrentTest);
-  console.log(testCurrent);
-  const type = String(testCurrent[0].type);
+
+  useEffect(() => {
+    setTimeout(() => {
+      const typeCurrent = String(testCurrent[0].type);
+      setType(typeCurrent);
+    }, 500);
+  });
+  const token = useSelector(getToken);
   console.log(type);
+
+  const hendlerCloseTest = () => {
+    const test = [];
+    dispatch(getTest(test));
+  };
   // const changeNext = radioButton => {
   //   const checkRadio = [];
   //   for (let i = 0; i < radioButton.lenght; i++) {
@@ -29,11 +40,6 @@ const TestPage = () => {
 
   // nextBtn.disabled = true;
   // console.log(nextBtn);
-
-  const hendlerCloseTest = () => {
-    const test = [];
-    dispatch(getTest(test));
-  };
 
   return (
     <>
