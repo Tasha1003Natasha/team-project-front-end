@@ -63,6 +63,13 @@ Link {
 .active {
   color: var(--accent-color);
 }
+button:disabled {
+  background-color: grey;
+}
+button:disabled:hover {
+  background-color: gray;
+  color: #000000;
+}
 
 @media (min-width: 768px) {
   .questionContainer {

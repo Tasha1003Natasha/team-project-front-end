@@ -5,7 +5,8 @@ import Radio from '@mui/material/Radio';
 import { useState } from 'react';
 import { orange, grey } from '@mui/material/colors';
 
-const TestCard = ({ index = 0 }) => {
+const TestCard = ({ index = 0, unDisableBtn }) => {
+
   const [answer, setAnswer] = useState([]);
   let currentIndex = Number(index);
 
@@ -26,13 +27,15 @@ const TestCard = ({ index = 0 }) => {
     );
 
     if (checked) {
-      setSelectedValue('');
+      //   setSelectedValue('');
       const index = answer.indexOf(checked);
       answer.splice(index, 1);
     }
     setSelectedValue(event.target.value);
     setAnswer([...answer, userAnswer]);
+    unDisableBtn();
   };
+  //   console.log(document.getElementsByName('next'));
 
   localStorage.setItem('userAnswers', JSON.stringify(answer));
 

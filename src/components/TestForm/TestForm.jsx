@@ -3,28 +3,25 @@ import { Link } from 'react-router-dom';
 import style from './TestForm.module.css';
 
 import { results } from 'redux/tests/tests-operations';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import TestCard from '../TestCard/TestCard';
 import Sprite from '../../images/icons/icons.svg';
+import { getCurrentTest } from 'redux/tests/test-selector';
 
 export const TestForm = () => {
-  // const radioButton = document.getElementsByName('r1');
-  // console.log(radioButton);
-
-  // for (let i = 0; i < radioButton.length; i++) {
-  //   radioButton.find(radioButton[i].checked);
-  //   console.log('checked');
-  // }
-  // console.log('disabled');
-
   const screenWidth = window.screen.width;
-  // document.getElementsByName('next').disabled = true;
-  console.log(document.getElementsByName('next'));
+  const [isDisable, setIsDisable] = useState(true);
   const [index, setIndex] = useState('0');
+  const currentTest = useSelector(getCurrentTest);
 
   const dispatch = useDispatch();
+  const answer = JSON.parse(localStorage.getItem('userAnswers'));
+  const getResultsFunc = () => {
+    dispatch(results(answer));
+  };
 
   const currentQuestionIndexBack = evt => {
+    setIsDisable(false);
     const backIndex = Number(index) - 1;
     if (backIndex > 0 && backIndex <= 12) {
       setIndex(backIndex);
@@ -34,8 +31,16 @@ export const TestForm = () => {
     }
   };
 
+  const changeButtonStatus = () => {
+    setIsDisable(false);
+  };
+
   const currentQuestionIndexNext = evt => {
-    // checkAnswer(radioButton);
+    const isDisabled = answer.find(
+      ({ _id }) => _id === currentTest[Number(index)]._id
+    );
+    console.log(Boolean(isDisabled));
+    setIsDisable(!Boolean(isDisabled));
 
     const NextIndex = Number(index) + 1;
     if (NextIndex > 0 && NextIndex <= 12) {
@@ -45,10 +50,6 @@ export const TestForm = () => {
       setIndex(0);
     }
   };
-  const answer = JSON.parse(localStorage.getItem('userAnswers'));
-  const getResultsFunc = () => {
-    dispatch(results(answer));
-  };
 
   return (
     <>
@@ -57,7 +58,7 @@ export const TestForm = () => {
           Question <span className={style.active}>{Number(index) + 1}</span> /
           12
         </p>
-        <TestCard index={index} />
+        <TestCard index={index} unDisableBtn={changeButtonStatus} />
       </div>
       <div className={style.testFooter}>
         <button
@@ -75,8 +76,9 @@ export const TestForm = () => {
           <button
             className={style.btnQuestions}
             type="button"
-            name="next"
+            id="next"
             onClick={currentQuestionIndexNext}
+            disabled={isDisable}
             // disabled={}
           >
             {screenWidth >= 768 && <span>Next question</span>}
@@ -90,6 +92,7 @@ export const TestForm = () => {
             to="/results"
             name="finish"
             onClick={getResultsFunc}
+            disabled={isDisable}
           >
             <span>Finish test</span>
           </Link>
