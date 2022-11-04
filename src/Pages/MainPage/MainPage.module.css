@@ -19,36 +19,6 @@
   }
 }
 
-/* .mainSection {
-  padding-top: 34px;
-  padding-bottom: 39px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 100vh;
-} */
-
-/* @media (min-width: 768px) {
-  .mainSection {
-    padding-top: 82px;
-    padding-bottom: 125px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-} */
-
-/* @media (min-width: 1280px) {
-  .mainSection {
-    padding-top: 122px;
-    padding-bottom: 133px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-} */
-
 .descriptionWrappper {
   width: 280px;
 }
@@ -58,12 +28,6 @@
     min-width: 650px;
   }
 }
-
-/* @media (min-width: 1280px) {
-  .descriptionWrappper {
-    width: 650px;
-  }
-} */
 
 .mainTitle {
   padding-bottom: 32px;
@@ -85,12 +49,6 @@
   }
 }
 
-/* @media (min-width: 1280px) {
-  .mainTitle {
-    text-align: center;
-  }
-} */
-
 .mainLine {
   margin: 0 auto;
   width: 130px;
@@ -106,16 +64,12 @@
 
 .mainTextStrong {
   margin-top: 12px;
-
   margin-bottom: 8px;
-
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
-
   text-align: center;
-
   color: var(--main-text);
 }
 
@@ -123,7 +77,6 @@
   .mainTextStrong {
     font-size: 18px;
     line-height: 1.22;
-
     text-align: center;
   }
 }
@@ -171,12 +124,10 @@
 @media (min-width: 1280px) {
   .btnsWrapper {
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: row;
     align-content: center;
     justify-content: center;
     width: 0px;
-    /* height: 212px; */
   }
 }
 
@@ -199,9 +150,6 @@
     padding: 60px 50px 46px 50px;
     margin-bottom: 30px;
     font-size: 32px;
-
-    /* width: 400px;
-    height: 212px; */
   }
 }
 
@@ -209,9 +157,7 @@
   .mainButton1 {
     padding: 60px 13px;
     margin-right: 20px;
-    width: 400px;
     margin-bottom: 0px;
-    /* height: 212px; */
   }
 }
 
@@ -238,17 +184,12 @@
   .mainButton2 {
     padding: 60px 50px 46px 50px;
     font-size: 32px;
-    /* 
-    width: 400px;
-    height: 212px; */
   }
 }
 
 @media (min-width: 1280px) {
   .mainButton2 {
     padding: 60px 130px;
-    /* width: 400px;
-    height: 212px; */
   }
 }
 
