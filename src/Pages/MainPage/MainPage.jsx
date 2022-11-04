@@ -27,44 +27,47 @@ const MainPage = () => {
     <>
       {token ? (
         <main>
-          <section className={styles.mainSection}>
-            <div className={styles.container}>
-              <div className={styles.mainWrapper}>
-                <div className={styles.descriptionWrappper}>
-                  <h1 className={styles.mainTitle}>
-                    “Regression testing. What is it? <br /> If the system
-                    compiles, that's good, if it boots, that's great!”
-                  </h1>
-                  <hr className={styles.mainLine} />
+          <section className={styles.container}>
+            <div className={styles.mainWrapper}>
+              <div className={styles.descriptionWrappper}>
+                <h1 className={styles.mainTitle}>
+                  “Regression testing. What is it? <br /> If the system
+                  compiles, that's good, if it boots, that's great!”
+                </h1>
+                <hr className={styles.mainLine} />
 
-                  <p className={styles.mainTextStrong}>Linus Torvalds</p>
+                <p className={styles.mainTextStrong}>Linus Torvalds</p>
 
-                  <p className={styles.mainText}>
-                    Linux kernel creator, hacker, 1969
+                <p className={styles.mainText}>
+                  Linux kernel creator, hacker, 1969
+                </p>
+              </div>
+              <div className={styles.btnsWrapper}>
+                <Link
+                  to="test"
+                  className={styles.mainButton1}
+                  onClick={handleTech}
+                >
+                  <p className={styles.mainButText1}>
+                    QA technical <br />
+                    training
                   </p>
-                </div>
-                <div className={styles.btnsWrapper}>
-                  <Link
-                    to="test"
-                    className={styles.mainButton}
-                    onClick={handleTech}
-                  >
-                    QA technical training
-                    <svg className={styles.arrowIcon} width={24} height={16}>
-                      <use href={`${Sprite}#arrow`}></use>
-                    </svg>
-                  </Link>
-                  <Link
-                    to="test"
-                    className={styles.mainButtonTest}
-                    onClick={handleTheory}
-                  >
-                    Testing theory
-                    <svg className={styles.arrowIcon} width={24} height={16}>
-                      <use href={`${Sprite}#arrow`}></use>
-                    </svg>
-                  </Link>
-                </div>
+                  <svg className={styles.arrowIcon} width={24} height={24}>
+                    <use href={`${Sprite}#arrow`}></use>
+                  </svg>
+                </Link>
+                <Link
+                  to="test"
+                  className={styles.mainButton2}
+                  onClick={handleTheory}
+                >
+                  <p className={styles.mainButText2}>
+                    Testing <br /> theory
+                  </p>
+                  <svg className={styles.arrowIcon} width={24} height={24}>
+                    <use href={`${Sprite}#arrow`}></use>
+                  </svg>
+                </Link>
               </div>
             </div>
           </section>
