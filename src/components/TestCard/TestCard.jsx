@@ -1,39 +1,85 @@
-// import { useEffect, useState } from 'react';
-// import style from './TestCard.module.css';
 import { useSelector } from 'react-redux';
-import { getTechTest, getTheoryTest } from '../../redux/tests/test-selector';
+import { getCurrentTest } from '../../redux/tests/test-selector';
 import style from './TestCard.module.css';
+import Radio from '@mui/material/Radio';
+import { useState } from 'react';
+import { orange, grey } from '@mui/material/colors';
 
 const TestCard = ({ index = 0 }) => {
   let currentIndex = Number(index);
 
-  const testTech = useSelector(getTechTest);
-  const testTheory = useSelector(getTheoryTest);
-  // const nextBtn = document.getElementsByName('next');
+  const currentTest = useSelector(getCurrentTest);
+
+  const [selectedValue, setSelectedValue] = useState('');
+  const handleChange = event => {
+    setSelectedValue('');
+    setSelectedValue(event.target.value);
+    console.log(event.target.value);
+  };
 
   return (
     <>
-      {testTech[currentIndex] && (
+      {currentTest[currentIndex] && (
         <>
           <p className={style.questionText}>
-            {testTech[currentIndex].question}
+            {currentTest[currentIndex].question}
           </p>
           <hr className={style.line} />
           {/* <p>{testTech[currentIndex]._id}</p> */}
           <ul className={style.answersList}>
-            {testTech[currentIndex].answers.map((answer, ind) => {
+            {currentTest[currentIndex].answers.map((answer, ind) => {
+              const localStorageArrayAnswers = JSON.parse(
+                localStorage.getItem('userAnswers')
+              );
+              // localStorageArrayAnswers.filter(({ userAnswer, _id }) => {
+              //   const current =
+              //     _id === currentTest[currentIndex]._id &&
+              //     userAnswer === answer;
+
+              //   console.log('true');
+              //   // setSelectedValue(answer);
+              //   return current;
+              // });
+
+              const a = localStorageArrayAnswers.find(item => 
+                item._id === currentTest[currentIndex]._id &&
+                  item.userAnswer === answer
+              );
+              // setSelectedValue(a.userAnswer);
+              console.log(Boolean(a));
+
               return (
                 <li className={style.answersItem} key={ind}>
-                  <input
-                    className={style.radio}
-                    // style="background-color: #ff6b09"
-                    name="r1"
-                    type="radio"
+                  <Radio
+                    // checked={localStorageArrayAnswers.filter(
+                    //   ({ userAnswer, _id }) => {
+                    //     const current =
+                    //       _id === currentTest[currentIndex]._id &&
+                    //       userAnswer === answer;
+
+                    //     console.log('true');
+                    //     // setSelectedValue(answer);
+                    //     return answer;
+                    //   }
+                    // )}
+                    // checked={Boolean(a)}
+                   
+                    checked={selectedValue === answer || Boolean(a)}
+                    // checked={localStorageArrayAnswers.find(
+                    //   ({ userAnswer, _id }) =>
+                    //     _id === currentTest[currentIndex]._id &&
+                    //     userAnswer === answer[ind]
+                    // )}
+                    onChange={handleChange}
                     value={answer}
-                    onClick={evt => {
-                      document.getElementsByName('next').disabled = 'false';
+                    name="r1"
+                    sx={{
+                      color: grey[500],
+                      '&.Mui-checked': {
+                        color: orange[800],
+                      },
                     }}
-                    defaultChecked={false}
+                    // inputProps={{ 'aria-label': 'A' }}
                   />
                   {answer}
                 </li>
@@ -41,30 +87,6 @@ const TestCard = ({ index = 0 }) => {
             })}
           </ul>
         </>
-      )}
-
-      {testTheory[currentIndex] && (
-        <div>
-          <p>{testTheory[currentIndex].question}</p>
-          <ul>
-            {testTheory[currentIndex].answers.map((answer, ind) => {
-              return (
-                <>
-                  <li key={currentIndex}>
-                    <input
-                      name="r1"
-                      type="radio"
-                      value={answer}
-                      id={ind}
-                      key={ind}
-                    />
-                    {answer}
-                  </li>
-                </>
-              );
-            })}
-          </ul>
-        </div>
       )}
     </>
   );

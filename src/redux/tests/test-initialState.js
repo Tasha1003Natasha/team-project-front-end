@@ -1,6 +1,6 @@
 export const testInitialState = {
-  testTech: [],
-  testTheory: [],
+  currentTest: [],
+  // testTheory: [],
   results: {
     correct: 0,
     incorrect: 0,
