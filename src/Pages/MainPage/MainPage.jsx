@@ -8,6 +8,7 @@ import AuthPage from '../AuthPage/AuthPage';
 
 import { useSelector } from 'react-redux';
 import { getToken } from 'redux/auth/auth-selector';
+
 // import { useState } from 'react';
 
 const MainPage = () => {

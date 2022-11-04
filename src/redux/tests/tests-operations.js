@@ -9,6 +9,7 @@ export const getTest = createAsyncThunk('tests', async type => {
     });
   }
   const { data } = await API.get(`tests/${type}`);
+  console.log(data);
   return data;
 });
 

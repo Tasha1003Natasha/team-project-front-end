@@ -6,7 +6,7 @@ const TestCard = ({ index = 0 }) => {
   let currentIndex = Number(index);
 
   const currentTest = useSelector(getCurrentTest);
-
+  console.log(currentTest);
   // const nextBtn = document.getElementsByName('next');
 
   return (
