@@ -12,12 +12,6 @@ export const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {
-    // googleAuth: (state, { payload }) => {
-    //   state.token = payload.token;
-    //   state.isLogin = true;
-    // },
-  },
   extraReducers: {
     [signUp.pending]: state => {
       state.loading = true;
@@ -26,8 +20,6 @@ const authSlice = createSlice({
     [signUp.fulfilled]: (state, { payload }) => {
       state.loading = false;
       state.isLogin = true;
-      // state.user = payload.user;
-      // state.token = payload.token;
     },
     [signUp.rejected]: (state, { payload }) => {
       state.loading = false;
@@ -68,9 +60,10 @@ const authSlice = createSlice({
     },
     [userCurrent.fulfilled]: (state, { payload }) => {
       state.loading = false;
-      state.user = payload.user;
-      // state.token = payload.token;
       state.isLogin = true;
+      // state.token = payload.token;
+      // state.user = payload.user;
+      state.user = payload;
     },
     [userCurrent.rejected]: (state, { payload }) => {
       state.loading = false;

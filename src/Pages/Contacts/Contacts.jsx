@@ -12,7 +12,6 @@ const Contacts = () => {
 
           <ul className={styles.card__wrapper}>
             {team.map((team, id) => {
-            //  console.log(team)
               return (
                 <ContactsCard
                   key={id}
