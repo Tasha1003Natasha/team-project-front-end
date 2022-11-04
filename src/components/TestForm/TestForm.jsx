@@ -1,55 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import style from './TestForm.module.css';
-import { useSelector } from 'react-redux';
-import { getCurrentTest } from '../../redux/tests/test-selector';
+
 import { results } from 'redux/tests/tests-operations';
 import { useDispatch } from 'react-redux';
 import TestCard from '../TestCard/TestCard';
 import Sprite from '../../images/icons/icons.svg';
 
 export const TestForm = () => {
-  const screenWidth = window.screen.width;
-  console.log(screenWidth);
-  const [index, setIndex] = useState('0');
-  const [answer, setAnswer] = useState([]);
-  // const [active, setActive] = useState('true');
-  const dispatch = useDispatch();
-
   const radioButton = document.getElementsByName('r1');
-
-  // nextBtn.disabled = true;
-
-  // console.log(nextBtn);
-
-  const currentTest = useSelector(getCurrentTest);
-  // const testTheory = useSelector(getTheoryTest);
-
-  const checkAnswer = radioButton => {
+  console.log(radioButton);
+  const next = radioButton => {
     for (let i = 0; i < radioButton.length; i++) {
-      if (radioButton[i].checked && currentTest[0]) {
-        const userAnswer = {
-          userAnswer: radioButton[i].value,
-          _id: currentTest[Number(index)]._id,
-        };
-        unClick(radioButton[i]);
-
-        for (let i = 0; i < answer.length; i++) {
-          if (userAnswer._id === answer[i]._id) {
-            const index = answer.indexOf(answer[i]);
-
-            answer.splice(index, 1);
-          }
-        }
-
-        setAnswer([...answer, userAnswer]);
-      }
+      radioButton.find(radioButton[i].checked);
+      console.log('checked');
     }
+    console.log('disabled');
   };
 
-  const currentQuestionIndexBack = evt => {
-    checkAnswer(radioButton);
+  const screenWidth = window.screen.width;
+  // document.getElementsByName('next').disabled = true;
+  console.log(document.getElementsByName('next'));
+  const [index, setIndex] = useState('0');
 
+  const dispatch = useDispatch();
+
+  const currentQuestionIndexBack = evt => {
     const backIndex = Number(index) - 1;
     if (backIndex > 0 && backIndex <= 12) {
       setIndex(backIndex);
@@ -60,7 +36,7 @@ export const TestForm = () => {
   };
 
   const currentQuestionIndexNext = evt => {
-    checkAnswer(radioButton);
+    // checkAnswer(radioButton);
 
     const NextIndex = Number(index) + 1;
     if (NextIndex > 0 && NextIndex <= 12) {
@@ -70,22 +46,17 @@ export const TestForm = () => {
       setIndex(0);
     }
   };
-
+  const answer = JSON.parse(localStorage.getItem('userAnswers'));
   const getResultsFunc = () => {
-    checkAnswer(radioButton);
     dispatch(results(answer));
   };
+  console.log(answer);
+  // const chengeNext = () => {
+  //   document.getElementsByName('next').disabled = false;
 
-  localStorage.setItem('userAnswers', JSON.stringify(answer));
-
-  const localStorageArrayAnswers = JSON.parse(
-    localStorage.getItem('userAnswers')
-  );
-  console.log(localStorageArrayAnswers);
-
-  const unClick = radioButton => {
-    radioButton.checked = false;
-  };
+  // };
+  // console.log(document.getElementsByName('next'));
+  console.log(Number(index) + 1);
 
   return (
     <>
@@ -114,6 +85,7 @@ export const TestForm = () => {
             type="button"
             name="next"
             onClick={currentQuestionIndexNext}
+            // disabled={}
           >
             {screenWidth >= 768 && <span>Next question</span>}
             <svg className={style.arrowNext} width={24} height={16}>

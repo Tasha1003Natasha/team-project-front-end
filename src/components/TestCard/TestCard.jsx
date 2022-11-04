@@ -5,17 +5,36 @@ import Radio from '@mui/material/Radio';
 import { useState } from 'react';
 import { orange, grey } from '@mui/material/colors';
 
-const TestCard = ({ index = 0 }) => {
+const TestCard = ({ index = 0, chengeNext }) => {
+  const [answer, setAnswer] = useState([]);
   let currentIndex = Number(index);
 
   const currentTest = useSelector(getCurrentTest);
 
   const [selectedValue, setSelectedValue] = useState('');
+
   const handleChange = event => {
-    setSelectedValue('');
     setSelectedValue(event.target.value);
-    console.log(event.target.value);
+    const answer = JSON.parse(localStorage.getItem('userAnswers'));
+
+    const userAnswer = {
+      userAnswer: event.target.value,
+      _id: currentTest[currentIndex]._id,
+    };
+    const checked = answer.find(
+      ({ _id, userAnswer }) => _id === currentTest[currentIndex]._id
+    );
+
+    if (checked) {
+      setSelectedValue('');
+      const index = answer.indexOf(checked);
+      answer.splice(index, 1);
+    }
+    setSelectedValue(event.target.value);
+    setAnswer([...answer, userAnswer]);
   };
+
+  localStorage.setItem('userAnswers', JSON.stringify(answer));
 
   return (
     <>
@@ -31,45 +50,17 @@ const TestCard = ({ index = 0 }) => {
               const localStorageArrayAnswers = JSON.parse(
                 localStorage.getItem('userAnswers')
               );
-              // localStorageArrayAnswers.filter(({ userAnswer, _id }) => {
-              //   const current =
-              //     _id === currentTest[currentIndex]._id &&
-              //     userAnswer === answer;
 
-              //   console.log('true');
-              //   // setSelectedValue(answer);
-              //   return current;
-              // });
-
-              const a = localStorageArrayAnswers.find(item => 
-                item._id === currentTest[currentIndex]._id &&
+              const a = localStorageArrayAnswers.find(
+                item =>
+                  item._id === currentTest[currentIndex]._id &&
                   item.userAnswer === answer
               );
-              // setSelectedValue(a.userAnswer);
-              console.log(Boolean(a));
 
               return (
                 <li className={style.answersItem} key={ind}>
                   <Radio
-                    // checked={localStorageArrayAnswers.filter(
-                    //   ({ userAnswer, _id }) => {
-                    //     const current =
-                    //       _id === currentTest[currentIndex]._id &&
-                    //       userAnswer === answer;
-
-                    //     console.log('true');
-                    //     // setSelectedValue(answer);
-                    //     return answer;
-                    //   }
-                    // )}
-                    // checked={Boolean(a)}
-                   
                     checked={selectedValue === answer || Boolean(a)}
-                    // checked={localStorageArrayAnswers.find(
-                    //   ({ userAnswer, _id }) =>
-                    //     _id === currentTest[currentIndex]._id &&
-                    //     userAnswer === answer[ind]
-                    // )}
                     onChange={handleChange}
                     value={answer}
                     name="r1"

@@ -27,19 +27,7 @@ const TestPage = () => {
     const test = [];
     dispatch(getTest(test));
   };
-  // const changeNext = radioButton => {
-  //   const checkRadio = [];
-  //   for (let i = 0; i < radioButton.lenght; i++) {
-  //     if (radioButton[i].checked) {
-  //       checkRadio.push(radioButton[i]);
-  //     }
-  //   }
-  //   console.log(checkRadio);
-  //   return checkRadio.length;
-  // };
 
-  // nextBtn.disabled = true;
-  // console.log(nextBtn);
 
   return (
     <>
