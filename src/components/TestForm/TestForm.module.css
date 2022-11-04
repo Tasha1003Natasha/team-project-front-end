@@ -23,15 +23,17 @@
   padding-right: 20px;
   background-color: #ffffff;
 }
-
-.btnQuestions:hover {
+.btnQuestions:hover,
+.btnQuestions:focus {
   background-color: var(--accent-color);
-  cursor: pointer;
   color: white;
   fill: white;
 }
+
 Link {
   text-decoration: none;
+  cursor: none;
+  color: black;
 }
 .testFooter {
   display: inline-flex;

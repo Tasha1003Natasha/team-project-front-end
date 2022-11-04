@@ -39,7 +39,6 @@ export const TestForm = () => {
     const isDisabled = answer.find(
       ({ _id }) => _id === currentTest[Number(index)]._id
     );
-    console.log(Boolean(isDisabled));
     setIsDisable(!Boolean(isDisabled));
 
     const NextIndex = Number(index) + 1;
@@ -50,6 +49,7 @@ export const TestForm = () => {
       setIndex(0);
     }
   };
+  console.log(answer.length);
 
   return (
     <>
@@ -87,14 +87,15 @@ export const TestForm = () => {
             </svg>
           </button>
         ) : (
-          <Link
-            className={style.btnQuestions}
-            to="/results"
-            name="finish"
-            onClick={getResultsFunc}
-            disabled={isDisable}
-          >
-            <span>Finish test</span>
+          <Link to="/results">
+            <button
+              className={style.btnQuestions}
+              name="finish"
+              onClick={getResultsFunc}
+              disabled={isDisable}
+            >
+              <span>Finish test</span>
+            </button>
           </Link>
         )}
       </div>
