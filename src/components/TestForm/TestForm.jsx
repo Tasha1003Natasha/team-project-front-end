@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import style from './TestForm.module.css';
 
@@ -9,14 +9,13 @@ import Sprite from '../../images/icons/icons.svg';
 
 export const TestForm = () => {
   const radioButton = document.getElementsByName('r1');
-  console.log(radioButton);
-  const next = radioButton => {
-    for (let i = 0; i < radioButton.length; i++) {
-      radioButton.find(radioButton[i].checked);
-      console.log('checked');
-    }
-    console.log('disabled');
-  };
+  // console.log(radioButton);
+
+  // for (let i = 0; i < radioButton.length; i++) {
+  //   radioButton.find(radioButton[i].checked);
+  //   console.log('checked');
+  // }
+  // console.log('disabled');
 
   const screenWidth = window.screen.width;
   // document.getElementsByName('next').disabled = true;
@@ -50,13 +49,6 @@ export const TestForm = () => {
   const getResultsFunc = () => {
     dispatch(results(answer));
   };
-  console.log(answer);
-  // const chengeNext = () => {
-  //   document.getElementsByName('next').disabled = false;
-
-  // };
-  // console.log(document.getElementsByName('next'));
-  console.log(Number(index) + 1);
 
   return (
     <>

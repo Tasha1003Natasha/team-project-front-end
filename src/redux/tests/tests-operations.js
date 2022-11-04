@@ -9,30 +9,9 @@ export const getTest = createAsyncThunk('tests', async type => {
     });
   }
   const { data } = await API.get(`tests/${type}`);
-  console.log(data);
+
   return data;
 });
-
-// export const techTest = createAsyncThunk('tests/tech', async () => {
-//   if (!tokenAuth) {
-//     toast.error('Login please, first', {
-//       theme: 'colored',
-//     });
-//   }
-//   const { data } = await API.get('/tests/tech');
-//   return data;
-// });
-
-// export const theoryTest = createAsyncThunk('tests/theory', async () => {
-//   if (!tokenAuth) {
-//     toast.error('Login please, first', {
-//       theme: 'colored',
-//     });
-//   }
-
-//   const { data } = await API.get('/tests/theory');
-//   return data;
-// });
 
 export const results = createAsyncThunk('tests/results', async answers => {
   if (!tokenAuth) {

@@ -5,7 +5,7 @@ import Radio from '@mui/material/Radio';
 import { useState } from 'react';
 import { orange, grey } from '@mui/material/colors';
 
-const TestCard = ({ index = 0, chengeNext }) => {
+const TestCard = ({ index = 0 }) => {
   const [answer, setAnswer] = useState([]);
   let currentIndex = Number(index);
 

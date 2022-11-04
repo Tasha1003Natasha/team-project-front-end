@@ -10,14 +10,7 @@ const testSlice = createSlice({
     [getTest.fulfilled]: (state, { payload }) => {
       state.currentTest = payload;
     },
-    // [theoryTest.fulfilled]: (state, { payload }) => {
-    //   state.testTheory = payload;
-    //   state.testTech = [];
-    // },
-    // [techTest.fulfilled]: (state, { payload }) => {
-    //   state.testTech = payload;
-    //   state.testTheory = [];
-    // },
+
     [results.fulfilled]: (state, { payload }) => {
       state.results.correct = payload.correct;
       state.results.incorrect = payload.incorrect;
@@ -25,9 +18,6 @@ const testSlice = createSlice({
     [getTest.rejected]: (state, { payload }) => {
       state.currentTest = [];
     },
-    // [theoryTest.rejected]: (state, { payload }) => {
-    //   state.testTheory = [];
-    // },
   },
 });
 export const testReducer = testSlice.reducer;
