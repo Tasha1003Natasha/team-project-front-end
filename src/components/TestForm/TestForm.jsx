@@ -8,7 +8,7 @@ import TestCard from '../TestCard/TestCard';
 import Sprite from '../../images/icons/icons.svg';
 
 export const TestForm = () => {
-  const radioButton = document.getElementsByName('r1');
+  // const radioButton = document.getElementsByName('r1');
   // console.log(radioButton);
 
   // for (let i = 0; i < radioButton.length; i++) {
