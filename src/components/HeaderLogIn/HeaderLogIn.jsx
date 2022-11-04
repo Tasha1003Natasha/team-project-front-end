@@ -4,10 +4,10 @@ import { Link, NavLink } from 'react-router-dom';
 // import {ReactComponent as LogOut} from '../../images/icons/sign-out.svg';
 import { MdLogout } from 'react-icons/md';
 import { logOut } from '../../redux/auth/auth-operations';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch,  } from 'react-redux';
 import { useState } from 'react';
 import MenuOpenLogIn from '../MenuOpen/MenuOpenLogIn';
-import { getUser } from 'redux/auth/auth-selector';
+// import { getUser } from 'redux/auth/auth-selector';
 
 const HeaderLogIn = () => {
   const dispatch = useDispatch();
@@ -17,8 +17,8 @@ const HeaderLogIn = () => {
     document.body.classList.remove('noscroll');
   };
 
-  const userName = useSelector(getUser);
-  const avatarName = userName?.slice(0, 1).toLocaleUpperCase();
+  // const userName = useSelector(getUser);
+  // const avatarName = userName?.slice(0, 1).toLocaleUpperCase();
 
   const [openMenu, setOpenMenu] = useState(false);
   const [showHeader,setShowHeader]=useState(true)
@@ -42,7 +42,7 @@ const HeaderLogIn = () => {
                 </svg>
               </Link>
               <div className={styles.menu__container}>
-                <p className={styles.iconAvatar}>{avatarName || 'U'}</p>
+                {/* <p className={styles.iconAvatar}>{avatarName || 'U'}</p> */}
                 <button
                   className={styles.iconButton}
                   type="button"
@@ -71,27 +71,27 @@ const HeaderLogIn = () => {
               <div className={styles.menu__container}>
                 <ul className={styles.menu__container_list}>
                   <li className={styles.menu__container_list_item}>
-                    <NavLink
+                    <NavLink to="/"
                       className={`${styles.menu__container_list_item_text} ${styles.menu__container_list_item_current}`}
                     >
                       Home
                     </NavLink>
                   </li>
                   <li className={styles.menu__container_list_item}>
-                    <NavLink className={styles.menu__container_list_item_text}>
+                    <NavLink to="/useful-info" className={styles.menu__container_list_item_text}>
                       Materials
                     </NavLink>
                   </li>
                   <li className={styles.menu__container_list_item}>
-                    <NavLink className={styles.menu__container_list_item_text}>
+                    <NavLink to="/contacts" className={styles.menu__container_list_item_text}>
                       Contacts
                     </NavLink>
                   </li>
                 </ul>
                 <div className={styles.textAvatar}>
-                  <p className={styles.iconAvatar}>{avatarName || 'U'}</p>
+                  {/* <p className={styles.iconAvatar}>{avatarName || 'U'}</p> */}
                   <p className={styles.avatarName}>
-                    {userName || 'User Name'}
+                    {/* {userName || 'User Name'} */}
          
                   </p>
                 </div>
