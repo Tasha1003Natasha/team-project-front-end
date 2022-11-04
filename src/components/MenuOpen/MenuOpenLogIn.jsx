@@ -36,15 +36,22 @@ const handlerClose=()=>{
           <li className={styles.menu__container_list_item}>
             <NavLink onClick={handlerClose}
               to="/"
-              className={`${styles.menu__container_list_item_text} ${styles.menu__container_list_item_current}`}
-            >
+              className={({ isActive }) =>
+              isActive
+                ? `${styles.list_item_text} ${styles.list_item_current}`
+                : `${styles.list_item_text}`
+            }>
               Home
             </NavLink>
           </li>
           <li className={styles.menu__container_list_item}>
             <NavLink onClick={handlerClose}
               to="/useful-info"
-              className={`${styles.menu__container_list_item_text}`}
+              className={({ isActive }) =>
+                        isActive
+                          ? `${styles.list_item_text} ${styles.list_item_current}`
+                          : `${styles.list_item_text}`
+                      }
             >
               Materials
             </NavLink>
@@ -52,7 +59,11 @@ const handlerClose=()=>{
           <li className={styles.menu__container_list_item}>
             <NavLink onClick={handlerClose}
               to="/contacts"
-              className={`${styles.menu__container_list_item_text}`}
+              className={({ isActive }) =>
+                        isActive
+                          ? `${styles.list_item_text} ${styles.list_item_current}`
+                          : `${styles.list_item_text}`
+                      }
             >
               Contacts
             </NavLink>
