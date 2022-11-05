@@ -9,8 +9,10 @@ import { useState } from 'react';
 import MenuOpenLogIn from '../MenuOpen/MenuOpenLogIn';
 // import { getUser } from '../../redux/auth/auth-selector';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 const HeaderLogIn = () => {
+  const pathname = useLocation().pathname;
   const dispatch = useDispatch();
 
   const handlerLogOut = () => {
@@ -76,14 +78,14 @@ const HeaderLogIn = () => {
                 </Link>
                 <div className={styles.menu__container}>
                   <ul className={styles.menu__container_list}>
-                    <li className={styles.menu__container_list_item}>
+                    <li className={styles.list_item_text}>
                       <NavLink
                         to="/"
-                        className={({ isActive }) =>
-                          isActive
-                            ? `${styles.list_item_text} ${styles.list_item_current}`
-                            : `${styles.list_item_text}`
-                        }
+                        className={`${
+                          pathname === '/'
+                            ? styles.list_item_current
+                            : styles.list_item_text
+                        }`}
                       >
                         Home
                       </NavLink>
@@ -91,10 +93,15 @@ const HeaderLogIn = () => {
                     <li className={styles.menu__container_list_item}>
                       <NavLink
                         to="/useful-info"
+                        // className={({ isActive }) =>
+                        //   isActive
+                        //     ? `${styles.list_item_text} ${styles.list_item_current}`
+                        //     : `${styles.list_item_text}`
+                        // }
                         className={({ isActive }) =>
                           isActive
-                            ? `${styles.list_item_text} ${styles.list_item_current}`
-                            : `${styles.list_item_text}`
+                            ? styles.list_item_current
+                            : styles.list_item_text
                         }
                       >
                         Materials
@@ -103,10 +110,15 @@ const HeaderLogIn = () => {
                     <li className={styles.menu__container_list_item}>
                       <NavLink
                         to="/contacts"
+                        // className={({ isActive }) =>
+                        //   isActive
+                        //     ? `${styles.list_item_text} ${styles.list_item_current}`
+                        //     : `${styles.list_item_text}`
+                        // }
                         className={({ isActive }) =>
                           isActive
-                            ? `${styles.list_item_text} ${styles.list_item_current}`
-                            : `${styles.list_item_text}`
+                            ? styles.list_item_current
+                            : styles.list_item_text
                         }
                       >
                         Contacts

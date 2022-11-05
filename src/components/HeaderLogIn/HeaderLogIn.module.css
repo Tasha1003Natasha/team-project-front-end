@@ -19,15 +19,20 @@ p {
   padding: 0 20px;
 }
 
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 @media (min-width: 768px) {
   .container {
-    padding: 0 32px;
+    padding: 20px 30px;
   }
 }
 
 @media (min-width: 1280px) {
   .container {
-    padding: 0 16px;
+    padding: 20px 16px;
   }
 }
 
@@ -81,13 +86,11 @@ p {
 
 .menu__container_list_item {
   margin-right: 60px;
+  list-style: none;
 }
+
 .list_item_current {
   position: relative;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.02em;
   color: var(--main-text);
 }
 

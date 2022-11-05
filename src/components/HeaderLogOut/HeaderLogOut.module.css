@@ -11,6 +11,19 @@
   padding: 0 20px;
 }
 
+@media (min-width: 768px) {
+  .container {
+    padding: 20px 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding: 20px 16px;
+  }
+}
+
+
 .header__nav {
   display: flex;
   align-items: center;

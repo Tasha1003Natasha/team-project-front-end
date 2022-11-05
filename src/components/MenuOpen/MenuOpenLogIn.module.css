@@ -52,10 +52,10 @@
 }
 
 .list_item_text {
-  font-weight: 500;
+  /* font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.02em; */
   color: var(--main-text);
   border-bottom: 1px solid #e2e3e5;
   margin-top: 28px;
@@ -92,7 +92,6 @@
 /* /////////////////////////////// */
 .logoutIcon {
   transition: all 0.3s;
-  fill: currentcolor;
 }
 
 .userLine {
@@ -107,35 +106,33 @@
   align-items: center;
 }
 
+
 /* .nav__link {
   display: block;
-  /* padding-top: 32px;
-  padding-bottom: 32px; */
-  /* color: var(--main-text);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: var(--main-text);
   font-weight: 500;
-  font-size: 1px;
+  font-size: 14px;
   line-height: 1.33;
   list-style: none;
   text-decoration: none;
-  letter-spacing: 0.02em; */
-  /* transition: color 250ms $timing-function; */
-/* } */
+  letter-spacing: 0.02em;
+  /* transition: color 250ms $timing-function;  */
+/* }  */
 
 /* .nav__link:hover,
 .nav__link:focus {
   color: var(--main-text);
-}
-
-.nav__link__current {
-  color: var(--main-text);
-  position: relative;
-  display: block;
 } */
 
+/* .nav__link__current {
+  color: var(--main-text);
+  position: relative;
+}
 
-/* .nav__link__current ::after {
+.nav__link__current ::after {
   position: absolute;
-  border-radius: 2px;
   display: block;
   content: '';
   left: 0;
@@ -144,4 +141,4 @@
   height: 4px;
   display: block;
   background-color: var(--accent-color);
-}  */
+} */

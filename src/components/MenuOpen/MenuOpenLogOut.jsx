@@ -23,15 +23,17 @@ const MenuOpenLogOut = ({ setShowMenu, setShowHeader }) => {
 
               <div className={styles.container_close}>
                 <span className={styles.userLine}></span>
-                <button
-                  className={styles.iconButton}
-                  type="button"
-                  onClick={handlerClose}
-                >
-                  <svg className={styles.logoutIcon} width={26} height={26}>
-                    <use href={`${Sprite}#close`}></use>
-                  </svg>
-                </button>
+                <Link to="/">
+                  <button
+                    className={styles.iconButton}
+                    type="button"
+                    onClick={handlerClose}
+                  >
+                    <svg className={styles.logoutIcon} width={26} height={26}>
+                      <use href={`${Sprite}#close`}></use>
+                    </svg>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
