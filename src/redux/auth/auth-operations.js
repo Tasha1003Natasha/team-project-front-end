@@ -5,11 +5,11 @@ import { toast } from 'react-toastify';
 export const signUp = createAsyncThunk('auth/register', async user => {
   try {
     const { data } = await API.post('auth/register', user);
-    // if (data.status === 201) {
-    //   toast.message(
-    //     'Email is registraited, if you whant check yourself, login now'
-    //   );
-    // }
+    if (data) {
+      toast.success('HELLO, check yourself PUSH - SING IN', {
+        theme: 'colored',
+      });
+    }
     return data;
   } catch (error) {
     if (error.response.status === 409) {
