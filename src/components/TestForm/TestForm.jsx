@@ -49,7 +49,7 @@ export const TestForm = () => {
       setIndex(0);
     }
   };
-  console.log(answer.length);
+  // console.log(answer.length);
 
   return (
     <>
