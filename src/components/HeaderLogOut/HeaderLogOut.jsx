@@ -25,26 +25,25 @@ const HeaderLogOut = () => {
       {showHeader && (
         <header className={styles.header}>
           <div className={styles.mobileWrapper}>
-            <div className={styles.container}>
-              <div className={styles.header__nav}>
-                <Link to="/">
-                  <svg width={129} height={28}>
-                    <use href={`${Sprite}#logo-header`}></use>
+            <div className={styles.header__nav}>
+              <Link to="/">
+                <svg width={129} height={28}>
+                  <use href={`${Sprite}#logo-header`}></use>
+                </svg>
+              </Link>
+
+              <div className={styles.menu__container}>
+                <span className={styles.userLine}></span>
+                <button
+                  className={styles.iconButton}
+                  type="button"
+                  onClick={handlerOpen}
+                >
+                  {/* <span className={styles.line}></span> */}
+                  <svg className={styles.logoutIcon} width={20} height={20}>
+                    <use href={`${Sprite}#burger-menu`}></use>
                   </svg>
-                </Link>
-                <div className={styles.menu__container}>
-                  <span className={styles.userLine}></span>
-                  <button
-                    className={styles.iconButton}
-                    type="button"
-                    onClick={handlerOpen}
-                  >
-                    {/* <span className={styles.line}></span> */}
-                    <svg className={styles.logoutIcon} width={20} height={20}>
-                      <use href={`${Sprite}#burger-menu`}></use>
-                    </svg>
-                  </button>
-                </div>
+                </button>
               </div>
             </div>
           </div>

@@ -8,33 +8,28 @@ p {
 }
 
 .header {
-  /* padding-top: 20px;
-  padding-bottom: 20px; */
+  margin: 0 auto;
+  padding: 0 20px;
   background-color: #f5f6fb;
   border-bottom: 1px solid #e2e3e5;
 }
 
-.container {
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.container {
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 @media (min-width: 768px) {
-  .container {
-    padding: 20px 30px;
+  .header {
+    padding: 0 30px;
   }
 }
 
 @media (min-width: 1280px) {
-  .container {
+  .header {
     padding: 20px 16px;
   }
 }
+
+/* .container {
+  margin: 0 auto;
+  padding: 0 20px;
+} */
 
 .header__nav {
   display: flex;
@@ -45,6 +40,7 @@ p {
   margin-left: auto;
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .iconAvatar {
@@ -79,15 +75,38 @@ p {
   height: 30px;
 }
 
+@media (min-width: 768px) {
+  .avatarName {
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .avatarName {
+    margin-left: 80px;
+  }
+}
+
 .menu__container_list {
   display: flex;
   align-items: center;
 }
 
-.menu__container_list_item {
+@media (min-width: 768px) {
+  .menu__container_list {
+    align-items: baseline;
+  }
+}
+
+/* .menu__container_list_item {
   margin-right: 60px;
   list-style: none;
-}
+} */
+
+/* .menu__container_list_item:not(:first-child) {
+  margin-right: 60px;
+  list-style: none;
+} */
 
 .list_item_current {
   position: relative;
@@ -112,6 +131,19 @@ p {
   letter-spacing: 0.02em;
 
   color: var(--main-text);
+}
+
+@media (min-width: 768px) {
+  .list_item_text:not(:last-child) {
+    margin-right: 60px;
+    list-style: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .list_item_text:not(:last-child) {
+    margin-right: 80px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -210,9 +242,22 @@ p {
   color: var(--secondary-text);
 }
 
+@media (min-width: 1280px) {
+  .userName {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
 .userLine {
   border-right: 1px solid var(--border-line);
   /* padding-right: 20px; */
   height: 68px;
   margin-right: 20px;
+}
+
+@media (min-width: 1280px) {
+  .userLine {
+    display: none;
+  }
 }

@@ -27,14 +27,12 @@
   background-color: var(--main-color);
   z-index: 10;
 }
+
 @media (min-width: 768px) {
   .menu__container {
     display: none;
   }
 }
-/* .menu__container_list {
-      width: 100%;
-  } */
 
 .menu__container_list_item {
   padding: 28px 0;

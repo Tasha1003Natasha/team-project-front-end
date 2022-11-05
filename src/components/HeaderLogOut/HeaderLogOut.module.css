@@ -1,12 +1,4 @@
-.header {
-  /* padding-top: 20px;
-  padding-bottom: 20px; */
-
-  background-color: #f5f6fb;
-  border-bottom: 1px solid #e2e3e5;
-}
-
-.container {
+/* .container {
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -21,8 +13,26 @@
   .container {
     padding: 20px 16px;
   }
+} */
+
+.header {
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: #f5f6fb;
+  border-bottom: 1px solid #e2e3e5;
 }
 
+@media (min-width: 768px) {
+  .header {
+    padding: 20px 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header {
+    padding: 20px 16px;
+  }
+}
 
 .header__nav {
   display: flex;
