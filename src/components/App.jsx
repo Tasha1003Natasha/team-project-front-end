@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router';
+import { Route, Routes, useNavigate } from 'react-router';
 import Layout from './Layout/Layout';
 // import AuthPage from '../Pages/AuthPage/AuthPage';
 // import MainPage from '../Pages/MainPage/MainPage';
@@ -8,18 +8,19 @@ import Layout from './Layout/Layout';
 // import ResultsPage from '../Pages/ResultsPage/Results';
 // import TestPage from '../Pages/TestPage/TestPage';
 
-import { lazy, Suspense } from 'react';
 import { Loader } from 'components/Loader/Loader';
+import { lazy, Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { PublicRoute } from './PublicRoute/PublicRoute';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import { PublicRoute } from './PublicRoute/PublicRoute';
 
 // import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { userCurrent } from '../redux/auth/auth-operations';
+import { useSearchParams } from 'react-router-dom';
+import { updateToken, userCurrent } from '../redux/auth/auth-operations';
 // import { getToken } from '../redux/auth/auth-selector';
 
 const AuthPageLazy = lazy(() => import('Pages/AuthPage/AuthPage'));
@@ -33,10 +34,24 @@ const TestPageLazy = lazy(() => import('Pages/TestPage/TestPage'));
 export const App = () => {
   const dispatch = useDispatch();
   // const token = useSelector(getToken);
+  const [searchParams] = useSearchParams();
+
+  const navigate = useNavigate();
+
+
 
   useEffect(() => {
+    const accessToken = searchParams.get('token');
+
+
+    if (accessToken) {
+      dispatch(updateToken(accessToken));
+      navigate("/")
+    };
+
     dispatch(userCurrent());
-  }, [dispatch]);
+
+  }, [searchParams, dispatch, navigate]);
 
   return (
     <>
