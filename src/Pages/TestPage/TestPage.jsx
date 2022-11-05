@@ -18,7 +18,7 @@ const TestPage = () => {
     setTimeout(() => {
       const typeCurrent = String(testCurrent[0].type);
       setType(typeCurrent);
-    }, 500);
+    }, 10);
   });
   const token = useSelector(getToken);
   console.log(type);
@@ -27,7 +27,6 @@ const TestPage = () => {
     const test = [];
     dispatch(getTest(test));
   };
-
 
   return (
     <>
