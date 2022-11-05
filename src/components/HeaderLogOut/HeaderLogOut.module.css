@@ -116,3 +116,18 @@
     display: none;
   }
 }
+
+.iconButton {
+  position: relative;
+ }
+
+ .iconButton::before {
+  content: '';
+  position:absolute;
+  width: 1px;
+  height: 68px;
+  top: -24px;
+  left: -20px;
+  transform: rotate(180deg);
+  background-color: #E2E3E5;
+ }

@@ -79,7 +79,19 @@
 
   .iconButton {
       margin-left: auto;
+      position: relative;
   }
+
+  .iconButton::before {
+    content: '';
+    position:absolute;
+    width: 1px;
+    height: 68px;
+    top: -20px;
+    left: -20px;
+    transform: rotate(180deg);
+    background-color: #E2E3E5;
+   }
 
   .iconButtonLogOut {
       margin-top: 18px;

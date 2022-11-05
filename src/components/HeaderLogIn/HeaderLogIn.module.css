@@ -151,9 +151,25 @@ color: var(--main-text);
   }
 }
 
+
+
 .iconButton {
-    margin-left: 20px;
-}
+  margin-left: 20px;
+  position: relative;
+ }
+
+ .iconButton::before {
+  content: '';
+  position:absolute;
+  width: 1px;
+  height: 68px;
+  top: -26px;
+  left: -20px;
+  transform: rotate(180deg);
+  background-color: #E2E3E5;
+ }
+
+
 
 .menu {
   width: 100vw;

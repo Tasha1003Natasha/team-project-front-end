@@ -31,7 +31,7 @@ const HeaderLogOut = () => {
             <div className={styles.menu__container}>
               <button className={styles.iconButton} type="button" onClick={handlerOpen}>
                 {/* <span className={styles.line}></span> */}
-                <svg className={styles.logoutIcon} width={16} height={16}>
+                <svg className={styles.logoutIcon} width={20} height={20}>
                   <use href={`${Sprite}#burger-menu`}></use>
                 </svg>
               </button>
