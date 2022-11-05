@@ -26,6 +26,12 @@
   z-index: 10;
 }
 
+@media (min-width: 768px) {
+  .menu__container {
+    display: none;
+  }
+}
+
 .menu__container_list {
   font-size: 14px;
   line-height: 1.14;
@@ -105,7 +111,6 @@
   display: flex;
   align-items: center;
 }
-
 
 /* .nav__link {
   display: block;

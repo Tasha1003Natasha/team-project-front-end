@@ -84,7 +84,7 @@ const AuthForm = () => {
                       <a
                         className={s.googleIcon}
                         // href="https://www.google.com/"
-                        href={`${BASE_URL}/auth/google`}
+                        href={`${BASE_URL}`}
                       >
                         <GoogleIcon />
                         Google

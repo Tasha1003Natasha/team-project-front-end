@@ -44,26 +44,24 @@ const HeaderLogIn = () => {
       {showHeader && (
         <header className={styles.header}>
           <div className={styles.mobileWrapper}>
-            <div className={styles.container}>
-              <div className={styles.header__nav}>
-                <Link to="/">
-                  <svg width={129} height={28}>
-                    <use href={`${Sprite}#logo-header`}></use>
+            <div className={styles.header__nav}>
+              <Link to="/">
+                <svg width={129} height={28}>
+                  <use href={`${Sprite}#logo-header`}></use>
+                </svg>
+              </Link>
+              <div className={styles.menu__container}>
+                <p className={styles.avatarName}>{avatarName || 'U'}</p>
+                <span className={styles.userLine}></span>
+                <button
+                  className={styles.iconButton}
+                  type="button"
+                  onClick={openModal}
+                >
+                  <svg className={styles.logoutIcon} width={20} height={20}>
+                    <use href={`${Sprite}#burger-menu`}></use>
                   </svg>
-                </Link>
-                <div className={styles.menu__container}>
-                  <p className={styles.avatarName}>{avatarName || 'U'}</p>
-                  <span className={styles.userLine}></span>
-                  <button
-                    className={styles.iconButton}
-                    type="button"
-                    onClick={openModal}
-                  >
-                    <svg className={styles.logoutIcon} width={20} height={20}>
-                      <use href={`${Sprite}#burger-menu`}></use>
-                    </svg>
-                  </button>
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -90,7 +88,7 @@ const HeaderLogIn = () => {
                         Home
                       </NavLink>
                     </li>
-                    <li className={styles.menu__container_list_item}>
+                    <li className={styles.list_item_text}>
                       <NavLink
                         to="/useful-info"
                         // className={({ isActive }) =>
@@ -107,7 +105,7 @@ const HeaderLogIn = () => {
                         Materials
                       </NavLink>
                     </li>
-                    <li className={styles.menu__container_list_item}>
+                    <li className={styles.list_item_text}>
                       <NavLink
                         to="/contacts"
                         // className={({ isActive }) =>
@@ -127,10 +125,9 @@ const HeaderLogIn = () => {
                   </ul>
 
                   <p className={styles.avatarName}>{avatarName || 'U'}</p>
-                  <p className={styles.userName}>
-                    {userName || 'User Name'}{' '}
-                    <span className={styles.userLine}></span>
-                  </p>
+
+                  <p className={styles.userName}>{userName || 'User Name'}</p>
+                  <span className={styles.userLine}></span>
 
                   {/* <button
                     className={styles.iconButton}
