@@ -2,12 +2,13 @@ import Sprite from '../../images/icons/icons.svg';
 import styles from './HeaderLogIn.module.css';
 import { Link, NavLink } from 'react-router-dom';
 // import {ReactComponent as LogOut} from '../../images/icons/sign-out.svg';
-import { MdLogout } from 'react-icons/md';
+// import { MdLogout } from 'react-icons/md';
 import { logOut } from '../../redux/auth/auth-operations';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import MenuOpenLogIn from '../MenuOpen/MenuOpenLogIn';
 // import { getUser } from '../../redux/auth/auth-selector';
+import { useSelector } from 'react-redux';
 
 const HeaderLogIn = () => {
   const dispatch = useDispatch();
@@ -17,8 +18,8 @@ const HeaderLogIn = () => {
     document.body.classList.remove('noscroll');
   };
 
-  // const userName = useSelector(getUser);
-  // const avatarName = userName?.slice(0, 1).toLocaleUpperCase();
+  const userName = useSelector(state => state.auth?.user?.email);
+  const avatarName = userName?.slice(0, 1).toLocaleUpperCase();
 
   const [openMenu, setOpenMenu] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
@@ -49,13 +50,14 @@ const HeaderLogIn = () => {
                   </svg>
                 </Link>
                 <div className={styles.menu__container}>
-                  {/* <p className={styles.iconAvatar}>{avatarName || 'U'}</p> */}
+                  <p className={styles.avatarName}>{avatarName || 'U'}</p>
+                  <span className={styles.userLine}></span>
                   <button
                     className={styles.iconButton}
                     type="button"
                     onClick={openModal}
                   >
-                    <svg className={styles.logoutIcon} width={16} height={16}>
+                    <svg className={styles.logoutIcon} width={20} height={20}>
                       <use href={`${Sprite}#burger-menu`}></use>
                     </svg>
                   </button>
@@ -111,19 +113,29 @@ const HeaderLogIn = () => {
                       </NavLink>
                     </li>
                   </ul>
-                  <div className={styles.textAvatar}>
-                    {/* <p className={styles.iconAvatar}>{avatarName || 'U'}</p> */}
-                    <p className={styles.avatarName}>
-                      {/* {userName || 'User Name'} */}
-                    </p>
-                  </div>
+
+                  <p className={styles.avatarName}>{avatarName || 'U'}</p>
+                  <p className={styles.userName}>
+                    {userName || 'User Name'}{' '}
+                    <span className={styles.userLine}></span>
+                  </p>
+
+                  {/* <button
+                    className={styles.iconButton}
+                    type="button"
+                    onClick={handlerLogOut}
+                  >
+                     <MdLogout className={styles.logoutIcon} /> 
+                 </button>  */}
 
                   <button
                     className={styles.iconButton}
                     type="button"
                     onClick={handlerLogOut}
                   >
-                    <MdLogout className={styles.logoutIcon} />
+                    <svg className={styles.logoutIcon} width={16} height={16}>
+                      <use href={`${Sprite}#sign-out`}></use>
+                    </svg>
                   </button>
                 </div>
               </div>
