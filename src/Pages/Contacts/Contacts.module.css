@@ -1,4 +1,4 @@
-.section{
+/* .section{
     padding-top: 42px;
     padding-bottom: 80px;
 }
@@ -8,79 +8,75 @@
         padding-top: 42px;
         padding-bottom: 60px;   
     }
-}
+} */
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-    @media (min-width: 768px) {
-   .container {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 32px;
-  }
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
 @media (min-width: 768px) {
-    .container {    
-     padding: 0 16px;
-   }
- }
+  .container {
+    padding: 40 0px;
+  }
+}
 
-.title{      
-    font-style: normal;
+/* @media (min-width: 1280px) {
+  .container {
+    padding: 0 40px;
+  }
+} */
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22;
+
+  text-align: center;
+
+  color: var(--main-text);
+}
+
+@media (min-width: 768px) {
+  .title {
     font-weight: 700;
-    font-size: 18px;
-    line-height: 1.22;   
-
-    text-align: center;    
-
-    color: var(--main-text);
+    font-size: 22px;
+    line-height: 1.23;
+  }
 }
 
-@media (min-width: 768px){
-    .title{
-        font-weight: 700;
-        font-size: 22px;
-        line-height: 1.23;
-    }
+.line {
+  margin-top: 14px;
+  margin-bottom: 20px;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  width: 130px;
+
+  opacity: 0.15;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.line{
-    margin-top: 14px;
-    margin-bottom: 20px;
-
-    margin-right: auto;
-    margin-left: auto;
-    
-    width: 130px;
-
-    opacity: 0.15;    
-    border-bottom: 1px solid var(--border-color);
-   
+@media (min-width: 768px) {
+  .line {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 322px;
+  }
 }
 
-@media (min-width: 768px){
-    .line{
-        margin-top: 20px;
-        margin-bottom: 40px; 
-        width: 322px;
-    }
+.card__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
 }
-
-.card__wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    justify-content: center;
-    gap: 20px;
-    
-}
-@media (min-width: 768px){
-    .card__wrapper{        
-        gap: 30px;
-    }
+@media (min-width: 768px) {
+  .card__wrapper {
+    gap: 30px;
+  }
 }

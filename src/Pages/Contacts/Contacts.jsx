@@ -5,8 +5,7 @@ import team from './teams.json';
 const Contacts = () => {
   return (
     <main>
-      <section className={styles.section}>
-        <div className={styles.container}>
+      <section className={styles.container}>
           <h1 className={styles.title}>Our team</h1>
           <p className={styles.line}></p>
 
@@ -24,7 +23,6 @@ const Contacts = () => {
               );
             })}
           </ul>
-        </div>
       </section>
     </main>
   );
