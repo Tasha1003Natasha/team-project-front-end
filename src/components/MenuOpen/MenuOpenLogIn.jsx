@@ -1,14 +1,16 @@
 import Sprite from '../../images/icons/icons.svg';
 import styles from './MenuOpenLogIn.module.css';
 import { Link, NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-const MenuOpenLogIn = ({setOpenMenu,setShowHeader,handlerLogOut}) => {
+const MenuOpenLogIn = ({ setOpenMenu, setShowHeader, handlerLogOut }) => {
+  const pathname = useLocation().pathname;
 
-const handlerClose=()=>{
-  setOpenMenu(false)
-  setShowHeader(true)
-  document.body.classList.remove('noscroll');
-}
+  const handlerClose = () => {
+    setOpenMenu(false);
+    setShowHeader(true);
+    document.body.classList.remove('noscroll');
+  };
 
   return (
     <>
@@ -22,55 +24,72 @@ const handlerClose=()=>{
                 </svg>
               </Link>
 
-              <button className={styles.iconButton} type="button" onClick={handlerClose}>
-                <svg className={styles.logoutIcon} width={26} height={26}>
-                  <use href={`${Sprite}#close`}></use>
-                </svg>
-              </button>
+              <div className={styles.container_close}>
+                <span className={styles.userLine}></span>
+
+                <button
+                  className={styles.iconButton}
+                  type="button"
+                  onClick={handlerClose}
+                >
+                  <Link to="/">
+                    <svg className={styles.logoutIcon} width={26} height={26}>
+                      <use href={`${Sprite}#close`}></use>
+                    </svg>
+                  </Link>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </header>
+
       <div className={styles.menu__container}>
         <ul className={styles.menu__container_list}>
-          <li className={styles.menu__container_list_item}>
-            <NavLink onClick={handlerClose}
+          <li
+            // className={`${styles.list_item_text} ${styles.list_item_current}`}
+            className={styles.list_item_text}
+          >
+            <NavLink
+              onClick={handlerClose}
               to="/"
-              className={({ isActive }) =>
-              isActive
-                ? `${styles.list_item_text} ${styles.list_item_current}`
-                : `${styles.list_item_text}`
-            }>
+              className={`${
+                pathname === '/'
+                  ? styles.list_item_current
+                  : styles.list_item_text
+              }`}
+            >
               Home
             </NavLink>
           </li>
-          <li className={styles.menu__container_list_item}>
-            <NavLink onClick={handlerClose}
+          <li className={styles.list_item_text}>
+            <NavLink
+              onClick={handlerClose}
               to="/useful-info"
               className={({ isActive }) =>
-                        isActive
-                          ? `${styles.list_item_text} ${styles.list_item_current}`
-                          : `${styles.list_item_text}`
-                      }
+                isActive ? styles.list_item_current : styles.list_item_text
+              }
             >
               Materials
             </NavLink>
           </li>
-          <li className={styles.menu__container_list_item}>
-            <NavLink onClick={handlerClose}
+          <li className={styles.list_item_text}>
+            <NavLink
+              onClick={handlerClose}
               to="/contacts"
               className={({ isActive }) =>
-                        isActive
-                          ? `${styles.list_item_text} ${styles.list_item_current}`
-                          : `${styles.list_item_text}`
-                      }
+                isActive ? styles.list_item_current : styles.list_item_text
+              }
             >
               Contacts
             </NavLink>
           </li>
         </ul>
-        <button className={styles.iconButtonLogOut} type="button" onClick={handlerLogOut}>
-          {/* <span className={styles.line}></span> */}
+        <button
+          className={styles.iconButtonLogOut}
+          type="button"
+          onClick={handlerLogOut}
+        >
           <svg className={styles.logoutIcon} width={16} height={16}>
             <use href={`${Sprite}#sign-out`}></use>
           </svg>

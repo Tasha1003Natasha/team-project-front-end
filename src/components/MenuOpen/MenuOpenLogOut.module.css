@@ -1,6 +1,6 @@
 .header {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
 
   background-color: #f5f6fb;
   border-bottom: 1px solid #e2e3e5;
@@ -70,6 +70,9 @@
 
 .iconButton {
   margin-left: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -110,4 +113,22 @@
 
 .menu__list_item_text {
   color: var(--main-text);
+}
+
+/* /////////////////////////////// */
+.logoutIcon {
+  transition: all 0.3s;
+  fill: currentcolor;
+}
+
+.userLine {
+  border-right: 1px solid var(--border-line);
+  height: 68px;
+  margin-right: 20px;
+}
+
+.container_close {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
