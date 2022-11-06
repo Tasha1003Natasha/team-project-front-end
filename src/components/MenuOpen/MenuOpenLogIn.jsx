@@ -80,6 +80,7 @@ const MenuOpenLogIn = ({ setOpenMenu, setShowHeader, handlerLogOut }) => {
               className={({ isActive }) =>
                 isActive ? styles.list_item_current : styles.list_item_text
               }
+
             >
               Contacts
             </NavLink>
