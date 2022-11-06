@@ -67,10 +67,24 @@ Link {
 }
 button:disabled {
   background-color: grey;
-}
-button:disabled:hover {
-  background-color: gray;
   color: #000000;
+}
+/* button:disabled:hover {
+  background-color: gray;
+} */
+.btnFinish {
+  font-family: 'Montserrat Medium';
+  font-size: 10px;
+  line-height: 12px;
+  align-items: center;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  color: white;
+  width: 55px;
+  height: 34px;
+  background-color: var(--accent-color);
 }
 
 @media (min-width: 768px) {
@@ -93,6 +107,12 @@ button:disabled:hover {
     text-transform: none;
     font-size: 14px;
     line-height: 17px;
+  }
+  .btnFinish {
+    font-family: 'Montserrat Medium';
+    font-size: 12px;
+    line-height: 14px;
+    width: 210px;
   }
 }
 
