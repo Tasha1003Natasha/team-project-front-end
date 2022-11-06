@@ -7,7 +7,7 @@ import { logOut } from '../../redux/auth/auth-operations';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import MenuOpenLogIn from '../MenuOpen/MenuOpenLogIn';
-// import { getUser } from '../../redux/auth/auth-selector';
+import { getUser } from '../../redux/auth/auth-selector';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -20,7 +20,8 @@ const HeaderLogIn = () => {
     document.body.classList.remove('noscroll');
   };
 
-  const userName = useSelector(state => state.auth?.user?.email);
+  const userName = useSelector(getUser);
+  console.log(userName);
   const avatarName = userName?.slice(0, 1).toLocaleUpperCase();
 
   const [openMenu, setOpenMenu] = useState(false);
