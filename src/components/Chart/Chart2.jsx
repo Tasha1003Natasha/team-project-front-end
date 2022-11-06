@@ -111,22 +111,20 @@ const Chart2 = () => {
   const COLORS = ['#FF6B09', '#555555'];
 
   return (
-    <div>
-      <PieChart width={400} height={400}>
-        <Pie
-          activeIndex={activeIndex}
-          activeShape={renderActiveShape}
-          data={data}
-          cx={200}
-          cy={200}
-          innerRadius={60}
-          outerRadius={80}
-          fill={COLORS[COLORS.length]}
-          dataKey="value"
-          onMouseEnter={onPieEnter}
-        />
-      </PieChart>
-    </div>
+    <PieChart width={400} height={400}>
+      <Pie
+        activeIndex={activeIndex}
+        activeShape={renderActiveShape}
+        data={data}
+        cx={200}
+        cy={200}
+        innerRadius={60}
+        outerRadius={80}
+        fill={COLORS[COLORS.length]}
+        dataKey="value"
+        onMouseEnter={onPieEnter}
+      />
+    </PieChart>
   );
 };
 
