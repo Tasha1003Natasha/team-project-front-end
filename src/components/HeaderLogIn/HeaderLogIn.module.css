@@ -177,6 +177,11 @@ p {
   }
 }
 
+.containerAvatar {
+  display: flex;
+  align-items: center;
+}
+
 .iconButton {
   border: none;
   background-color: transparent;

@@ -123,10 +123,12 @@ const HeaderLogIn = () => {
                       </NavLink>
                     </li>
                   </ul>
+                  <div className={styles.containerAvatar}>
+                    <p className={styles.avatarName}>{avatarName || 'U'}</p>
 
-                  <p className={styles.avatarName}>{avatarName || 'U'}</p>
+                    <p className={styles.userName}>{userName || 'User Name'}</p>
+                  </div>
 
-                  <p className={styles.userName}>{userName || 'User Name'}</p>
                   <span className={styles.userLine}></span>
 
                   {/* <button
