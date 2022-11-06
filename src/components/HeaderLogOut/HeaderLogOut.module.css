@@ -18,8 +18,8 @@
 .header {
   margin: 0 auto;
   padding: 0 20px;
-  background-color: #f5f6fb;
-  border-bottom: 1px solid #e2e3e5;
+  background-color: var(--main-color);
+  border-bottom: 1px solid var(--border-line);
 }
 
 @media (min-width: 768px) {
@@ -106,7 +106,7 @@
 
 .line {
   height: 25px;
-  border-right: 1px solid #e2e3e5;
+  border-right: 1px solid var(--border-line);
   margin-right: 20px;
 }
 

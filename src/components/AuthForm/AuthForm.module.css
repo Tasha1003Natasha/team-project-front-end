@@ -113,8 +113,8 @@
 .inputForm {
   width: 200px;
   padding: 20px;
-  background: #ffffff;
-  border: 1px solid #ced2d1;
+  background: var(--form-color);
+  border: 1px solid var(--border-input);
 }
 .inputForm > placeholder {
   font-family: 'Montserrat Medium';
@@ -123,7 +123,7 @@
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.02em;
-  color: #bbbbbb;
+  color: var(--form-color);
 }
 .btnsWrapper {
   margin-top: 20px;
@@ -144,15 +144,16 @@
   line-height: 1.2;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  border: 1px solid #ced2d1;
+  border: 1px solid var(--border-input);
   box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
   background-color: var(--form-color);
+  color: var(--main-text);
   cursor: pointer;
 }
 .formButton:hover {
   border: none;
-  color: #ffffff;
-  background: #ff6b09;
+  color: var(--form-color);
+  background: var(--accent-color);
   transition: 0.3s;
 }
 
@@ -199,6 +200,7 @@
   .formButton {
     width: 210px;
     font-size: 12px;
+    color: var(--main-text);
   }
   .btnsWrapper {
     margin-top: 40px;

@@ -39,10 +39,10 @@
   align-items: center;
   text-align: center;
   letter-spacing: 0.02em;
-  color: #ffffff;
+  color: var(--form-color);
   width: 130px;
   height: 48px;
-  background-color: #ff6b09;
+  background-color: var(--accent-color);
 }
 
 @media (min-width: 768px) {

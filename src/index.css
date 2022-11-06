@@ -13,8 +13,10 @@
   --main-text: #000000;
   --secondary-text: #555555;
   --footer-text: rgba(255, 255, 255, 0.4);
-  --avatar-bg: #ffffff;
   --border-line: #e2e3e5;
+  --input-form: #bbbbbb;
+  --border-input: #ced2d1;
+  --back-color: #f9fafc;
 }
 
 body {
