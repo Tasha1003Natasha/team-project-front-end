@@ -35,10 +35,10 @@ const Results = () => {
 
               <ul className={s.answerList}>
                 <li className={s.answerCorrect}>
-                  Correct answers -<span>{correct}</span>
+                  Correct answers -<span> {correct}</span>
                 </li>
                 <li className={s.answerTotal}>
-                  Total questions -<span>12</span>
+                  Total questions -<span> 12</span>
                 </li>
               </ul>
             </div>
