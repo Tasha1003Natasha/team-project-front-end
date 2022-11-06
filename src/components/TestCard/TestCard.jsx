@@ -9,8 +9,6 @@ const TestCard = ({ index = 0, unDisableBtn, test }) => {
   const [answer, setAnswer] = useState([]);
   let currentIndex = Number(index);
 
-  // const currentTest = useSelector(getCurrentTest);
-
   const [selectedValue, setSelectedValue] = useState('');
 
   const handleChange = event => {
@@ -26,7 +24,6 @@ const TestCard = ({ index = 0, unDisableBtn, test }) => {
     );
 
     if (checked) {
-      //   setSelectedValue('');
       const index = answer.indexOf(checked);
       answer.splice(index, 1);
     }
@@ -34,7 +31,6 @@ const TestCard = ({ index = 0, unDisableBtn, test }) => {
     setAnswer([...answer, userAnswer]);
     unDisableBtn();
   };
-  //   console.log(document.getElementsByName('next'));
 
   localStorage.setItem('userAnswers', JSON.stringify(answer));
 
@@ -70,7 +66,6 @@ const TestCard = ({ index = 0, unDisableBtn, test }) => {
                         color: orange[800],
                       },
                     }}
-                    // inputProps={{ 'aria-label': 'A' }}
                   />
                   {answer}
                 </li>

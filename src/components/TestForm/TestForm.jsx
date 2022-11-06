@@ -66,7 +66,7 @@ export const TestForm = ({ testCurrent }) => {
           className={style.btnQuestions}
           type="button"
           name="back"
-          disabled={!Boolean(answer.length)}
+          disabled={!Boolean(answer?.length)}
           onClick={currentQuestionIndexBack}
         >
           <svg className={style.arrowBack} width={24} height={16}>
@@ -81,7 +81,6 @@ export const TestForm = ({ testCurrent }) => {
             id="next"
             onClick={currentQuestionIndexNext}
             disabled={isDisable}
-            // disabled={}
           >
             {screenWidth >= 768 && <span>Next question</span>}
             <svg className={style.arrowNext} width={24} height={16}>
@@ -91,12 +90,12 @@ export const TestForm = ({ testCurrent }) => {
         ) : (
           <Link to="/results">
             <button
-              className={style.btnQuestions}
+              className={style.btnFinish}
               name="finish"
               onClick={getResultsFunc}
               disabled={isDisable}
             >
-              <span>Finish test</span>
+              Finish test
             </button>
           </Link>
         )}

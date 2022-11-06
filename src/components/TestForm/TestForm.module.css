@@ -66,11 +66,7 @@ Link {
   color: var(--accent-color);
 }
 button:disabled {
-  background-color: var(--secondary-text);
-}
-button:disabled:hover {
-  background-color: var(--secondary-text);
-  color: var(--main-text);
+
 }
 
 @media (min-width: 768px) {
@@ -93,6 +89,12 @@ button:disabled:hover {
     text-transform: none;
     font-size: 14px;
     line-height: 17px;
+  }
+  .btnFinish {
+    font-family: 'Montserrat Medium';
+    font-size: 12px;
+    line-height: 14px;
+    width: 210px;
   }
 }
 
