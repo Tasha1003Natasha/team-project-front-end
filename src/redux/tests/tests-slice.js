@@ -15,6 +15,10 @@ const testSlice = createSlice({
       state.results.correct = payload.correct;
       state.results.incorrect = payload.incorrect;
     },
+    [results.rejected]: (state, { payload }) => {
+      state.results.correct = 0;
+      state.results.incorrect = 0;
+    },
     [getTest.rejected]: (state, { payload }) => {
       state.currentTest = [];
     },
