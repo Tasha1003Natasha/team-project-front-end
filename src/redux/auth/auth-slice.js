@@ -69,7 +69,7 @@ const authSlice = createSlice({
       state.isLogin = true;
       state.token = payload.token;
       state.user.email = payload.user.email;
-      // state.user = payload;
+      state.user = payload;
     },
     [userCurrent.rejected]: (state, { payload }) => {
       state.loading = false;
