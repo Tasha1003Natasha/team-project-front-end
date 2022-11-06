@@ -1,7 +1,6 @@
 import Sprite from '../../images/icons/icons.svg';
 import styles from './HeaderLogIn.module.css';
 import { Link, NavLink } from 'react-router-dom';
-// import {ReactComponent as LogOut} from '../../images/icons/sign-out.svg';
 import { MdLogout } from 'react-icons/md';
 import { logOut } from '../../redux/auth/auth-operations';
 import { useDispatch } from 'react-redux';
