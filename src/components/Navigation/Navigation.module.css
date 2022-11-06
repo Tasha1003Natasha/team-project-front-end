@@ -3,8 +3,8 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
-  background-color: #F5F6FB;
-  border-bottom: 1px solid #E2E3E5;
+  background-color: var(--main-color);
+  border-bottom: 1px solid var(--border-line);
 }
 
 .container {
@@ -44,24 +44,23 @@
 }
 
 .menu__container_list_item_current::after {
-    content: " ";
-    width: 100%;
-    height: 1px;
-    background-color: var(--accent-color);
-    display: block;
-} 
+  content: ' ';
+  width: 100%;
+  height: 1px;
+  background-color: var(--accent-color);
+  display: block;
+}
 
 .menu__container_list_item_text {
-    color: var(--main-text);
-    /* font-family: 'Montserrat Medium'; */
+  color: var(--main-text);
+  /* font-family: 'Montserrat Medium'; */
 }
 
 .line {
-    height: 20px;
-    border-right: 1px solid #E2E3E5;
+  height: 20px;
+  border-right: 1px solid var(--border-line);
 }
 
 .button_logo_sign_out {
-
-    margin-left: 27px;
+  margin-left: 27px;
 }

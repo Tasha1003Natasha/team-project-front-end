@@ -9,7 +9,7 @@
   text-align: center;
   letter-spacing: 0.02em;
 
-  color: #000000;
+  color: var(--main-text);
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -18,7 +18,7 @@
   width: 130px;
   height: 1px;
   opacity: 0.15;
-  color: #00122f;
+  color: var(--border-color);
 }
 .answersList {
   margin-top: 22px;
@@ -37,7 +37,7 @@
   line-height: 12px;
   letter-spacing: 0.02em;
 
-  color: #000000;
+  color: var(--main-text);
 }
 
 .radio {

@@ -5,7 +5,7 @@
 
   letter-spacing: 0.04em;
 
-  color: #000000;
+  color: var(--main-text);
 
   margin-bottom: 12px;
 }

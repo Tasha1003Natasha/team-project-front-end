@@ -5,7 +5,7 @@
   align-items: center;
   width: 280px;
   /* height: 456px; */
-  background: #ffffff;
+  background: var(--form-color);
 
   box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
   padding-top: 40px;
@@ -16,24 +16,24 @@
   align-items: center;
   letter-spacing: 0.02em;
 
-  color: #000000;
+  color: var(--main-text);
   width: 55px;
   height: 34px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #ffffff;
+  background-color: var(--form-color);
 }
 .btnQuestions:hover,
 .btnQuestions:focus {
   background-color: var(--accent-color);
-  color: white;
-  fill: white;
+  color: var(--form-color);
+  fill: var(--form-color);
 }
 
 Link {
   text-decoration: none;
   cursor: none;
-  color: black;
+  color: var(--main-text);
 }
 .testFooter {
   display: inline-flex;
@@ -59,18 +59,18 @@ Link {
 
   letter-spacing: 0.02em;
 
-  color: #555555;
+  color: var(--secondary-color);
 }
 
 .active {
   color: var(--accent-color);
 }
 button:disabled {
-  background-color: grey;
+  background-color: var(--secondary-text);
 }
 button:disabled:hover {
-  background-color: gray;
-  color: #000000;
+  background-color: var(--secondary-text);
+  color: var(--main-text);
 }
 
 @media (min-width: 768px) {
