@@ -13,7 +13,7 @@ export const TestForm = () => {
   const [isDisable, setIsDisable] = useState(true);
   const [index, setIndex] = useState('0');
   const currentTest = useSelector(getCurrentTest);
-
+  console.log(currentTest);
   const dispatch = useDispatch();
   const answer = JSON.parse(localStorage.getItem('userAnswers'));
   const getResultsFunc = () => {
@@ -49,7 +49,7 @@ export const TestForm = () => {
       setIndex(0);
     }
   };
-  // console.log(answer.length);
+
 
   return (
     <>
@@ -58,7 +58,10 @@ export const TestForm = () => {
           Question <span className={style.active}>{Number(index) + 1}</span> /
           12
         </p>
-        <TestCard index={index} unDisableBtn={changeButtonStatus} />
+        <TestCard
+          index={index}
+          unDisableBtn={changeButtonStatus}
+          />
       </div>
       <div className={style.testFooter}>
         <button

@@ -13,13 +13,16 @@ const TestPage = () => {
   const dispatch = useDispatch();
   const [type, setType] = useState('');
   const testCurrent = useSelector(getCurrentTest);
+  // useEffect(() => {
+  //   const typeCurrent = String(testCurrent[0].type);
+  //   setType(typeCurrent);
+  //   console.log(typeCurrent);
+  // });
 
   useEffect(() => {
-    setTimeout(() => {
-      const typeCurrent = String(testCurrent[0].type);
-      setType(typeCurrent);
-    }, 500);
-  });
+    setType(String(testCurrent[0].type));
+  }, [setType, testCurrent]);
+
   const token = useSelector(getToken);
   console.log(type);
 
@@ -27,7 +30,6 @@ const TestPage = () => {
     const test = [];
     dispatch(getTest(test));
   };
-
 
   return (
     <>
