@@ -66,7 +66,7 @@ export const TestForm = ({ testCurrent }) => {
           className={style.btnQuestions}
           type="button"
           name="back"
-          disabled={!Boolean(answer.length)}
+          disabled={!Boolean(answer?.length)}
           onClick={currentQuestionIndexBack}
         >
           <svg className={style.arrowBack} width={24} height={16}>
