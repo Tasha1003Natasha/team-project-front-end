@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { orange, grey } from '@mui/material/colors';
 
 const TestCard = ({ index = 0, unDisableBtn }) => {
-
   const [answer, setAnswer] = useState([]);
   let currentIndex = Number(index);
 
