@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { PieChart, Pie, Sector } from 'recharts';
+import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
 import {
   getCurrectAnswer,
   getIncurrectAnswer,
@@ -82,7 +82,7 @@ const renderActiveShape = props => {
       <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
-        dy={18}
+        dy={2}
         textAnchor={textAnchor}
         fill="#555555"
       >
@@ -111,20 +111,23 @@ const Chart2 = () => {
   const COLORS = ['#FF6B09', '#555555'];
 
   return (
-    <PieChart width={400} height={400}>
-      <Pie
-        activeIndex={activeIndex}
-        activeShape={renderActiveShape}
-        data={data}
-        cx={200}
-        cy={200}
-        innerRadius={60}
-        outerRadius={80}
-        fill={COLORS[COLORS.length]}
-        dataKey="value"
-        onMouseEnter={onPieEnter}
-      />
-    </PieChart>
+    <ResponsiveContainer width={300} height={300}>
+      <PieChart>
+        <Pie
+          startAngle={-300}
+          activeIndex={activeIndex}
+          activeShape={renderActiveShape}
+          data={data}
+          cx={150}
+          cy={150}
+          innerRadius={60}
+          outerRadius={80}
+          fill={COLORS[COLORS.length]}
+          dataKey="value"
+          onMouseEnter={onPieEnter}
+        />
+      </PieChart>
+    </ResponsiveContainer>
   );
 };
 
