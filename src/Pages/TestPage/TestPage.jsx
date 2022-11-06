@@ -35,7 +35,7 @@ const TestPage = () => {
               className={style.closeBtn}
               to="/"
               type="button"
-              // onClick={hendlerCloseTest}
+         
             >
               Close test
             </Link>

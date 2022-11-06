@@ -22,7 +22,7 @@ const MainPage = () => {
   const handleTheory = () => {
     dispatch(getTest('theory'));
   };
-
+  localStorage.setItem('userAnswers', JSON.stringify([]));
   return (
     <>
       {token ? (
