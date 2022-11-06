@@ -12,7 +12,7 @@ const TestCard = ({ index = 0, unDisableBtn, test }) => {
 
   useEffect(() => {
     setSelectedValue('');
-  });
+  }, [selectedValue]);
 
   const handleChange = event => {
     setSelectedValue(event.target.value);
