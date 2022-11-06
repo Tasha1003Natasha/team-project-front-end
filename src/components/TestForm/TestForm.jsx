@@ -3,17 +3,15 @@ import { Link } from 'react-router-dom';
 import style from './TestForm.module.css';
 
 import { results } from 'redux/tests/tests-operations';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import TestCard from '../TestCard/TestCard';
 import Sprite from '../../images/icons/icons.svg';
-import { getCurrentTest } from 'redux/tests/test-selector';
 
-export const TestForm = () => {
+export const TestForm = ({ testCurrent }) => {
   const screenWidth = window.screen.width;
   const [isDisable, setIsDisable] = useState(true);
   const [index, setIndex] = useState('0');
-  const currentTest = useSelector(getCurrentTest);
-  console.log(currentTest);
+
   const dispatch = useDispatch();
   const answer = JSON.parse(localStorage.getItem('userAnswers'));
   const getResultsFunc = () => {
@@ -37,7 +35,7 @@ export const TestForm = () => {
 
   const currentQuestionIndexNext = evt => {
     const isDisabled = answer.find(
-      ({ _id }) => _id === currentTest[Number(index)]._id
+      ({ _id }) => _id === testCurrent[Number(index)]._id
     );
     setIsDisable(!Boolean(isDisabled));
 
@@ -50,7 +48,6 @@ export const TestForm = () => {
     }
   };
 
-
   return (
     <>
       <div className={style.questionContainer}>
@@ -61,13 +58,15 @@ export const TestForm = () => {
         <TestCard
           index={index}
           unDisableBtn={changeButtonStatus}
-          />
+          test={testCurrent}
+        />
       </div>
       <div className={style.testFooter}>
         <button
           className={style.btnQuestions}
           type="button"
           name="back"
+          disabled={!Boolean(answer.length)}
           onClick={currentQuestionIndexBack}
         >
           <svg className={style.arrowBack} width={24} height={16}>
