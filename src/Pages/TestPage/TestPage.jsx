@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { getCurrentTest } from '../../redux/tests/test-selector';
 import { getToken } from 'redux/auth/auth-selector';
 import { useState, useEffect } from 'react';
@@ -6,30 +6,19 @@ import TestForm from '../../components/TestForm/TestForm';
 import { Link } from 'react-router-dom';
 import style from './TestPage.module.css';
 
-import { getTest } from 'redux/tests/tests-operations';
 import AuthPage from 'Pages/AuthPage/AuthPage';
 
 const TestPage = () => {
-  const dispatch = useDispatch();
   const [type, setType] = useState('');
   const testCurrent = useSelector(getCurrentTest);
-  // useEffect(() => {
-  //   const typeCurrent = String(testCurrent[0].type);
-  //   setType(typeCurrent);
-  //   console.log(typeCurrent);
-  // });
+
+  // const getType = testCurrent[0]?.type;
 
   useEffect(() => {
-    setType(String(testCurrent[0].type));
+    setType(testCurrent[0]?.type);
   }, [setType, testCurrent]);
 
   const token = useSelector(getToken);
-  console.log(type);
-
-  const hendlerCloseTest = () => {
-    const test = [];
-    dispatch(getTest(test));
-  };
 
   return (
     <>
@@ -46,12 +35,12 @@ const TestPage = () => {
               className={style.closeBtn}
               to="/"
               type="button"
-              onClick={hendlerCloseTest}
+              // onClick={hendlerCloseTest}
             >
               Close test
             </Link>
           </div>
-          <TestForm />
+          <TestForm testCurrent={testCurrent} />
         </section>
       ) : (
         <AuthPage />
