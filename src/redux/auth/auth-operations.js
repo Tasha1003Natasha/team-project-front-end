@@ -1,4 +1,4 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { API, tokenAuth } from 'API';
 import { toast } from 'react-toastify';
 
@@ -66,3 +66,4 @@ export const userCurrent = createAsyncThunk(
     }
   }
 );
+export const updateToken = createAction("auth/token")

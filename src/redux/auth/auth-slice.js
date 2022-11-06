@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { logIn, signUp, userCurrent, logOut } from './auth-operations';
+import { logIn, logOut, signUp, updateToken, userCurrent } from './auth-operations';
 
 export const initialState = {
   token: '',
@@ -69,6 +69,9 @@ const authSlice = createSlice({
       state.loading = false;
       state.token = '';
       state.error = payload;
+    },
+    [updateToken]: (state, { payload }) => {
+      state.token = payload;
     },
   },
 });

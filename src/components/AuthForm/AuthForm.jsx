@@ -11,6 +11,9 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { TextField } from 'components/SignIn/TextField';
 
+const BASE_URL = 'https://team-project-back-end.herokuapp.com/api/auth/google';
+// const BASE_URL = 'http://localhost:4000/api/auth/google';
+
 const AuthForm = () => {
   const dispatch = useDispatch();
 
@@ -80,7 +83,8 @@ const AuthForm = () => {
                     <button className={s.authButton}>
                       <a
                         className={s.googleIcon}
-                        href="https://www.google.com/"
+                        // href="https://www.google.com/"
+                        href={`${BASE_URL}`}
                       >
                         <GoogleIcon />
                         Google

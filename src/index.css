@@ -4,7 +4,7 @@
 /* @import '../node_modules/modern-normalize/modern-normalize.css'; */
 
 :root {
-  --main-color: #F5F6FB;
+  --main-color: #f5f6fb;
   --secondary-color: #555555;
   --form-color: #ffffff;
   --accent-color: #ff6b09;
@@ -13,6 +13,8 @@
   --main-text: #000000;
   --secondary-text: #555555;
   --footer-text: rgba(255, 255, 255, 0.4);
+  --avatar-bg: #ffffff;
+  --border-line: #e2e3e5;
 }
 
 body {
@@ -55,6 +57,6 @@ svg {
   height: auto;
 }
 
-.noscroll{
+.noscroll {
   overflow: hidden;
 }
