@@ -1,15 +1,15 @@
-import { useSelector } from 'react-redux';
-import { getCurrentTest } from '../../redux/tests/test-selector';
+// import { useSelector } from 'react-redux';
+// import { getCurrentTest } from '../../redux/tests/test-selector';
 import style from './TestCard.module.css';
 import Radio from '@mui/material/Radio';
 import { useState } from 'react';
 import { orange, grey } from '@mui/material/colors';
 
-const TestCard = ({ index = 0, unDisableBtn }) => {
+const TestCard = ({ index = 0, unDisableBtn, test }) => {
   const [answer, setAnswer] = useState([]);
   let currentIndex = Number(index);
 
-  const currentTest = useSelector(getCurrentTest);
+  // const currentTest = useSelector(getCurrentTest);
 
   const [selectedValue, setSelectedValue] = useState('');
 
@@ -19,10 +19,10 @@ const TestCard = ({ index = 0, unDisableBtn }) => {
 
     const userAnswer = {
       userAnswer: event.target.value,
-      _id: currentTest[currentIndex]._id,
+      _id: test[currentIndex]._id,
     };
     const checked = answer.find(
-      ({ _id, userAnswer }) => _id === currentTest[currentIndex]._id
+      ({ _id, userAnswer }) => _id === test[currentIndex]._id
     );
 
     if (checked) {
@@ -40,22 +40,20 @@ const TestCard = ({ index = 0, unDisableBtn }) => {
 
   return (
     <>
-      {currentTest[currentIndex] && (
+      {test[currentIndex] && (
         <>
-          <p className={style.questionText}>
-            {currentTest[currentIndex].question}
-          </p>
+          <p className={style.questionText}>{test[currentIndex].question}</p>
           <hr className={style.line} />
           {/* <p>{testTech[currentIndex]._id}</p> */}
           <ul className={style.answersList}>
-            {currentTest[currentIndex].answers.map((answer, ind) => {
+            {test[currentIndex].answers.map((answer, ind) => {
               const localStorageArrayAnswers = JSON.parse(
                 localStorage.getItem('userAnswers')
               );
 
               const a = localStorageArrayAnswers.find(
                 item =>
-                  item._id === currentTest[currentIndex]._id &&
+                  item._id === test[currentIndex]._id &&
                   item.userAnswer === answer
               );
 
