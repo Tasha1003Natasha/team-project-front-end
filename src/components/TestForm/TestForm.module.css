@@ -29,6 +29,12 @@
   color: var(--form-color);
   fill: var(--form-color);
 }
+.btnQuestions:disabled:hover,
+.btnQuestions:disabled:focus {
+  background-color: rgb(218, 212, 212);
+  color: black;
+  fill: var(--form-color);
+}
 
 Link {
   text-decoration: none;
@@ -66,9 +72,14 @@ Link {
   color: var(--accent-color);
 }
 button:disabled {
-
+  background-color: rgb(218, 212, 212);
 }
-
+.btnFinish {
+  width: 55px;
+  height: 34px;
+  background-color: var(--accent-color);
+  color: white;
+}
 @media (min-width: 768px) {
   .questionContainer {
     width: 704px;

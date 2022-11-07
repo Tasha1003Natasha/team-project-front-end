@@ -2,31 +2,35 @@
 // import { getCurrentTest } from '../../redux/tests/test-selector';
 import style from './TestCard.module.css';
 import Radio from '@mui/material/Radio';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { orange, grey } from '@mui/material/colors';
 
 const TestCard = ({ index = 0, unDisableBtn, test }) => {
   const [answer, setAnswer] = useState([]);
   let currentIndex = Number(index);
-
   const [selectedValue, setSelectedValue] = useState('');
+
+  useEffect(() => {
+    setSelectedValue('');
+  }, [selectedValue]);
 
   const handleChange = event => {
     setSelectedValue(event.target.value);
+
     const answer = JSON.parse(localStorage.getItem('userAnswers'));
 
     const userAnswer = {
       userAnswer: event.target.value,
       _id: test[currentIndex]._id,
     };
-    const checked = answer.find(
-      ({ _id, userAnswer }) => _id === test[currentIndex]._id
-    );
+
+    const checked = answer.find(({ _id }) => _id === test[currentIndex]._id);
 
     if (checked) {
       const index = answer.indexOf(checked);
       answer.splice(index, 1);
     }
+
     setSelectedValue(event.target.value);
     setAnswer([...answer, userAnswer]);
     unDisableBtn();
@@ -40,7 +44,7 @@ const TestCard = ({ index = 0, unDisableBtn, test }) => {
         <>
           <p className={style.questionText}>{test[currentIndex].question}</p>
           <hr className={style.line} />
-          {/* <p>{testTech[currentIndex]._id}</p> */}
+
           <ul className={style.answersList}>
             {test[currentIndex].answers.map((answer, ind) => {
               const localStorageArrayAnswers = JSON.parse(
@@ -56,7 +60,7 @@ const TestCard = ({ index = 0, unDisableBtn, test }) => {
               return (
                 <li className={style.answersItem} key={ind}>
                   <Radio
-                    checked={selectedValue === answer || Boolean(a)}
+                    checked={Boolean(a) || selectedValue === answer}
                     onChange={handleChange}
                     value={answer}
                     name="r1"
