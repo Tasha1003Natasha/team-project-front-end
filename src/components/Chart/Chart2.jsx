@@ -86,7 +86,7 @@ const renderActiveShape = props => {
         textAnchor={textAnchor}
         fill="#555555"
       >
-        {` ${(percent * 100).toFixed(2)}%`}
+        {` ${(percent * 100).toFixed(0)}%`}
       </text>
     </g>
   );
@@ -120,8 +120,8 @@ const Chart2 = () => {
           data={data}
           cx={150}
           cy={150}
-          innerRadius={60}
-          outerRadius={80}
+          innerRadius={55}
+          outerRadius={70}
           fill={COLORS[COLORS.length]}
           dataKey="value"
           onMouseEnter={onPieEnter}

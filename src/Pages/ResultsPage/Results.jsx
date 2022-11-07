@@ -54,7 +54,7 @@ const Results = () => {
                 </p>
               </>
             )}
-            {correct < 10 && (
+            {correct > 5 && correct < 10 && (
               <>
                 <img className={s.resultPic} src={CatLove} alt="result" />
                 <p className={s.resultText}>Good</p>
