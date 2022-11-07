@@ -8,6 +8,7 @@ import Layout from './Layout/Layout';
 // import ResultsPage from '../Pages/ResultsPage/Results';
 // import TestPage from '../Pages/TestPage/TestPage';
 
+import { Toggle } from 'components/Theme/Toggle';
 import { Loader } from 'components/Loader/Loader';
 import { lazy, Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
@@ -55,6 +56,7 @@ export const App = () => {
         fallback={
           <div>
             <Loader />
+            <Toggle />
           </div>
         }
       >
