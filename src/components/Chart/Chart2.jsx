@@ -26,8 +26,8 @@ const renderActiveShape = props => {
   const cos = Math.cos(-RADIAN * midAngle);
   const sx = cx + (outerRadius + 10) * cos;
   const sy = cy + (outerRadius + 10) * sin;
-  const mx = cx + (outerRadius + 30) * cos;
-  const my = cy + (outerRadius + 30) * sin;
+  const mx = cx + (outerRadius + 15) * cos;
+  const my = cy + (outerRadius + 15) * sin;
   const ex = mx + (cos >= 0 ? 1 : -1) * 22;
   const ey = my;
   const textAnchor = cos >= 0 ? 'start' : 'end';
@@ -111,17 +111,17 @@ const Chart2 = () => {
   const COLORS = ['#FF6B09', '#555555'];
 
   return (
-    <ResponsiveContainer width={300} height={300}>
+    <ResponsiveContainer width={320} height={320}>
       <PieChart>
         <Pie
           startAngle={-300}
           activeIndex={activeIndex}
           activeShape={renderActiveShape}
           data={data}
-          cx={150}
+          cx={155}
           cy={150}
-          innerRadius={55}
-          outerRadius={70}
+          innerRadius={50}
+          outerRadius={65}
           fill={COLORS[COLORS.length]}
           dataKey="value"
           onMouseEnter={onPieEnter}
