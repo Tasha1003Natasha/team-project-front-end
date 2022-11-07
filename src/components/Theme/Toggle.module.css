@@ -1,32 +1,36 @@
-.moon {
-  width: 24px;
-  height: 24px;
-  transition: 0.8s;
-  fill: white;
-  cursor: pointer;
-}
 .sun {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   transition: 0.8s;
-  cursor: pointer;
-  fill: blue;
+  fill: var(--accent-color);
+  /* background-color: currentColor; */
+  /* cursor: pointer;
+  border-radius: 50%;
+  padding: 5px; */
 }
+.moon {
+  width: 20px;
+  height: 20px;
+  transition: 0.8s;
+  fill: var(--fill-color);
+  cursor: pointer;
+  /* background-color: var(--form-color); */
+  /* order-radius: 50%; b */
+  /* padding: 5px; */
+}
+
+.header {
+  margin-left: 20px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    margin-left: 30px;
+  }
+}
+
 @media (min-width: 1280px) {
-  .moon {
-    width: 28px;
-    height: 28px;
-  }
-  .sun {
-    width: 28px;
-    height: 28px;
-  }
-  .sun:hover {
-    transform: rotate(360deg);
-    transition: 0.5s;
-  }
-  .moon:hover {
-    transform: rotate(90deg);
-    transition: 0.5s;
+  .header {
+    margin-left: 20px;
   }
 }

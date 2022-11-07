@@ -25,16 +25,11 @@ const persistTest = {
   storage,
 };
 
-const persistTheme = {
-  key: 'theme',
-  storage,
-};
-
 const store = configureStore({
   reducer: {
     auth: persistReducer(persistAuth, authReducer),
     test: persistReducer(persistTest, testReducer),
-    theme: persistReducer(persistTheme, themeReducer),
+    theme: themeReducer,
   },
   devTools: process.env.NODE_ENV === 'development',
   middleware: getDefaultMiddleware =>

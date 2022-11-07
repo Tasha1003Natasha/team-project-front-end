@@ -33,12 +33,26 @@
   --input-form: #bbbbbb;
   --border-input: #ced2d1;
   --back-color: #f9fafc;
+
+  --fill-btn: #02172a;
 }
 
 :root[data-theme='dark'] {
-  --form-color: #2e0707;
-  --accent-color: #ff0946;
-  --main-color: #1d1d1d;
+  --main-color: #02172a;
+  --form-color: #344555;
+  --main-text: #f9fafc;
+  --secondary-text: #9f9c9c;
+  --fill-btn: #f9fafc;
+
+  --secondary-color: #555555;
+  --accent-color: #ff6b09;
+
+  --border-color: #00122f;
+
+  --footer-text: rgba(255, 255, 255, 0.4);
+  --border-line: #e2e3e5;
+  --input-form: #bbbbbb;
+  --border-input: #ced2d1;
 }
 
 body {

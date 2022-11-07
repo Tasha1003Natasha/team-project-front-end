@@ -11,6 +11,9 @@ import { getUser } from '../../redux/auth/auth-selector';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
+import Toggle from 'components/Theme/Toggle';
+// import { useEffect } from 'react';
+
 const HeaderLogIn = () => {
   const pathname = useLocation().pathname;
   const dispatch = useDispatch();
@@ -21,7 +24,6 @@ const HeaderLogIn = () => {
   };
 
   const userName = useSelector(getUser);
-
   const avatarName = userName?.slice(0, 1).toLocaleUpperCase();
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -32,6 +34,15 @@ const HeaderLogIn = () => {
     setShowHeader(false);
     document.body.classList.add('noscroll');
   };
+
+  const theme = useSelector(state => state.theme);
+  // console.log(theme);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   document.documentElement.dataset.theme = theme;
+  //   localStorage.setItem('theme', theme);
+  // }, [theme]);
 
   return (
     <>
@@ -46,12 +57,21 @@ const HeaderLogIn = () => {
         <header className={styles.header}>
           <div className={styles.mobileWrapper}>
             <div className={styles.header__nav}>
-              <Link to="/">
-                <svg width={129} height={28}>
-                  <use href={`${Sprite}#logo-header`}></use>
-                </svg>
-              </Link>
+              {theme !== 'dark' ? (
+                <Link to="/">
+                  <svg width={129} height={28}>
+                    <use href={`${Sprite}#logo-header`}></use>
+                  </svg>
+                </Link>
+              ) : (
+                <Link to="/">
+                  <svg width={129} height={28}>
+                    <use href={`${Sprite}#logo-header-dark`}></use>
+                  </svg>
+                </Link>
+              )}
 
+              <Toggle />
               <div className={styles.menu__container}>
                 <p className={styles.avatarName}>{avatarName || 'U'}</p>
                 <span className={styles.userLine}></span>
@@ -71,11 +91,21 @@ const HeaderLogIn = () => {
           <div className={styles.desktopWrapper}>
             <div className={styles.container}>
               <div className={styles.header__nav}>
-                <Link to="/">
-                  <svg width={129} height={28} className={styles.header__logo}>
-                    <use href={`${Sprite}#logo-header`}></use>
-                  </svg>
-                </Link>
+                {theme !== 'dark' ? (
+                  <Link to="/">
+                    <svg width={129} height={28}>
+                      <use href={`${Sprite}#logo-header`}></use>
+                    </svg>
+                  </Link>
+                ) : (
+                  <Link to="/">
+                    <svg width={129} height={28}>
+                      <use href={`${Sprite}#logo-header-dark`}></use>
+                    </svg>
+                  </Link>
+                )}
+
+                <Toggle />
                 <div className={styles.menu__container}>
                   <ul className={styles.menu__container_list}>
                     <li className={styles.list_item_text}>

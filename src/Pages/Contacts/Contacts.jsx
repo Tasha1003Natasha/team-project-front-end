@@ -3,7 +3,6 @@ import styles from './Contacts.module.css';
 import team from './teams.json';
 
 const Contacts = () => {
-
   return (
     <main>
       <section className={styles.container}>
