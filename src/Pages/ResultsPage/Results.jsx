@@ -1,7 +1,10 @@
 import s from './Results.module.css';
 // import Chart from 'components/Chart/Chart';
 import Chart2 from 'components/Chart/Chart2';
-import Cat from '../../images/result/result.png';
+import CatSad from '../../images/result/sad.png';
+import CatLove from '../../images/result/love.png';
+import CatHappy from '../../images/result/happy.png';
+
 import { useSelector } from 'react-redux';
 import {
   getCurrectAnswer,
@@ -42,15 +45,31 @@ const Results = () => {
                 </li>
               </ul>
             </div>
-            <img className={s.resultPic} src={Cat} alt="result" />
-            <p className={s.resultText}>
-              {correct === 12 ? 'Great!' : 'Not bad'}
-            </p>
-            <p className={s.materialsText}>
-              {correct === 12
-                ? 'You are cool!'
-                : 'But you still need to learn some materials.'}
-            </p>
+            {correct <= 5 && (
+              <>
+                <img className={s.resultPic} src={CatSad} alt="result" />
+                <p className={s.resultText}>Not bad</p>
+                <p className={s.materialsText}>
+                  But you still need to learn some materials.
+                </p>
+              </>
+            )}
+            {correct > 5 && correct < 10 && (
+              <>
+                <img className={s.resultPic} src={CatLove} alt="result" />
+                <p className={s.resultText}>Good</p>
+                <p className={s.materialsText}>
+                  But you still need to learn some materials.
+                </p>
+              </>
+            )}
+            {correct >= 10 && (
+              <>
+                <img className={s.resultPic} src={CatHappy} alt="result" />
+                <p className={s.resultText}>Great</p>
+                <p className={s.materialsText}>You are the best!</p>
+              </>
+            )}
             <Link to="/test" className={s.buttonRepeat}>
               Try again
             </Link>
