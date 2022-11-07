@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const getTheme = () => {
+export const getTheme = () => {
   const theme = `${window?.localStorage?.getItem('theme')}`;
   if (['light', 'dark'].includes(theme)) return theme;
 
@@ -22,4 +22,4 @@ export const themeSlice = createSlice({
 
 export const { set } = themeSlice.actions;
 
-export default themeSlice.reducer;
+export const themeReducer = themeSlice.reducer;

@@ -2,35 +2,17 @@ import Navigation from 'components/Navigation/Navigation';
 import Footer from 'components/Footer/Footer';
 import { Outlet } from 'react-router';
 
-// import { useSelector } from 'react-redux';
-// import { getIsLoggedIn } from 'redux/auth/auth-selector';
-// import AuthPage from 'Pages/AuthPage/AuthPage';
+import Toggle from '../Theme/Toggle';
 
 const Layout = () => {
-  // const isLogin = useSelector(getIsLoggedIn);
-
   return (
     <>
+      <Toggle />
       <Navigation />
       <Outlet />
-      <Footer/>
+      <Footer />
     </>
   );
 };
 
 export default Layout;
-
-// if (isLogin) {
-//   return (
-//     <>
-//       <Navigation />
-//       <Outlet />
-//     </>
-//   );
-// } else {
-//   return (
-//     <>
-//       <Navigation />
-//       <AuthPage />
-//     </>
-//   );

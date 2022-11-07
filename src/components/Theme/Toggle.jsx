@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import cn from 'classnames';
 
+import { FaSun, FaMoon } from 'react-icons/fa';
+
 import { set } from '../../redux/theme/theme-slice';
 import styles from './Toggle.module.css';
 
@@ -15,7 +17,12 @@ export const Toggle = ({ className }) => {
   }, [theme]);
 
   const handleChange = () => {
-    const next = theme === 'dak' ? 'light' : 'dark';
+    const next =
+      theme === 'dark' ? (
+        <FaSun className={styles.sun} />
+      ) : (
+        <FaMoon className={styles.moon} />
+      );
     dispatch(set(next));
   };
 

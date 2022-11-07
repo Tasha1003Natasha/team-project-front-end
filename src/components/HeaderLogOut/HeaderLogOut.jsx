@@ -39,7 +39,6 @@ const HeaderLogOut = () => {
                   type="button"
                   onClick={handlerOpen}
                 >
-                  {/* <span className={styles.line}></span> */}
                   <svg className={styles.logoutIcon} width={20} height={20}>
                     <use href={`${Sprite}#burger-menu`}></use>
                   </svg>

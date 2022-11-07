@@ -1,0 +1,32 @@
+.moon {
+  width: 24px;
+  height: 24px;
+  transition: 0.8s;
+  fill: white;
+  cursor: pointer;
+}
+.sun {
+  width: 24px;
+  height: 24px;
+  transition: 0.8s;
+  cursor: pointer;
+  fill: blue;
+}
+@media (min-width: 1280px) {
+  .moon {
+    width: 28px;
+    height: 28px;
+  }
+  .sun {
+    width: 28px;
+    height: 28px;
+  }
+  .sun:hover {
+    transform: rotate(360deg);
+    transition: 0.5s;
+  }
+  .moon:hover {
+    transform: rotate(90deg);
+    transition: 0.5s;
+  }
+}

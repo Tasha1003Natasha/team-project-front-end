@@ -51,6 +51,7 @@ const HeaderLogIn = () => {
                   <use href={`${Sprite}#logo-header`}></use>
                 </svg>
               </Link>
+
               <div className={styles.menu__container}>
                 <p className={styles.avatarName}>{avatarName || 'U'}</p>
                 <span className={styles.userLine}></span>
@@ -92,11 +93,6 @@ const HeaderLogIn = () => {
                     <li className={styles.list_item_text}>
                       <NavLink
                         to="/useful-info"
-                        // className={({ isActive }) =>
-                        //   isActive
-                        //     ? `${styles.list_item_text} ${styles.list_item_current}`
-                        //     : `${styles.list_item_text}`
-                        // }
                         className={({ isActive }) =>
                           isActive
                             ? styles.list_item_current
@@ -109,11 +105,6 @@ const HeaderLogIn = () => {
                     <li className={styles.list_item_text}>
                       <NavLink
                         to="/contacts"
-                        // className={({ isActive }) =>
-                        //   isActive
-                        //     ? `${styles.list_item_text} ${styles.list_item_current}`
-                        //     : `${styles.list_item_text}`
-                        // }
                         className={({ isActive }) =>
                           isActive
                             ? styles.list_item_current
@@ -131,14 +122,6 @@ const HeaderLogIn = () => {
                   </div>
 
                   <span className={styles.userLine}></span>
-
-                  {/* <button
-                    className={styles.iconButton}
-                    type="button"
-                    onClick={handlerLogOut}
-                  >
-                     <MdLogout className={styles.logoutIcon} /> 
-                 </button>  */}
 
                   <button
                     className={styles.iconButton}
