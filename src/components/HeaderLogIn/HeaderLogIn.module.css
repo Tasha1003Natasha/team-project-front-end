@@ -43,6 +43,12 @@ p {
   text-align: center;
 }
 
+@media (min-width: 1280px) {
+  .menu__container {
+    align-items: baseline;
+  }
+}
+
 .iconAvatar {
   margin-right: 20px;
 }
