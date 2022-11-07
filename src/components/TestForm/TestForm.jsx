@@ -95,7 +95,7 @@ export const TestForm = ({ testCurrent }) => {
               onClick={getResultsFunc}
               disabled={isDisable}
             >
-              Finish test
+              Finish
             </button>
           </Link>
         )}
