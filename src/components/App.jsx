@@ -40,7 +40,6 @@ export const App = () => {
 
   useEffect(() => {
     const accessToken = searchParams.get('token');
-    console.log(accessToken);
 
     if (accessToken) {
       dispatch(updateToken(accessToken));

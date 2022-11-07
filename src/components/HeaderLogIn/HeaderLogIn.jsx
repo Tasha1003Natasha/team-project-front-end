@@ -21,7 +21,6 @@ const HeaderLogIn = () => {
   };
 
   const userName = useSelector(getUser);
-  console.log(userName);
   const avatarName = userName?.slice(0, 1).toLocaleUpperCase();
 
   const [openMenu, setOpenMenu] = useState(false);
