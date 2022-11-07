@@ -2,19 +2,7 @@ import ContactsCard from '../../components/ContactsCard/ContactsCard';
 import styles from './Contacts.module.css';
 import team from './teams.json';
 
-// import { useSelector } from 'react-redux';
-// import { Navigate } from 'react-router-dom';
-// import { getToken } from 'redux/auth/auth-selector';
-// import AuthPage from '../AuthPage/AuthPage';
-
 const Contacts = () => {
-  // const token = useSelector(getToken);
-
-  // if (token) {
-  //   <Navigate to="/" />;
-  // } else {
-  //   <Navigate to="/auth" />;
-  // }
 
   return (
     <main>
