@@ -38,19 +38,16 @@ export const App = () => {
 
   const navigate = useNavigate();
 
-
-
   useEffect(() => {
     const accessToken = searchParams.get('token');
-
+    console.log(accessToken);
 
     if (accessToken) {
       dispatch(updateToken(accessToken));
-      navigate("/")
-    };
+      navigate('/');
+    }
 
     dispatch(userCurrent());
-
   }, [searchParams, dispatch, navigate]);
 
   return (
