@@ -144,7 +144,13 @@
 
 .logoutIcon {
   transition: all 0.3s;
-  fill: currentcolor;
+  fill: var(--main-text);
+}
+
+.logoutIcon:hover,
+.logoutIcon:focus {
+  fill: var(--accent-color);
+  transition: all 0.2s ease-out;
 }
 
 .userLine {
