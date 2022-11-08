@@ -16,10 +16,8 @@ const renderActiveShape = props => {
     outerRadius,
     startAngle,
     endAngle,
-    // fill,
     payload,
     percent,
-    // value,
   } = props;
 
   const sin = Math.sin(-RADIAN * midAngle);
@@ -73,12 +71,7 @@ const renderActiveShape = props => {
         fill={payload.name === 'Correct' ? '#FF6B09' : '#555555'}
         stroke="none"
       />
-      {/* <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey}
-        textAnchor={textAnchor}
-        fill="#333"
-      >{`Correct ${value}`}</text> */}
+
       <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}

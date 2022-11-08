@@ -58,10 +58,7 @@ const MenuOpenLogIn = ({ setOpenMenu, setShowHeader, handlerLogOut }) => {
 
       <div className={styles.menu__container}>
         <ul className={styles.menu__container_list}>
-          <li
-            // className={`${styles.list_item_text} ${styles.list_item_current}`}
-            className={styles.list_item_text}
-          >
+          <li className={styles.list_item_text}>
             <NavLink
               onClick={handlerClose}
               to="/"

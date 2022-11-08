@@ -13,7 +13,6 @@
   align-items: center;
   justify-content: space-between;
   min-width: 280px;
-
   margin-top: 28px;
   margin-bottom: 18px;
 }
@@ -21,9 +20,7 @@
 .hederText {
   width: 130px;
   display: inline;
-
   font-family: 'Montserrat Medium';
-
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
@@ -31,7 +28,6 @@
 
 .closeBtn {
   font-family: 'Montserrat Medium';
-
   font-size: 10px;
   line-height: 12px;
   display: flex;

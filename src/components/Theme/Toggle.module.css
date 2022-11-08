@@ -4,10 +4,6 @@
   transition: 0.3s;
   fill: var(--accent-color);
   cursor: pointer;
-  /* background-color: currentColor; */
-  /* cursor: pointer;
-  border-radius: 50%;
-  padding: 5px; */
 }
 
 .sun:hover,
@@ -22,9 +18,6 @@
   transition: 0.3s;
   fill: var(--fill-color);
   cursor: pointer;
-  /* background-color: var(--form-color); */
-  /* order-radius: 50%; b */
-  /* padding: 5px; */
 }
 
 .moon:hover,

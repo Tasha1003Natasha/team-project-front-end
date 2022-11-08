@@ -1,27 +1,15 @@
 import { Route, Routes, useNavigate } from 'react-router';
 import Layout from './Layout/Layout';
-// import AuthPage from '../Pages/AuthPage/AuthPage';
-// import MainPage from '../Pages/MainPage/MainPage';
-// import PageNotFound from '../Pages/PageNotFound/PageNotFound';
-// import Contacts from '../Pages/Contacts/Contacts';
-// import UsefulInfo from '../Pages/UsefulInfo/UsefulInfo';
-// import ResultsPage from '../Pages/ResultsPage/Results';
-// import TestPage from '../Pages/TestPage/TestPage';
-
 import { Loader } from 'components/Loader/Loader';
 import { lazy, Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
-
-// import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { updateToken, userCurrent } from '../redux/auth/auth-operations';
-// import { getToken } from '../redux/auth/auth-selector';
 
 const AuthPageLazy = lazy(() => import('Pages/AuthPage/AuthPage'));
 const MainPageLazy = lazy(() => import('Pages/MainPage/MainPage'));
@@ -33,7 +21,7 @@ const TestPageLazy = lazy(() => import('Pages/TestPage/TestPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  // const token = useSelector(getToken);
+
   const [searchParams] = useSearchParams();
 
   const navigate = useNavigate();
@@ -60,14 +48,7 @@ export const App = () => {
       >
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route
-              index
-              element={
-                // <PrivateRoute>
-                <MainPageLazy />
-                // </PrivateRoute>
-              }
-            />
+            <Route index element={<MainPageLazy />} />
 
             <Route
               path="/auth"
@@ -103,18 +84,6 @@ export const App = () => {
             />
             <Route path="/contacts" element={<ContactsLazy />} />
             <Route path="*" element={<PageNotFoundLazy />} />
-
-            {/* <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<MainPageLazy />} />
-            <Route path="/auth" element={<AuthPageLazy />} />
-            <Route path="/test" element={<TestPageLazy />} />
-            <Route path="/results" element={<ResultsPageLazy />} />
-            <Route path="/useful-info" element={<UsefulInfoLazy />} />
-            <Route path="/contacts" element={<ContactsLazy />} />
-            <Route path="*" element={<PageNotFoundLazy />} />
-          </Route>
-        </Routes> */}
           </Route>
         </Routes>
         <ToastContainer theme="colored" />

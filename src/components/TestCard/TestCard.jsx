@@ -1,5 +1,3 @@
-// import { useSelector } from 'react-redux';
-// import { getCurrentTest } from '../../redux/tests/test-selector';
 import style from './TestCard.module.css';
 import Radio from '@mui/material/Radio';
 import { useEffect, useState } from 'react';

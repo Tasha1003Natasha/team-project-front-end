@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-// import cn from 'classnames';
 
 import { FaSun, FaMoon } from 'react-icons/fa';
 
@@ -24,11 +23,7 @@ export const Toggle = () => {
   };
 
   return (
-    <div
-      className={styles.header}
-      // className={cn(className, theme === 'dark' ? styles.dark : styles.light)}
-      onClick={handleChange}
-    >
+    <div className={styles.header} onClick={handleChange}>
       {theme === 'dark' ? (
         <FaSun className={styles.sun} />
       ) : (

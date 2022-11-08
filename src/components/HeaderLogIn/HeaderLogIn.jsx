@@ -1,8 +1,6 @@
 import Sprite from '../../images/icons/icons.svg';
 import styles from './HeaderLogIn.module.css';
 import { Link, NavLink } from 'react-router-dom';
-// import {ReactComponent as LogOut} from '../../images/icons/sign-out.svg';
-// import { MdLogout } from 'react-icons/md';
 import { logOut } from '../../redux/auth/auth-operations';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -10,9 +8,8 @@ import MenuOpenLogIn from '../MenuOpen/MenuOpenLogIn';
 import { getUser } from '../../redux/auth/auth-selector';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-
 import Toggle from 'components/Theme/Toggle';
-// import { useEffect } from 'react';
+
 
 const HeaderLogIn = () => {
   const pathname = useLocation().pathname;
@@ -36,13 +33,6 @@ const HeaderLogIn = () => {
   };
 
   const theme = useSelector(state => state.theme);
-  // console.log(theme);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   document.documentElement.dataset.theme = theme;
-  //   localStorage.setItem('theme', theme);
-  // }, [theme]);
 
   return (
     <>
