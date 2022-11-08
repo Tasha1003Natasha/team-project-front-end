@@ -12,7 +12,6 @@ const TestPage = () => {
   const [type, setType] = useState('');
   const testCurrent = useSelector(getCurrentTest);
 
-  // const getType = testCurrent[0]?.type;
 
   useEffect(() => {
     setType(testCurrent[0]?.type);

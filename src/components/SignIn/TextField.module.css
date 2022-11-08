@@ -2,11 +2,8 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
-
   letter-spacing: 0.04em;
-
   color: var(--main-text);
-
   margin-bottom: 12px;
 }
 .error {
@@ -14,6 +11,5 @@
   font-weight: 600;
   margin-top: 5px;
   font-size: 10px;
-
   color: var(--accent-color);
 }

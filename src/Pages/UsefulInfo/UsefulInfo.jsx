@@ -1,6 +1,5 @@
 import styles from './UsefulInfo.module.css';
 import { useSelector } from 'react-redux';
-
 import { getToken } from 'redux/auth/auth-selector';
 import AuthPage from 'Pages/AuthPage/AuthPage';
 
@@ -17,8 +16,6 @@ const UsefulInfo = () => {
               theme !== 'dark' ? styles.useSection : styles.useSection_dark
             }`}
           >
-            {/* {(theme  === 'dark') ? <section className={styles.useSection}> :  <section className={styles.useSection_dark}> } */}
-            {/* <section className={styles.useSection}> */}
             <div className={styles.container}>
               <ul>
                 <li>

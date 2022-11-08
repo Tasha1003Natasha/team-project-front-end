@@ -5,20 +5,14 @@ import MenuOpenLogOut from 'components/MenuOpen/MenuOpenLogOut';
 import { useState } from 'react';
 import Toggle from 'components/Theme/Toggle';
 import { useSelector } from 'react-redux';
-// import { useEffect } from 'react';
+
 
 const HeaderLogOut = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
 
   const theme = useSelector(state => state.theme);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   document.documentElement.dataset.theme = theme;
-  //   localStorage.setItem('theme', theme);
-  // }, [theme]);
-
+ 
   const handlerOpen = () => {
     setShowMenu(true);
     setShowHeader(false);
