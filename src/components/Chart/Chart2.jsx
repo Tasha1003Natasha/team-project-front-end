@@ -39,7 +39,7 @@ const renderActiveShape = props => {
         y={cy}
         dy={8}
         textAnchor="middle"
-        fill={payload.name === 'Correct' ? '#FF6B09' : '#000000'}
+        fill={payload.name === 'Correct' ? '#FF6B09' : 'var(--secondary-color)'}
       >
         {payload.name}
       </text>
@@ -84,7 +84,7 @@ const renderActiveShape = props => {
         y={ey}
         dy={2}
         textAnchor={textAnchor}
-        fill="#555555"
+        fill="var(--secondary-color"
       >
         {` ${(percent * 100).toFixed(0)}%`}
       </text>
