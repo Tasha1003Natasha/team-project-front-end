@@ -43,6 +43,11 @@
         width: 100vw; 
         height: 100vh; */
   }
+  .useSection_dark {
+    background-image: url('../../images/contacts/pic-3-dark.png');
+    background-position: 100%;
+    background-size: cover;
+  }
 }
 
 .container {
