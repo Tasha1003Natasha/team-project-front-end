@@ -75,7 +75,7 @@ p {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: var(--form-color);
+  background-color: var(--bg-avatar);
   margin-right: 20px;
   width: 30px;
   height: 30px;
@@ -249,7 +249,7 @@ p {
 
 .logoutIcon {
   transition: all 0.3s;
-  fill: currentcolor;
+  color: var(--main-text);
 }
 
 .userName {
@@ -277,4 +277,8 @@ p {
   .userLine {
     display: none;
   }
+}
+
+.header__theme {
+  margin-left: 10px;
 }

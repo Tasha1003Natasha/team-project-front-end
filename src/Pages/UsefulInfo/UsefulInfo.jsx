@@ -6,11 +6,19 @@ import AuthPage from 'Pages/AuthPage/AuthPage';
 
 const UsefulInfo = () => {
   const isLogin = useSelector(getToken);
+  const theme = useSelector(state => state.theme);
+
   return (
     <>
       {isLogin ? (
         <main>
-          <section className={styles.useSection}>
+          <section
+            className={`${
+              theme !== 'dark' ? styles.useSection : styles.useSection_dark
+            }`}
+          >
+            {/* {(theme  === 'dark') ? <section className={styles.useSection}> :  <section className={styles.useSection_dark}> } */}
+            {/* <section className={styles.useSection}> */}
             <div className={styles.container}>
               <ul>
                 <li>
