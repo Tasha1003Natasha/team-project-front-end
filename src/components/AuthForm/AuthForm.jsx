@@ -107,6 +107,7 @@ const AuthForm = () => {
                         name="password"
                         type="password"
                         value={password}
+                        placeholder="Password"
                         // onChange={handleChange}
                       />
                     </div>

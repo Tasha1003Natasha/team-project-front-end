@@ -35,6 +35,8 @@
   --back-color: #f9fafc;
   --bg-avatar: #f9fafc;
   --fill-btn: #02172a;
+  --btns-color: #fafafa;
+  --rgb-color: 0, 0, 0;
 }
 
 :root[data-theme='dark'] {
@@ -46,12 +48,13 @@
   --bg-avatar: #f9fafc;
   --secondary-color: #f9fafc;
   --accent-color: #ff6b09;
-
+  --btns-color: #9c9a9a;
   --border-line: #e2e3e5;
-  --border-color: #00122f;
+  --border-color: #e2e3e5;
   --footer-text: rgba(255, 255, 255, 0.4);
   --input-form: #bbbbbb;
   --border-input: #ced2d1;
+  --rgb-color: 193, 191, 191;
 }
 
 body {
