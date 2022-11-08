@@ -8,7 +8,8 @@ const Footer = () => {
       <footer className={styles.footer}>
         <div className={styles.container}>
           <p className={styles.footer__text}>
-            &#169; 2021 | All Rights Reserved | Developed with
+            {' '}
+            &#169; 2022 | All Rights Reserved | Developed with
           </p>
           <svg width={16} height={16} className={styles.footer__svg}>
             <use href={heart + '#heart-footer'}></use>
