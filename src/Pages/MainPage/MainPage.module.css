@@ -141,7 +141,7 @@
   text-align: center;
   letter-spacing: 0.02em;
   color: var(--form-color);
-  background: var(--fill-color);
+  background: var(--fill-btn);
   transition: 0.25s;
 }
 

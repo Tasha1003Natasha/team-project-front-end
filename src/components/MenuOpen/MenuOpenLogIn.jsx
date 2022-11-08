@@ -2,9 +2,12 @@ import Sprite from '../../images/icons/icons.svg';
 import styles from './MenuOpenLogIn.module.css';
 import { Link, NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Toggle from 'components/Theme/Toggle';
 
 const MenuOpenLogIn = ({ setOpenMenu, setShowHeader, handlerLogOut }) => {
   const pathname = useLocation().pathname;
+  const theme = useSelector(state => state.theme);
 
   const handlerClose = () => {
     setOpenMenu(false);
@@ -18,12 +21,21 @@ const MenuOpenLogIn = ({ setOpenMenu, setShowHeader, handlerLogOut }) => {
         <div className={styles.mobileWrapper}>
           <div className={styles.container}>
             <div className={styles.header__nav}>
-              <Link to="/" onClick={handlerClose}>
-                <svg width={129} height={28}>
-                  <use href={`${Sprite}#logo-header`}></use>
-                </svg>
-              </Link>
+              {theme !== 'dark' ? (
+                <Link to="/">
+                  <svg width={129} height={28}>
+                    <use href={`${Sprite}#logo-header`}></use>
+                  </svg>
+                </Link>
+              ) : (
+                <Link to="/">
+                  <svg width={129} height={28}>
+                    <use href={`${Sprite}#logo-header-dark`}></use>
+                  </svg>
+                </Link>
+              )}
 
+              <Toggle />
               <div className={styles.container_close}>
                 <span className={styles.userLine}></span>
 
@@ -80,7 +92,6 @@ const MenuOpenLogIn = ({ setOpenMenu, setShowHeader, handlerLogOut }) => {
               className={({ isActive }) =>
                 isActive ? styles.list_item_current : styles.list_item_text
               }
-
             >
               Contacts
             </NavLink>

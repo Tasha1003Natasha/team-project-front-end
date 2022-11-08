@@ -80,16 +80,16 @@ const AuthForm = () => {
                     <p className={s.formText}>
                       You can use your Google Account to authorize:
                     </p>
-                    <button className={s.authButton}>
-                      <a
-                        className={s.googleIcon}
-                        // href="https://www.google.com/"
-                        href={`${BASE_URL}`}
-                      >
-                        <GoogleIcon />
-                        Google
-                      </a>
-                    </button>
+                    {/* <button className={s.authButton}> */}
+                    <a
+                      className={s.authButton}
+                      // href="https://www.google.com/"
+                      href={`${BASE_URL}`}
+                    >
+                      <GoogleIcon />
+                      Google
+                    </a>
+                    {/* </button> */}
                     <p className={s.loginText}>
                       Or login to our app using e-mail and password:
                     </p>

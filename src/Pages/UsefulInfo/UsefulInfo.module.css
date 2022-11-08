@@ -16,6 +16,13 @@
   /* object-fit: none; */
 }
 
+/* Dark */
+.useSection_dark {
+  background-color: var(--back-color);
+  padding-top: 42px;
+  padding-bottom: 117px;
+}
+
 @media (min-width: 768px) {
   .useSection {
     padding-top: 180px;

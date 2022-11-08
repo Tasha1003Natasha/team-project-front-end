@@ -3,7 +3,7 @@
 /* @import-normalize; bring in normalize.css styles */
 /* @import '../node_modules/modern-normalize/modern-normalize.css'; */
 
-:root {
+/* :root {
   --main-color: #f5f6fb;
   --secondary-color: #555555;
   --form-color: #ffffff;
@@ -17,6 +17,41 @@
   --input-form: #bbbbbb;
   --border-input: #ced2d1;
   --back-color: #f9fafc;
+} */
+
+:root[data-theme='light'] {
+  --main-color: #f5f6fb;
+  --secondary-color: #555555;
+  --form-color: #ffffff;
+  --accent-color: #ff6b09;
+  --fill-color: #02172a;
+  --border-color: #00122f;
+  --main-text: #000000;
+  --secondary-text: #555555;
+  --footer-text: rgba(255, 255, 255, 0.4);
+  --border-line: #e2e3e5;
+  --input-form: #bbbbbb;
+  --border-input: #ced2d1;
+  --back-color: #f9fafc;
+  --bg-avatar: #f9fafc;
+  --fill-btn: #02172a;
+}
+
+:root[data-theme='dark'] {
+  --main-color: #02172a;
+  --form-color: #344555;
+  --main-text: #f9fafc;
+  --secondary-text: #9f9c9c;
+  --fill-btn: #f9fafc;
+  --bg-avatar: #f9fafc;
+  --secondary-color: #f9fafc;
+  --accent-color: #ff6b09;
+
+  --border-line: #e2e3e5;
+  --border-color: #00122f;
+  --footer-text: rgba(255, 255, 255, 0.4);
+  --input-form: #bbbbbb;
+  --border-input: #ced2d1;
 }
 
 body {

@@ -36,6 +36,10 @@
   fill: var(--form-color);
 }
 
+.btnPrevious {
+  color: var(--main-text);
+}
+
 Link {
   text-decoration: none;
   cursor: none;
@@ -72,7 +76,7 @@ Link {
   color: var(--accent-color);
 }
 button:disabled {
-  background-color: var(--border-line);
+  background-color: var(--form-color);
 }
 .btnFinish {
   width: 55px;
