@@ -12,8 +12,8 @@
 /* Dark */
 .useSection_dark {
   background-color: var(--back-color);
-  padding-top: 42px;
-  padding-bottom: 117px;
+  padding-top: 90px;
+  padding-bottom: 110px;
 }
 
 @media (min-width: 768px) {
@@ -33,6 +33,8 @@
     background-image: url('../../images/contacts/pic-3-dark.png');
     background-position: 100%;
     background-size: cover;
+    width: 100vw;
+    height: 100vh;
   }
 }
 
