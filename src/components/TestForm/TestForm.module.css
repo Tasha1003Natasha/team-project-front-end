@@ -70,7 +70,8 @@ Link {
   color: var(--accent-color);
 }
 button:disabled {
-  background-color: var(--form-color);
+  background-color: var(--secondary-text);
+  color: var(--bg-avatar);
 }
 .btnFinish {
   width: 55px;
