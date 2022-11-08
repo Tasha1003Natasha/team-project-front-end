@@ -72,7 +72,9 @@ export const TestForm = ({ testCurrent }) => {
           <svg className={style.arrowBack} width={24} height={16}>
             <use href={`${Sprite}#arrow`}></use>
           </svg>
-          {screenWidth >= 768 && <span>Previous question</span>}
+          {screenWidth >= 768 && (
+            <span className={style.btnPrevious}>Previous question</span>
+          )}
         </button>
         {Number(index) + 1 < 12 ? (
           <button
@@ -82,7 +84,9 @@ export const TestForm = ({ testCurrent }) => {
             onClick={currentQuestionIndexNext}
             disabled={isDisable}
           >
-            {screenWidth >= 768 && <span>Next question</span>}
+            {screenWidth >= 768 && (
+              <span className={style.btnPrevious}>Next question</span>
+            )}
             <svg className={style.arrowNext} width={24} height={16}>
               <use href={`${Sprite}#arrow`}></use>
             </svg>

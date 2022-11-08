@@ -58,6 +58,7 @@
     font-size: 22px;
     line-height: 27px;
     letter-spacing: 0.02em;
+    color: var(--main-text);
   }
   .closeBtn {
     font-family: 'Montserrat';

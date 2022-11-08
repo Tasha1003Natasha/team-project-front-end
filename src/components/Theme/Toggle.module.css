@@ -1,22 +1,36 @@
 .sun {
   width: 20px;
   height: 20px;
-  transition: 0.8s;
+  transition: 0.3s;
   fill: var(--accent-color);
+  cursor: pointer;
   /* background-color: currentColor; */
   /* cursor: pointer;
   border-radius: 50%;
   padding: 5px; */
 }
+
+.sun:hover,
+.sun:focus {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
 .moon {
   width: 20px;
   height: 20px;
-  transition: 0.8s;
+  transition: 0.3s;
   fill: var(--fill-color);
   cursor: pointer;
   /* background-color: var(--form-color); */
   /* order-radius: 50%; b */
   /* padding: 5px; */
+}
+
+.moon:hover,
+.moon:focus {
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 .header {
