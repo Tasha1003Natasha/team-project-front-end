@@ -75,7 +75,6 @@ const authSlice = createSlice({
       state.error = payload;
     },
     [updateToken]: (state, { payload }) => {
-      console.log(payload);
       state.token = payload;
     },
   },
