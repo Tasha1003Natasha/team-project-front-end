@@ -4,16 +4,24 @@ import CatSad from '../../images/result/sad.png';
 import CatLove from '../../images/result/love.png';
 import CatHappy from '../../images/result/happy.png';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getCurrectAnswer,
   getCurrentTest,
 } from '../../redux/tests/test-selector';
+import { getAnswers } from 'redux/tests/tests-operations';
 import { Link } from 'react-router-dom';
 
 const Results = () => {
+  const dispatch = useDispatch();
   const correct = useSelector(getCurrectAnswer);
   const currentTest = useSelector(getCurrentTest);
+
+  const checkAnswers = () => {
+    const userAnswers = JSON.parse(localStorage.getItem('userAnswers'));
+    console.log(userAnswers);
+    dispatch(getAnswers(userAnswers));
+  };
 
   return (
     <main>
@@ -71,6 +79,9 @@ const Results = () => {
             )}
             <Link to="/test" className={s.buttonRepeat}>
               Try again
+            </Link>
+            <Link to="/check" className={s.buttonRepeat} onClick={checkAnswers}>
+              check your answers
             </Link>
           </div>
         </div>

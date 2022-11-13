@@ -3,7 +3,13 @@ import Radio from '@mui/material/Radio';
 import { useEffect, useState } from 'react';
 import { orange, grey } from '@mui/material/colors';
 
-const TestCard = ({ index = 0, unDisableBtn, test }) => {
+const TestCard = ({
+  index = 0,
+  unDisableBtn,
+  test,
+  userAnswerArr,
+  rightAnswerArr,
+}) => {
   const [answer, setAnswer] = useState([]);
   let currentIndex = Number(index);
   const [selectedValue, setSelectedValue] = useState('');
@@ -36,6 +42,14 @@ const TestCard = ({ index = 0, unDisableBtn, test }) => {
 
   localStorage.setItem('userAnswers', JSON.stringify(answer));
 
+  const color = ans => {
+    const a = userAnswerArr.find(
+      item => item._id === test[currentIndex]._id && item.userAnswer === ans
+    );
+
+    return a;
+  };
+
   return (
     <>
       {test[currentIndex] && (
@@ -45,6 +59,7 @@ const TestCard = ({ index = 0, unDisableBtn, test }) => {
 
           <ul className={style.answersList}>
             {test[currentIndex].answers.map((answer, ind) => {
+              color(answer);
               const localStorageArrayAnswers = JSON.parse(
                 localStorage.getItem('userAnswers')
               );
@@ -58,7 +73,11 @@ const TestCard = ({ index = 0, unDisableBtn, test }) => {
               return (
                 <li className={style.answersItem} key={ind}>
                   <Radio
-                    checked={Boolean(a) || selectedValue === answer}
+                    checked={
+                      Boolean(a) ||
+                      selectedValue === answer ||
+                      Boolean(color(answer))
+                    }
                     onChange={handleChange}
                     value={answer}
                     name="r1"
@@ -69,7 +88,8 @@ const TestCard = ({ index = 0, unDisableBtn, test }) => {
                       },
                     }}
                   />
-                  {answer}
+                  
+                  <span>{answer}</span>
                 </li>
               );
             })}

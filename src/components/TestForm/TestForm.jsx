@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import style from './TestForm.module.css';
 
@@ -7,10 +7,15 @@ import { useDispatch } from 'react-redux';
 import TestCard from '../TestCard/TestCard';
 import Sprite from '../../images/icons/icons.svg';
 
-export const TestForm = ({ testCurrent }) => {
+export const TestForm = ({ testCurrent, rightAnswerArr, userAnswerArr }) => {
   const screenWidth = window.screen.width;
   const [isDisable, setIsDisable] = useState(true);
   const [index, setIndex] = useState('0');
+  useEffect(() => {
+    if (rightAnswerArr[0]) {
+      setIsDisable(false);
+    }
+  }, [rightAnswerArr]);
 
   const dispatch = useDispatch();
   const answer = JSON.parse(localStorage.getItem('userAnswers'));
@@ -59,6 +64,8 @@ export const TestForm = ({ testCurrent }) => {
           index={index}
           unDisableBtn={changeButtonStatus}
           test={testCurrent}
+          rightAnswerArr={rightAnswerArr}
+          userAnswerArr={userAnswerArr}
         />
       </div>
       <div className={style.testFooter}>

@@ -67,6 +67,14 @@ export const App = () => {
               }
             />
             <Route
+              path="/check"
+              element={
+                <PrivateRoute>
+                  <TestPageLazy />
+                </PrivateRoute>
+              }
+            />
+            <Route
               path="/results"
               element={
                 <PrivateRoute>

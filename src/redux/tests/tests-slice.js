@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { results, getTest } from './tests-operations';
+import { results, getTest, getAnswers } from './tests-operations';
 import { testInitialState } from './test-initialState';
 
 const testSlice = createSlice({
@@ -21,6 +21,12 @@ const testSlice = createSlice({
     },
     [getTest.rejected]: (state, { payload }) => {
       state.currentTest = [];
+    },
+    [getAnswers.pending]: (state, { meta }) => {
+      state.userAnswers = meta.arg;
+    },
+    [getAnswers.fulfilled]: (state, { payload }) => {
+      state.rightAnswers = payload;
     },
   },
 });

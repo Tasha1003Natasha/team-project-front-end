@@ -4,4 +4,6 @@ export const testInitialState = {
     correct: 0,
     incorrect: 0,
   },
+  rightAnswers: [],
+  userAnswers:[],
 };

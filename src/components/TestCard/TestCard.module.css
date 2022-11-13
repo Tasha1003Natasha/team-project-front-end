@@ -44,7 +44,12 @@
   accent-color: var(--accent-color);
 }
 
-
+.red{
+  color:red;
+}
+.green {
+  color: green;
+}
 @media (min-width: 768px) {
   .questionText {
     font-size: 22px;
