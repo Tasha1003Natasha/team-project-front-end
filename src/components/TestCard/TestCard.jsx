@@ -42,7 +42,7 @@ const TestCard = ({
 
   localStorage.setItem('userAnswers', JSON.stringify(answer));
 
-  const color = ans => {
+  const check = ans => {
     const a = userAnswerArr.find(
       item => item._id === test[currentIndex]._id && item.userAnswer === ans
     );
@@ -59,12 +59,27 @@ const TestCard = ({
 
           <ul className={style.answersList}>
             {test[currentIndex].answers.map((answer, ind) => {
-              color(answer);
               const localStorageArrayAnswers = JSON.parse(
                 localStorage.getItem('userAnswers')
               );
+              console.log(rightAnswerArr);
+              if (rightAnswerArr?.lenght > 1) {
+                const r = rightAnswerArr.find(
+                  item =>
+                    item._id === test[currentIndex]._id &&
+                    item.rightAnswer === answer
+                );
+                console.log(r);
+                return r;
+              }
 
               const a = localStorageArrayAnswers.find(
+                item =>
+                  item._id === test[currentIndex]._id &&
+                  item.userAnswer === answer
+              );
+
+              const user = userAnswerArr?.find(
                 item =>
                   item._id === test[currentIndex]._id &&
                   item.userAnswer === answer
@@ -76,7 +91,7 @@ const TestCard = ({
                     checked={
                       Boolean(a) ||
                       selectedValue === answer ||
-                      Boolean(color(answer))
+                      Boolean(check(answer))
                     }
                     onChange={handleChange}
                     value={answer}
@@ -88,8 +103,14 @@ const TestCard = ({
                       },
                     }}
                   />
-                  
-                  <span>{answer}</span>
+                  {answer ? (
+                    <span className={style.green}>{answer}</span>
+                  ) : (
+                    <span>{answer}</span>
+                  )}
+                  {user !== answer &&
+                    (user === answer) &
+                    <span className={style.red}>{answer}</span>}
                 </li>
               );
             })}

@@ -43,6 +43,9 @@ export const TestForm = ({ testCurrent, rightAnswerArr, userAnswerArr }) => {
       ({ _id }) => _id === testCurrent[Number(index)]._id
     );
     setIsDisable(!Boolean(isDisabled));
+    if (rightAnswerArr[0]) {
+      setIsDisable(false);
+    }
 
     const NextIndex = Number(index) + 1;
     if (NextIndex > 0 && NextIndex <= 12) {
