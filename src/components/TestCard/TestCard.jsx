@@ -50,6 +50,21 @@ const TestCard = ({
     return a;
   };
 
+  //  console.log(rightAnswerArr);
+  const checkRight = ans => {
+    const rightColor = rightAnswerArr?.find(
+      item => item._id === test[currentIndex]._id && item.rightAnswer === ans
+    );
+    return rightColor;
+  };
+  const checkUserAnsw = answ => {
+    const userColor = userAnswerArr?.find(
+      item => item._id === test[currentIndex]._id && item.userAnswers === answ
+    );
+    return userColor;
+  };
+
+  console.log(test);
   return (
     <>
       {test[currentIndex] && (
@@ -58,20 +73,10 @@ const TestCard = ({
           <hr className={style.line} />
 
           <ul className={style.answersList}>
-            {test[currentIndex].answers.map((answer, ind) => {
+            {test[currentIndex]?.answers.map((answer, ind) => {
               const localStorageArrayAnswers = JSON.parse(
                 localStorage.getItem('userAnswers')
               );
-              console.log(rightAnswerArr);
-              if (rightAnswerArr?.lenght > 1) {
-                const r = rightAnswerArr.find(
-                  item =>
-                    item._id === test[currentIndex]._id &&
-                    item.rightAnswer === answer
-                );
-                console.log(r);
-                return r;
-              }
 
               const a = localStorageArrayAnswers.find(
                 item =>
@@ -79,11 +84,11 @@ const TestCard = ({
                   item.userAnswer === answer
               );
 
-              const user = userAnswerArr?.find(
-                item =>
-                  item._id === test[currentIndex]._id &&
-                  item.userAnswer === answer
-              );
+              // const user = userAnswerArr?.find(
+              //   item =>
+              //     item._id === test[currentIndex]._id &&
+              //     item.userAnswer === answer
+              // );
 
               return (
                 <li className={style.answersItem} key={ind}>
@@ -103,14 +108,20 @@ const TestCard = ({
                       },
                     }}
                   />
-                  {answer ? (
-                    <span className={style.green}>{answer}</span>
-                  ) : (
+                  {!rightAnswerArr.length ? (
                     <span>{answer}</span>
+                  ) : (
+                    (checkUserAnsw(answer)?.userAnswers ===
+                      checkRight(answer)?.rightAnswers ||
+                      (Boolean(checkRight(answer)) &&
+                        (<span className={style.green}>{answer}</span>)(
+                          checkUserAnsw(answer)?.userAnswers !==
+                            checkRight(answer)?.rightAnswers
+                        ))) &&
+                    (<span className={style.red}>{answer}</span>)() && (
+                      <span>{answer}</span>
+                    )
                   )}
-                  {user !== answer &&
-                    (user === answer) &
-                    <span className={style.red}>{answer}</span>}
                 </li>
               );
             })}
